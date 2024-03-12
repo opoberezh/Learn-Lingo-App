@@ -12,5 +12,5 @@ export default defineConfig({
           assets: '/src/assets'
         },
       },
-      base: '/Learn-Lingo-App/',
+      base: '/Learn-Lingo_App/',
     });
