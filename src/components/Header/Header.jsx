@@ -17,7 +17,7 @@ export const Header = () => {
       </LogoWrapper>
       <Navigation>
         <StyledLink to="/home">Home</StyledLink>
-        <StyledLink to="/second">Second</StyledLink>
+        <StyledLink to="/teachers">Teachers</StyledLink>
       </Navigation>
     </HeaderContainer>
   );
