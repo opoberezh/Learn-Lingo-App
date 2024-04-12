@@ -2,27 +2,22 @@ import {
   HeaderContainer,
   Navigation,
   StyledLink,
-  IconWrapper,
+  Logo,
+  LogoWrapper,
+  LogoName,
 } from './Header.styled';
-import sprite from 'assets/sprite.svg';
+import ukraine from '../../assets/ukraine.svg';
 
 export const Header = () => {
-
   return (
     <HeaderContainer>
+      <LogoWrapper>
+        <Logo src={ukraine} alt="Ukraine Flag" />
+        <LogoName>LearnLingo</LogoName>
+      </LogoWrapper>
       <Navigation>
-        <StyledLink to="/first">
-          <IconWrapper>
-            <use href={`${sprite}#icon-logo`} />
-          </IconWrapper>
-          First
-        </StyledLink>
-        <StyledLink to="/second">
-          <IconWrapper>
-            <use href={`${sprite}#icon-logo`} />
-          </IconWrapper>
-          Second
-        </StyledLink>
+        <StyledLink to="/home">Home</StyledLink>
+        <StyledLink to="/second">Second</StyledLink>
       </Navigation>
     </HeaderContainer>
   );

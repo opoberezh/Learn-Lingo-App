@@ -2,9 +2,27 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
-  padding: 20px;
+  width: 1440px;
+  height: 88px;
+  padding: 20px 128px;
 `;
 
+export const LogoWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  width: 133px;
+  height: 28px;
+  gap: 8px;
+`;
+
+export const Logo = styled.img`
+  width: 28px;
+  height: 28px;
+`;
+
+export const LogoName = styled.p`
+  margin: 0;
+`;
 export const Navigation = styled.nav`
   display: flex;
   justify-content: center;
@@ -37,9 +55,9 @@ export const StyledLink = styled(Link)`
 `;
 
 export const IconWrapper = styled.svg`
-  width: ${(props) => props.size || '12px'};
-  height: ${(props) => props.size || '12px'};
-  fill: ${(props) => props.color || '#ffffff'};
+  width: ${(props) => props.size || '28px'};
+  height: ${(props) => props.size || '28px'};
+  fill: ${(props) => props.color || '#000000'};
   display: inline-block;
   margin-right: 5px;
   box-shadow:
