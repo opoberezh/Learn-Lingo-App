@@ -19,6 +19,7 @@ export const Header = () => {
         <StyledLink to="/home">Home</StyledLink>
         <StyledLink to="/second">Second</StyledLink>
       </Navigation>
+      <div>log in</div>
     </HeaderContainer>
   );
 };
