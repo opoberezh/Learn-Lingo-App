@@ -94,4 +94,13 @@ export const Button = styled.button`
   border-radius: 12px;
   background-color: #121417;
   color: #fff;
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+
+  &:hover,
+  &:focus {
+    color: #f4c550;
+    background-color: #fbe9ba;
+  }
 `;

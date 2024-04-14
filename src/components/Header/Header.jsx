@@ -15,7 +15,7 @@ import {
 import ukraine from '../../assets/ukraine.svg';
 import login from '../../assets/login.svg';
 
-export const Header = () => {
+const Header = () => {
   return (
     <HeaderContainer>
       <PageWrapper>
@@ -38,3 +38,5 @@ export const Header = () => {
     </HeaderContainer>
   );
 };
+
+export default Header;
