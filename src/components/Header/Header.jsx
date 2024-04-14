@@ -8,12 +8,12 @@ import {
   PageWrapper,
   IconWrapper,
   LoginWrapper,
-  LoginText,
   Authentication,
-  Button,
+  LogOutButton,
 } from './Header.styled';
 import ukraine from '../../assets/ukraine.svg';
-import login from '../../assets/login.svg';
+
+import logOut from '../../assets/logOut.svg';
 
 const Header = () => {
   return (
@@ -30,10 +30,11 @@ const Header = () => {
       </PageWrapper>
       <Authentication>
         <LoginWrapper>
-          <IconWrapper src={login} alt="authenticate" />
-          <LoginText>log in</LoginText>
+          <LogOutButton type="button">
+            Log out
+            <IconWrapper src={logOut} alt="log out" />
+          </LogOutButton>
         </LoginWrapper>
-        <Button>Registration</Button>
       </Authentication>
     </HeaderContainer>
   );

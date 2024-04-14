@@ -5,14 +5,14 @@ import {
   LoginButton,
   LoginWrapper,
 } from './AuthNav.styled';
-import login from '../../assets/login.svg';
+import logIn from '../../assets/login.svg';
 
 const AuthNav = () => {
   return (
     <Authentication>
       <LoginWrapper>
         <LoginButton>
-          <Icon src={login} alt="Login" />
+          <Icon src={logIn} alt="Login" />
           Log in
         </LoginButton>
       </LoginWrapper>

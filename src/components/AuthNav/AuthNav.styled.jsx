@@ -15,6 +15,7 @@ export const LoginWrapper = styled.div`
 export const Icon = styled.img`
   width: 20px;
   height: 20px;
+
   margin-right: 8px;
 `;
 

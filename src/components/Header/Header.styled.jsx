@@ -46,11 +46,11 @@ export const Navigation = styled.nav`
   align-items: center;
   width: 138px;
   height: 20px;
-  gap: 28px;
+  gap: 12px;
 `;
 
 export const StyledLink = styled(Link)`
-  padding: 8px 16px;
+  padding: 8px 8px;
   color: #121417;
 
   font-weight: 400;
@@ -69,10 +69,27 @@ export const LoginWrapper = styled.div`
   align-items: center;
   gap: 8px;
 `;
+export const LogOutButton = styled.button`
+  display: inline-flex;
+  min-width: 80px;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 700;
+  transition: color 0.3s;
+
+  &:hover,
+  &:focus {
+    color: #f4c550;
+  }
+`;
 
 export const IconWrapper = styled.img`
   width: 20px;
   height: 20px;
+  margin-left: 8px;
 `;
 
 export const LoginText = styled.p`
