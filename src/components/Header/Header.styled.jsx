@@ -6,7 +6,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   width: 1440px;
   height: 88px;
-  padding: 20px 128px;
+  padding: 40px 128px;
   gap: 268px;
 `;
 

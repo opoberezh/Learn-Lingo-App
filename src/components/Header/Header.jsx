@@ -1,3 +1,5 @@
+import { useDispatch } from 'react-redux';
+import { useAuth } from '../hooks';
 import {
   HeaderContainer,
   Navigation,
@@ -13,9 +15,13 @@ import {
 } from './Header.styled';
 import ukraine from '../../assets/ukraine.svg';
 
-import logOut from '../../assets/logOut.svg';
+import logout from '../../assets/logOut.svg';
+import { logOut } from '../../redux/auth/operations';
+import { Avatar } from '@mui/material';
 
 const Header = () => {
+  const dispatch = useDispatch();
+  const { user } = useAuth();
   return (
     <HeaderContainer>
       <PageWrapper>
@@ -30,11 +36,18 @@ const Header = () => {
       </PageWrapper>
       <Authentication>
         <LoginWrapper>
-          <LogOutButton type="button">
+          <LogOutButton type="button" onClick={() => dispatch(logOut())}>
             Log out
-            <IconWrapper src={logOut} alt="log out" />
+            <IconWrapper src={logout} alt="log out" />
           </LogOutButton>
         </LoginWrapper>
+        <div>
+          <Avatar
+            alt={user.name}
+            src={user.avatar}
+            sx={{ width: 56, height: 56 }}
+          />
+        </div>
       </Authentication>
     </HeaderContainer>
   );
