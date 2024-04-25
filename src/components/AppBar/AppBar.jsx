@@ -1,4 +1,3 @@
-import AuthNav from '../AuthNav/AuthNav';
 import Header from '../Header/Header';
 import InactiveHeader from '../InactiveHeader/InactiveHeader';
 import { useAuth } from '../hooks';
