@@ -1,7 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import { useAuth } from './components/hooks';
 
-export const RestrictedRouter = ({
+export const RestrictedRoute = ({
   component: Component,
   redirectTo = '/',
 }) => {

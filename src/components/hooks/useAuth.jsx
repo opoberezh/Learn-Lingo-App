@@ -6,12 +6,12 @@ import {
 import { useSelector } from 'react-redux';
 
 export const useAuth = () => {
-  const isLoggedI = useSelector(selectIsLoggedIn);
+  const isLoggedIn = useSelector(selectIsLoggedIn);
   const isRefreshing = useSelector(selectIsRefreshing);
   const user = useSelector(selectUser);
 
   return {
-    isLoggedI,
+    isLoggedIn,
     isRefreshing,
     user,
   };
