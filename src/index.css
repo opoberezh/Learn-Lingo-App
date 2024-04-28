@@ -9,8 +9,8 @@ body {
   font-style: normal;
   color: #121417;
   width: 1440px;
-  height: 100vh;
-  margin: 0;
+  height: 790px;
+  padding: 20px 64px;
   margin: 0 auto;
 }
 html {
