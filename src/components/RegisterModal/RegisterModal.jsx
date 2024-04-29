@@ -9,11 +9,12 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 400,
+  width: 566,
+  height: 600,
   bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
+  borderRadius: 12,
+
+  p: 8,
 };
 
 const RegisterModal = ({ open, setOpen }) => {
@@ -30,11 +31,21 @@ const RegisterModal = ({ open, setOpen }) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Text in a modal
+          <Typography
+            id="modal-modal-title"
+            variant="h3"
+            component="h2"
+            sx={{ mb: 2.5, fontSize: 40, fontWeight: 500 }}
+          >
+            Registration
           </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          <Typography
+            id="modal-modal-description"
+            sx={{ fontSize: 16, fontWeight: 400 }}
+          >
+            Thank you for your interest in our platform! In order to register,
+            we need some information. Please provide us with the following
+            information
           </Typography>
         </Box>
       </Modal>
