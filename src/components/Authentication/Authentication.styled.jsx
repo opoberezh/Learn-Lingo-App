@@ -40,7 +40,7 @@ export const LoginButton = styled.button`
 export const Button = styled.button`
   width: 166px;
   height: 48px;
-  cursor: pointer;
+
   border: none;
   border-radius: 12px;
   background-color: #121417;
@@ -54,7 +54,7 @@ export const Button = styled.button`
 
   &:hover,
   &:focus {
-    color: #f4c550;
+    color: #121417;
     background-color: #fbe9ba;
   }
 `;

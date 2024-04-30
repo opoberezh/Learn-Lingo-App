@@ -2,10 +2,19 @@ import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { register } from '../../redux/auth/operations';
 import Box from '@mui/material/Box';
-import { Formik, Field, Form } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
+import CloseIcon from '@mui/icons-material/Close';
+import {
+  ErrorMessageStyled,
+  SignUpButton,
+  StyledField,
+  StyledForm,
+} from './RegisterModal.styled';
 
 const style = {
   position: 'absolute',
@@ -15,7 +24,7 @@ const style = {
   width: 566,
   height: 600,
   bgcolor: 'background.paper',
-  borderRadius: 12,
+  borderRadius: 10,
 
   p: 8,
 };
@@ -30,7 +39,7 @@ const RegisterSchema = Yup.object({
     .required('Email is required!'),
   password: Yup.string('Enter your password')
     .min(8, 'Password should be of minimum 8 characters length')
-    .required('Password is required'),
+    .required('Password is required!'),
 });
 
 const RegisterModal = ({ open, setOpen }) => {
@@ -51,11 +60,22 @@ const RegisterModal = ({ open, setOpen }) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+          <CloseIcon
+            onClick={handleClose}
+            sx={{
+              position: 'absolute',
+              top: '6%',
+              left: '93%',
+              transform: 'translate(-50%, -50%)',
+              width: 32,
+              height: 32,
+            }}
+          />
           <Typography
             id="modal-modal-title"
             variant="h3"
             component="h2"
-            sx={{ mb: 2.5, fontSize: 40, fontWeight: 500 }}
+            sx={{ mb: 1, fontSize: 40, fontWeight: 500 }}
           >
             Registration
           </Typography>
@@ -87,8 +107,8 @@ const RegisterModal = ({ open, setOpen }) => {
               handleChange,
               values,
             }) => (
-              <Form onSubmit={handleSubmit}>
-                <Field
+              <StyledForm onSubmit={handleSubmit}>
+                <StyledField
                   id="name"
                   name="name"
                   placeholder="Name"
@@ -97,8 +117,10 @@ const RegisterModal = ({ open, setOpen }) => {
                   onBlur={handleBlur}
                   value={values.name}
                 />
-                {errors.name && touched.name ? <div>{errors.name}</div> : null}
-                <Field
+                {errors.name && touched.name ? (
+                  <ErrorMessageStyled>{errors.name}</ErrorMessageStyled>
+                ) : null}
+                <StyledField
                   id="email"
                   name="email"
                   placeholder="Email"
@@ -108,23 +130,36 @@ const RegisterModal = ({ open, setOpen }) => {
                   value={values.email}
                 />
                 {errors.email && touched.email ? (
-                  <div>{errors.email}</div>
+                  <ErrorMessageStyled>{errors.email}</ErrorMessageStyled>
                 ) : null}
-                <Field
+                <StyledField
                   id="password"
                   name="password"
                   placeholder="Password"
-                  type="password"
+                  type={showPassword ? 'text' : 'password'}
                   success="true"
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.password}
+                  style={{ position: 'relative' }}
                 />
+                <div
+                  style={{
+                    display: values.password ? 'block' : 'none',
+                    position: 'absolute',
+                    top: '-5%',
+                    right: '10px',
+                    transform: 'translateY(50%)',
+                  }}
+                  onClick={handlePasswordVisibility}
+                >
+                  {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                </div>
                 {errors.password && touched.password ? (
-                  <div>{errors.password}</div>
+                  <ErrorMessageStyled>{errors.password}</ErrorMessageStyled>
                 ) : null}
-                <button type="submit">Sign Up</button>
-              </Form>
+                <SignUpButton type="submit">Sign Up</SignUpButton>
+              </StyledForm>
             )}
           </Formik>
         </Box>
