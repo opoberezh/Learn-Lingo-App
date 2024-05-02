@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { register } from '../../redux/auth/operations';
+import { logIn } from '../../redux/auth/operations';
 import Box from '@mui/material/Box';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
@@ -22,7 +22,7 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: 566,
-  height: 600,
+  height: 506,
   bgcolor: 'background.paper',
   borderRadius: 10,
 
@@ -43,7 +43,7 @@ const RegisterSchema = Yup.object({
 });
 
 const LoginModal = ({ open, setOpen }) => {
-  const handleClose = () => setOpen(false);
+  const handleLoginClose = () => setOpen(false);
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -55,13 +55,13 @@ const LoginModal = ({ open, setOpen }) => {
     <div>
       <Modal
         open={open}
-        onClose={handleClose}
+        onClose={handleLoginClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
           <CloseIcon
-            onClick={handleClose}
+            onClick={handleLoginClose}
             sx={{
               position: 'absolute',
               top: '6%',
@@ -77,15 +77,14 @@ const LoginModal = ({ open, setOpen }) => {
             component="h2"
             sx={{ mb: 1, fontSize: 40, fontWeight: 500 }}
           >
-            Registration
+            Log In
           </Typography>
           <Typography
             id="modal-modal-description"
             sx={{ fontSize: 16, fontWeight: 400 }}
           >
-            Thank you for your interest in our platform! In order to register,
-            we need some information. Please provide us with the following
-            information
+            Welcome back! Please enter your credentials to access your account
+            and continue your search for an teacher
           </Typography>
           <Formik
             initialValues={{
@@ -94,8 +93,8 @@ const LoginModal = ({ open, setOpen }) => {
               password: '',
             }}
             validationSchema={RegisterSchema}
-            onSudmit={({ ...values }, actions) => {
-              dispatch(register({ ...values }));
+            onSubmit={({ ...values }, actions) => {
+              dispatch(logIn({ ...values }));
               actions.resetForm();
             }}
           >
@@ -109,18 +108,6 @@ const LoginModal = ({ open, setOpen }) => {
             }) => (
               <StyledForm onSubmit={handleSubmit}>
                 <StyledField
-                  id="name"
-                  name="name"
-                  placeholder="Name"
-                  type="text"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.name}
-                />
-                {errors.name && touched.name ? (
-                  <ErrorMessageStyled>{errors.name}</ErrorMessageStyled>
-                ) : null}
-                <StyledField
                   id="email"
                   name="email"
                   placeholder="Email"
@@ -132,33 +119,34 @@ const LoginModal = ({ open, setOpen }) => {
                 {errors.email && touched.email ? (
                   <ErrorMessageStyled>{errors.email}</ErrorMessageStyled>
                 ) : null}
-                <StyledField
-                  id="password"
-                  name="password"
-                  placeholder="Password"
-                  type={showPassword ? 'text' : 'password'}
-                  success="true"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.password}
-                  style={{ position: 'relative' }}
-                />
-                <div
-                  style={{
-                    display: values.password ? 'block' : 'none',
-                    position: 'absolute',
-                    top: '-5%',
-                    right: '10px',
-                    transform: 'translateY(50%)',
-                  }}
-                  onClick={handlePasswordVisibility}
-                >
-                  {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                <div style={{ position: 'relative' }}>
+                  <StyledField
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                    type={showPassword ? 'text' : 'password'}
+                    success="true"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.password}
+                  />
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '68%',
+                      right: 16,
+                      transform: 'translateY(-50%)',
+                      cursor: 'pointer',
+                    }}
+                    onClick={handlePasswordVisibility}
+                  >
+                    {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                  </div>
                 </div>
                 {errors.password && touched.password ? (
                   <ErrorMessageStyled>{errors.password}</ErrorMessageStyled>
                 ) : null}
-                <SignUpButton type="submit">Sign Up</SignUpButton>
+                <SignUpButton type="submit">Log In</SignUpButton>
               </StyledForm>
             )}
           </Formik>

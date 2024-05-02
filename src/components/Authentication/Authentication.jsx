@@ -8,18 +8,20 @@ import {
   Button,
 } from './Authentication.styled';
 
-const Auth = ({ setOpen }) => {
-  const handleOpen = () => setOpen(true);
+const Auth = ({ setRegisterOpen, setLoginOpen }) => {
+  const handleRegisterOpen = () => setRegisterOpen(true);
+  const handleLoginOpen = () => setLoginOpen(true);
+
   return (
     <Authentication>
       <NavLink to="/login">
-        <LoginButton type="button" onClick={handleOpen}>
+        <LoginButton type="button" onClick={handleLoginOpen}>
           <Icon src={login} alt="Login" />
           Log in
         </LoginButton>
       </NavLink>
       <NavLink to="/register">
-        <Button type="button" onClick={handleOpen}>
+        <Button type="button" onClick={handleRegisterOpen}>
           Registration
         </Button>
       </NavLink>

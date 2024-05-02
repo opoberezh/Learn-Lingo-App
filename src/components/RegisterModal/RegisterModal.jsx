@@ -132,28 +132,29 @@ const RegisterModal = ({ open, setOpen }) => {
                 {errors.email && touched.email ? (
                   <ErrorMessageStyled>{errors.email}</ErrorMessageStyled>
                 ) : null}
-                <StyledField
-                  style={{ position: 'relative' }}
-                  id="password"
-                  name="password"
-                  placeholder="Password"
-                  type={showPassword ? 'text' : 'password'}
-                  success="true"
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  value={values.password}
-                />
-                <div
-                  style={{
-                    position: 'relative',
-                    top: '80%',
-                    right: 8,
-                    transform: 'translateY(-50%)',
-                    cursor: 'pointer',
-                  }}
-                  onClick={handlePasswordVisibility}
-                >
-                  {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                <div style={{ position: 'relative' }}>
+                  <StyledField
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                    type={showPassword ? 'text' : 'password'}
+                    success="true"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.password}
+                  />
+                  <div
+                    style={{
+                      position: 'absolute',
+                      top: '68%',
+                      right: 16,
+                      transform: 'translateY(-50%)',
+                      cursor: 'pointer',
+                    }}
+                    onClick={handlePasswordVisibility}
+                  >
+                    {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                  </div>
                 </div>
                 {errors.password && touched.password ? (
                   <ErrorMessageStyled>{errors.password}</ErrorMessageStyled>
