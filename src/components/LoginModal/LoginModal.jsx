@@ -14,7 +14,7 @@ import {
   SignUpButton,
   StyledField,
   StyledForm,
-} from './RegisterModal.styled';
+} from './LoginModal.styled';
 
 const style = {
   position: 'absolute',
@@ -42,7 +42,7 @@ const RegisterSchema = Yup.object({
     .required('Password is required!'),
 });
 
-const RegisterModal = ({ open, setOpen }) => {
+const LoginModal = ({ open, setOpen }) => {
   const handleClose = () => setOpen(false);
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
@@ -94,7 +94,7 @@ const RegisterModal = ({ open, setOpen }) => {
               password: '',
             }}
             validationSchema={RegisterSchema}
-            onSubmit={({ ...values }, actions) => {
+            onSudmit={({ ...values }, actions) => {
               dispatch(register({ ...values }));
               actions.resetForm();
             }}
@@ -133,7 +133,6 @@ const RegisterModal = ({ open, setOpen }) => {
                   <ErrorMessageStyled>{errors.email}</ErrorMessageStyled>
                 ) : null}
                 <StyledField
-                  style={{ position: 'relative' }}
                   id="password"
                   name="password"
                   placeholder="Password"
@@ -142,14 +141,15 @@ const RegisterModal = ({ open, setOpen }) => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.password}
+                  style={{ position: 'relative' }}
                 />
                 <div
                   style={{
-                    position: 'relative',
-                    top: '80%',
-                    right: 8,
-                    transform: 'translateY(-50%)',
-                    cursor: 'pointer',
+                    display: values.password ? 'block' : 'none',
+                    position: 'absolute',
+                    top: '-5%',
+                    right: '10px',
+                    transform: 'translateY(50%)',
                   }}
                   onClick={handlePasswordVisibility}
                 >
@@ -168,4 +168,4 @@ const RegisterModal = ({ open, setOpen }) => {
   );
 };
 
-export default RegisterModal;
+export default LoginModal;

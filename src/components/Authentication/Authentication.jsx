@@ -13,7 +13,7 @@ const Auth = ({ setOpen }) => {
   return (
     <Authentication>
       <NavLink to="/login">
-        <LoginButton type="button">
+        <LoginButton type="button" onClick={handleOpen}>
           <Icon src={login} alt="Login" />
           Log in
         </LoginButton>
