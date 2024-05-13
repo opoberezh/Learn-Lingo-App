@@ -1,11 +1,27 @@
-import { Container, Title, StyledImage } from './HomePage.styled';
-import example from '../../assets/example.png';
+import {
+  Container,
+  Title,
+  HeroWrapper,
+  StyledSpan,
+  TextWrapper,
+} from './HomePage.styled';
 
 const HomePage = () => {
   return (
     <Container>
-      <Title>First Page</Title>
-      <StyledImage src={example} alt="Example" />
+      <HeroWrapper>
+        <Title>
+          Unlock your potential with the best <StyledSpan>language </StyledSpan>
+          tutors
+        </Title>
+      </HeroWrapper>
+      <TextWrapper>
+        <p>
+          Embark on an Exciting Language Journey with Expert Language Tutors:
+          Elevate your language proficiency to new heights by connecting with
+          highly qualified and experienced tutors.
+        </p>
+      </TextWrapper>
     </Container>
   );
 };
