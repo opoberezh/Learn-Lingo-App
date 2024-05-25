@@ -1,6 +1,6 @@
 // import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import login from '../../assets/login.svg';
+import login from '../../../assets/login.svg';
 import {
   Authentication,
   LoginButton,

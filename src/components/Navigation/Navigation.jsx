@@ -1,6 +1,6 @@
 import { useAuth } from '../hooks';
 
-import ukraine from '../../assets/ukraine.svg';
+import ukraine from '../../../assets/ukraine.svg';
 import {
   LinkStyled,
   LinkWrapper,
