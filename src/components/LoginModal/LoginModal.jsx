@@ -25,15 +25,10 @@ const style = {
   height: 506,
   bgcolor: 'background.paper',
   borderRadius: 10,
-
   p: 8,
 };
 
-const RegisterSchema = Yup.object({
-  name: Yup.string()
-    .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Name is required!'),
+const LoginSchema = Yup.object({
   email: Yup.string('Enter your email')
     .email('Enter a valid email')
     .required('Email is required!'),
@@ -84,15 +79,14 @@ const LoginModal = ({ open, setOpen }) => {
             sx={{ fontSize: 16, fontWeight: 400 }}
           >
             Welcome back! Please enter your credentials to access your account
-            and continue your search for an teacher
+            and continue your search for a teacher.
           </Typography>
           <Formik
             initialValues={{
-              name: '',
               email: '',
               password: '',
             }}
-            validationSchema={RegisterSchema}
+            validationSchema={LoginSchema}
             onSubmit={({ ...values }, actions) => {
               dispatch(logIn({ ...values }));
               actions.resetForm();

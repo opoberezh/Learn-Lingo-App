@@ -25,7 +25,6 @@ const style = {
   height: 600,
   bgcolor: 'background.paper',
   borderRadius: 10,
-
   p: 8,
 };
 
@@ -85,7 +84,7 @@ const RegisterModal = ({ open, setOpen }) => {
           >
             Thank you for your interest in our platform! In order to register,
             we need some information. Please provide us with the following
-            information
+            information.
           </Typography>
           <Formik
             initialValues={{

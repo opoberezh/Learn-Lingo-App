@@ -1,4 +1,3 @@
-// import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import login from '../../../assets/login.svg';
 import {
@@ -6,9 +5,9 @@ import {
   LoginButton,
   Icon,
   Button,
-} from './Authentication.styled';
+} from './AuthNav.styled';
 
-const Auth = ({ setRegisterOpen, setLoginOpen }) => {
+const AuthNav = ({ setRegisterOpen, setLoginOpen }) => {
   const handleRegisterOpen = () => setRegisterOpen(true);
   const handleLoginOpen = () => setLoginOpen(true);
 
@@ -29,4 +28,4 @@ const Auth = ({ setRegisterOpen, setLoginOpen }) => {
   );
 };
 
-export default Auth;
+export default AuthNav;
