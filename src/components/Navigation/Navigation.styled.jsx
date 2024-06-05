@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styled from '@emotion/styled';
 
 export const Nav = styled.nav`
@@ -9,13 +9,7 @@ export const Nav = styled.nav`
   gap: 390px;
 `;
 
-// export const LogoWrapper = styled.div`
-//   display: flex;
-//   align-items: center;
-//   width: 133px;
-//   height: 28px;
-//   gap: 8px;
-// `;
+
 
 export const StyledLink = styled(Link)`
   display: flex;
@@ -43,7 +37,7 @@ export const LinkWrapper = styled.div`
   width: 138px;
   gap: 28px;
 `;
-export const LinkStyled = styled(Link)`
+export const LinkStyled = styled(NavLink)`
   display: flex;
   gap: 8px;
   padding: 8px 8px;
@@ -55,6 +49,10 @@ export const LinkStyled = styled(Link)`
 
   &:hover,
   &:focus {
+    color: #f4c550;
+  }
+
+  &.active{
     color: #f4c550;
   }
 `;

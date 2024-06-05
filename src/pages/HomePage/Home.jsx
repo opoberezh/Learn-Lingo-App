@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import {
   Container,
   Title,
@@ -40,8 +41,9 @@ const HomePage = () => {
               connecting with highly qualified and experienced tutors.
             </Text>
           </TextWrapper>
-
-          <SignUpButton type="submit">Get started</SignUpButton>
+<Link to="/teachers"><SignUpButton type="submit">Get started</SignUpButton>
+</Link>
+          
         </HeroWrapper>
         <PicsWrapper>
           <EmojiImg
