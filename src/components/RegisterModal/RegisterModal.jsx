@@ -96,6 +96,7 @@ const RegisterModal = ({ open, setOpen }) => {
             onSubmit={({ ...values }, actions) => {
               dispatch(register({ ...values }));
               actions.resetForm();
+              setOpen(false);
             }}
           >
             {({

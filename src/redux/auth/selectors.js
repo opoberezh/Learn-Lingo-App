@@ -1,4 +1,4 @@
-// selectors.js
+
 export const selectIsLoggedIn = (state) => state.auth.isLoggedIn;
 export const selectUser = (state) => {
   console.log('selectUser:', state.auth.user);

@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 
 export const LogOutButton = styled.button`
   display: inline-flex;
-  min-width: 80px;
+  min-width: 100px;
   cursor: pointer;
   padding: 0;
   border: none;
@@ -33,4 +33,24 @@ export const IconWrapper = styled.img`
   width: 20px;
   height: 20px;
   margin-left: 8px;
+`;
+
+export const UserMailDiv = styled.div`
+display: flex;
+align-items: center;
+    justify-content: center;
+width: 166px;
+height: 48px;
+
+
+border-radius: 12px;
+background-color: #121417;
+
+`;
+
+export const UserMail = styled.p`
+color: #fff;
+
+font-size: 16px;
+font-weight: 700;
 `;

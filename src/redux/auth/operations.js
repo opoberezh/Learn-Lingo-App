@@ -1,4 +1,4 @@
-// operations.js
+
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { auth } from '../../../ firebaseConfig';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
