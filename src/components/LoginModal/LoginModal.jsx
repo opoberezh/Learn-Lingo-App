@@ -1,5 +1,5 @@
-import { useDispatch } from 'react-redux';
-import { useState } from 'react';
+import { useDispatch  } from 'react-redux';
+import {  useState } from 'react';
 import { logIn } from '../../redux/auth/operations';
 import Box from '@mui/material/Box';
 import { Formik } from 'formik';
@@ -15,6 +15,7 @@ import {
   StyledField,
   StyledForm,
 } from './LoginModal.styled';
+
 
 const style = {
   position: 'absolute',
@@ -37,10 +38,11 @@ const LoginSchema = Yup.object({
     .required('Password is required!'),
 });
 
-const LoginModal = ({ open, setOpen }) => {
+const LoginModal = ({ open, setOpen,  }) => {
   const handleLoginClose = () => setOpen(false);
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
+
 
   const handlePasswordVisibility = () => {
     setShowPassword((prevPassword) => !prevPassword);
@@ -90,6 +92,7 @@ const LoginModal = ({ open, setOpen }) => {
             onSubmit={({ ...values }, actions) => {
               dispatch(logIn({ ...values }));
               actions.resetForm();
+              setOpen(false);
             }}
           >
             {({

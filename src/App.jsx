@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useAuth } from './components/hooks';
+import { useAuth } from './hooks/index';
 import SharedLayout from 'components/SharedLayout/SharedLayout';
 import HomePage from './pages/HomePage/Home';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
@@ -42,7 +42,7 @@ function App() {
             path="register"
             element={
               <RestrictedRoute
-                redirectTo="/home"
+                redirectTo="/"
                 component={<RegisterPage />}
               />
             }
@@ -50,7 +50,7 @@ function App() {
           <Route
             path="login"
             element={
-              <RestrictedRoute redirectTo="/home" component={<LoginPage />} />
+              <RestrictedRoute redirectTo="/" component={<LoginPage />} />
             }
           />
           <Route

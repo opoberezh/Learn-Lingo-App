@@ -1,5 +1,5 @@
 import { Navigate } from 'react-router-dom';
-import { useAuth } from './components/hooks';
+import { useAuth } from '../src/hooks/index';
 
 export const RestrictedRoute = ({
   component: Component,

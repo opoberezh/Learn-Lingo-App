@@ -4,7 +4,7 @@ import Navigation from '../Navigation/Navigation';
 import { HeaderWrapper } from './Header.styled';
 import RegisterModal from '../RegisterModal/RegisterModal';
 import LoginModal from '../LoginModal/LoginModal';
-import { useAuth } from '../hooks';
+import { useAuth } from '../../hooks/index';
 import UserMenu from '../UserMenu/UserMenu';
 import AuthNav from '../Authentication/AuthNav';
 
