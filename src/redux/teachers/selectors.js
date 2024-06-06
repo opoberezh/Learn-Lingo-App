@@ -1,0 +1,1 @@
+export const selectTeachersCard = (state) => state.teachers.items;

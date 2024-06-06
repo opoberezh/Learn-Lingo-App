@@ -1,5 +1,8 @@
+import BadgeAvatars from "../../components/Avatar/Avatar";
+
 const TeachersPage = () => {
-  return <div>TeachersPage</div>;
+  return (<div><BadgeAvatars/>
+    </div>)
 };
 
 export default TeachersPage;

@@ -1,10 +1,10 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { db } from "../../../ firebaseConfig";
+import { db } from "../../../fireBaseConfig";
 import { getDocs, collection } from "firebase/firestore";
 
 export const fetchTeachers = createAsyncThunk (
   'teachers/fetchAll',
-  async (pageSize = 12, pageNumber = 0, thunkAPI) => {
+  async (pageSize = 3, pageNumber = 0, thunkAPI) => {
     try {
 const teachersCollectionRef = collection(db, 'teachers'); //Ми використовуємо функцію collection для отримання посилання на колекцію teachers
 const teacherCard = await getDocs(teachersCollectionRef); //викликаємо getDocs для отримання всіх документів у цій колекції.

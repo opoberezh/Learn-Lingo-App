@@ -29,15 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<SharedLayout />}>
           <Route index element={<HomePage />} />
-          <Route
-            path="teachers"
-            element={
-              <RestrictedRoute
-                redirectTo="/teachers"
-                component={<TeachersPage />}
-              />
-            }
-          />
+          <Route path="teachers" element={<TeachersPage />} />
           <Route
             path="register"
             element={

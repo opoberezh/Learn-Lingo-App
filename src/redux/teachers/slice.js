@@ -22,4 +22,3 @@ state.error = null;
 })
 
 export const teacherReducer = teachersSlice.reducer;
-export const eventActions = {...teachersSlice.actions, fetchTeachers};

@@ -7,4 +7,3 @@ export const selectUser = (state) => {
 export const selectIsRefreshing = (state) => state.auth.isRefreshing;
 
 
-export const selectTeachersCard = (state) => state.teachers.items;
