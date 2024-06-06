@@ -5,3 +5,6 @@ export const selectUser = (state) => {
   return state.auth.user;
 };
 export const selectIsRefreshing = (state) => state.auth.isRefreshing;
+
+
+export const selectTeachersCard = (state) => state.teachers.items;

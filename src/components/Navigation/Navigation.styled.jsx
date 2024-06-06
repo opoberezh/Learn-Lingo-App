@@ -9,8 +9,6 @@ export const Nav = styled.nav`
   gap: 390px;
 `;
 
-
-
 export const StyledLink = styled(Link)`
   display: flex;
   gap: 8px;
@@ -52,7 +50,7 @@ export const LinkStyled = styled(NavLink)`
     color: #f4c550;
   }
 
-  &.active{
+  &.active {
     color: #f4c550;
   }
 `;
