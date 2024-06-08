@@ -27,23 +27,46 @@ display: flex;
 gap: 149px;
 `;
 
+
 export const FirstList = styled.ul`
 display: flex;
-flex-direction: column;
-gap: 8px;
-
-`;
-
-export const SecondList = styled.ul`
-display: flex;
 flex-direction: row;
-gap: 32px;
+
+& > li:not(:last-child) {
+    border-right: 1px solid #12141733;
+    margin-right: 16px;
+    padding-right: 16px;
+  }
 `;
+
+export const FirstListTest = styled.p`
+font-weight: 500;
+font-size: 16px;
+`;
+
 export const SecondaryText = styled.p`
 font-weight: 500;
 font-size: 16px;
 color: #8A8A89;
 `; 
+
+export const IconOpenBook = styled.svg`
+width: 16px;
+height: 16px;
+fill: transparent;
+stroke: #121417;
+margin-right: 4px;
+vertical-align: middle;
+`;
+
+export const IconStar = styled.svg`
+width: 16px;
+height: 16px;
+fill: #FFC531;
+stroke: #FFC531;
+margin-right: 8px;
+vertical-align: text-top;
+`;
 
 export const SpanText = styled.span`
 font-weight: 500;
@@ -52,11 +75,41 @@ color: #8A8A89;
 
 `;
 
+export const SpanPrice = styled.span`
+color: #38CD3E;
+`;
+
 export const NameText = styled.p`
 font-weight: 500;
 font-size: 24px;
+margin-top: 8px;
 `;
 
-export const ThirdList = styled.ul`
+export const SecondList = styled.ul`
+display: flex;
+flex-direction: column;
 margin-top: 32px;
+gap: 8px;
+`;
+
+export const UnderlinedText = styled.span`
+text-decoration: underline;
+`;
+
+export const ReadMoreButton = styled.button`
+font-weight: 500;
+font-size: 16px;
+text-decoration: underline;
+background-color: transparent;
+border: none;
+margin-top: 16px;
+cursor: pointer;
+
+
+  transition: color 0.3s;
+
+  &:hover,
+  &:focus {
+    color: #F4C550;
+  }
 `;

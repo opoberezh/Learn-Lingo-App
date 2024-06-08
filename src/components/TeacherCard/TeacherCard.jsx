@@ -1,5 +1,23 @@
 import BadgeAvatars from '../Avatar/BadgeAvatar';
-import { AvatarCircle, CardContainer,  FirstList,  SecondaryText,  ListWrapper,  SecondList, SpanText , NameText, ThirdList} from './TeacherCard.styled';
+import {
+  AvatarCircle,
+  CardContainer,
+  FirstList,
+  SecondaryText,
+  ListWrapper,
+  
+  SpanText,
+  NameText,
+ 
+  IconOpenBook,
+  FirstListTest,
+  IconStar,
+  SpanPrice,
+  SecondList,
+  UnderlinedText,
+  ReadMoreButton,
+} from './TeacherCard.styled';
+import sprite from '../../../assets/symbol.svg';
 
 const TeacherCard = ({ teacher }) => {
   const {
@@ -22,44 +40,60 @@ const TeacherCard = ({ teacher }) => {
       </AvatarCircle>
       <div>
         <ListWrapper>
-         
-            <FirstList>
-              <li>
-                <SecondaryText>Languages</SecondaryText>
-              </li>
-              <li>
-                <NameText>
-                  {name} {surname}
-                </NameText>
-              </li>
-            </FirstList>
-         
-          <SecondList>
+          <SecondaryText>Languages</SecondaryText>
+
+          <FirstList>
             <li>
-              <p>Lessons done: {lessons_done}</p>
+              <FirstListTest>
+                <IconOpenBook>
+                  <use xlinkHref={sprite + '#icon-book-open-01'} />
+                </IconOpenBook>
+                Lessons online
+              </FirstListTest>
             </li>
             <li>
-              <p>Rating: {rating}</p>
+              <FirstListTest>Lessons done: {lessons_done}</FirstListTest>
             </li>
             <li>
-              <p>Price per hour: {price_per_hour}$</p>
+              <FirstListTest>
+              <IconStar>
+              <use xlinkHref={sprite + '#icon-star-full'} />
+                </IconStar>
+                Rating: {rating}</FirstListTest>
             </li>
-          </SecondList>
+            <li>
+              <FirstListTest>Price / 1 hour: <SpanPrice>{price_per_hour}$</SpanPrice></FirstListTest>
+            </li>
+          </FirstList>
         </ListWrapper>
 
-        <ThirdList>
-          <li>
-            <p><SpanText>Speaks: </SpanText>{languages && languages.join(', ')}</p>
-          </li>
-          <li>
-            <p><SpanText>Lesson Info:</SpanText> {lesson_info}</p>
-          </li>
-          <li>
-            <p><SpanText>Conditions</SpanText>: {conditions}</p>
-          </li>
-        </ThirdList>
+        <NameText>
+          {name} {surname}
+        </NameText>
 
-        <button type="button">Read more</button>
+        <SecondList>
+          <li>
+          <p>
+              <SpanText>Speaks: </SpanText>
+              <UnderlinedText>
+                {languages && languages.join(', ')}
+              </UnderlinedText>
+            </p>
+          </li>
+          <li>
+            <p>
+              <SpanText>Lesson Info:</SpanText> {lesson_info}
+            </p>
+          </li>
+          <li>
+            <p>
+              <SpanText>Conditions</SpanText>: {conditions}
+            </p>
+          </li>
+        </SecondList>
+
+        <ReadMoreButton
+          type="button">Read more</ReadMoreButton>
         {/* <ul>
           {reviews && reviews.map((review, index) => (
             <li key={index}>
