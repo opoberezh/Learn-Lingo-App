@@ -2379,39 +2379,26 @@ cursor: pointer;
   }
 `,qW=H.div`
   display: flex;
- 
-  gap: 8px;
   margin-top: 32px;
-`,YW=H.div`
-  position: relative;
-  display: flex;
-`,XW=H.input`
-  appearance: none;
+  gap: 8px;
+`,YW=H.label`
+  display: inline-block;
   min-width: 110px;
   height: 32px;
   border: 1px solid #12141733;
-  border-radius: 35px 0px 0px 0px;
+  border-radius: 35px;
   padding: 8px 12px;
-  background-color: transparent;
+  background-color: ${e=>e.checked?"#F4C550":"#fff"};
   cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  &:checked {
+  text-align: center;
+  transition: background-color 0.3s;
+
+  &:hover {
     background-color: #F4C550;
   }
-
-  &:before {
-    content: attr(data-label);
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-  }
-`,uE="/Learn-Lingo-App/assets/symbol-fae2f89f.svg",JW=()=>({}),QW=({teacher:e})=>{const[t,n]=N.useState(!1),[r,i]=N.useState(""),{avatar_url:o,lessons_done:s,price_per_hour:a,name:u,surname:c,languages:f,conditions:h,rating:p,lesson_info:b,levels:g}=e||{},S=()=>n(!t),I=w=>{i(w.target.value)};return A.jsxs(DW,{children:[A.jsx(LW,{children:A.jsx(jW,{avatar_url:o})}),A.jsxs("div",{children:[A.jsxs(MW,{children:[A.jsx(UW,{children:"Languages"}),A.jsxs(FW,{children:[A.jsx("li",{children:A.jsxs(qu,{children:[A.jsx(zW,{children:A.jsx("use",{xlinkHref:uE+"#icon-book-open-01"})}),"Lessons online"]})}),A.jsx("li",{children:A.jsxs(qu,{children:["Lessons done: ",s]})}),A.jsx("li",{children:A.jsxs(qu,{children:[A.jsx(BW,{children:A.jsx("use",{xlinkHref:uE+"#icon-star-full"})}),"Rating: ",p]})}),A.jsx("li",{children:A.jsxs(qu,{children:["Price / 1 hour: ",A.jsxs(VW,{children:[a,"$"]})]})})]})]}),A.jsxs(HW,{children:[u," ",c]}),A.jsxs(WW,{children:[A.jsx("li",{children:A.jsxs("p",{children:[A.jsx(zp,{children:"Speaks: "}),A.jsx(KW,{children:f&&f.join(", ")})]})}),A.jsx("li",{children:A.jsxs("p",{children:[A.jsx(zp,{children:"Lesson Info:"})," ",b]})}),A.jsx("li",{children:A.jsxs("p",{children:[A.jsx(zp,{children:"Conditions"}),": ",h]})})]}),t&&A.jsx(JW,{}),A.jsx(GW,{type:"button",onClick:S,children:t?"Show less":"Read more"}),A.jsx(qW,{children:g.map((w,v)=>A.jsx(YW,{children:A.jsx(XW,{type:"radio",value:w,"data-label":w,checked:r===w,onChange:I})},v))})]})]})},ZW=H.ul`
+`,XW=H.input`
+  display: none;
+`,uE="/Learn-Lingo-App/assets/symbol-fae2f89f.svg",JW=()=>({}),QW=({teacher:e})=>{const[t,n]=N.useState(!1),[r,i]=N.useState(""),{avatar_url:o,lessons_done:s,price_per_hour:a,name:u,surname:c,languages:f,conditions:h,rating:p,lesson_info:b,levels:g}=e||{},S=()=>n(!t),I=w=>{i(w.target.value)};return A.jsxs(DW,{children:[A.jsx(LW,{children:A.jsx(jW,{avatar_url:o})}),A.jsxs("div",{children:[A.jsxs(MW,{children:[A.jsx(UW,{children:"Languages"}),A.jsxs(FW,{children:[A.jsx("li",{children:A.jsxs(qu,{children:[A.jsx(zW,{children:A.jsx("use",{xlinkHref:uE+"#icon-book-open-01"})}),"Lessons online"]})}),A.jsx("li",{children:A.jsxs(qu,{children:["Lessons done: ",s]})}),A.jsx("li",{children:A.jsxs(qu,{children:[A.jsx(BW,{children:A.jsx("use",{xlinkHref:uE+"#icon-star-full"})}),"Rating: ",p]})}),A.jsx("li",{children:A.jsxs(qu,{children:["Price / 1 hour: ",A.jsxs(VW,{children:[a,"$"]})]})})]})]}),A.jsxs(HW,{children:[u," ",c]}),A.jsxs(WW,{children:[A.jsx("li",{children:A.jsxs("p",{children:[A.jsx(zp,{children:"Speaks: "}),A.jsx(KW,{children:f&&f.join(", ")})]})}),A.jsx("li",{children:A.jsxs("p",{children:[A.jsx(zp,{children:"Lesson Info:"})," ",b]})}),A.jsx("li",{children:A.jsxs("p",{children:[A.jsx(zp,{children:"Conditions"}),": ",h]})})]}),t&&A.jsx(JW,{}),A.jsx(GW,{type:"button",onClick:S,children:t?"Show less":"Read more"}),A.jsx(qW,{children:g.map((w,v)=>A.jsxs(YW,{checked:r===w,children:[A.jsx(XW,{type:"radio",value:w,checked:r===w,onChange:I}),w]},v))})]})]})},ZW=H.ul`
 display: flex;
 flex-direction: column;
 align-items: center;
