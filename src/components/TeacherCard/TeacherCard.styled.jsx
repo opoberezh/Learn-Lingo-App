@@ -122,7 +122,8 @@ export const RadioContainer = styled.div`
 `;
 
 export const RadioInputWrapper = styled.label`
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   min-width: 110px;
   height: 32px;
   border: 1px solid #12141733;
@@ -130,7 +131,7 @@ export const RadioInputWrapper = styled.label`
   padding: 8px 12px;
   background-color: ${props => props.checked ? '#F4C550' : '#fff'};
   cursor: pointer;
-  text-align: center;
+ 
   transition: background-color 0.3s;
 
   &:hover {
