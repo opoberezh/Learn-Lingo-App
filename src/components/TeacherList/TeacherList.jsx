@@ -4,6 +4,7 @@ import { fetchTeachers } from '../../redux/teachers/operations';
 import { selectError, selectIsLoading, selectTeachers } from '../../redux/teachers/selectors';
 import TeacherCard from '../TeacherCard/TeacherCard';
 import { CardsWrapper } from './TeacherList.styled';
+import Loader from '../Loader/Loader';
 
 
 const TeacherList = () => {
@@ -12,7 +13,7 @@ const TeacherList = () => {
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   const [pageNumber, setPageNumber] = useState(0);
-  const pageSize = 4;
+  const pageSize = 3;
 
   useEffect(() => {
     dispatch(fetchTeachers({ pageSize, pageNumber }))
@@ -29,7 +30,7 @@ const TeacherList = () => {
   };
 
   if (isLoading && pageNumber === 0) {
-    return <div>Loading...</div>;
+    return <Loader/>
   }
 
   if (error) {

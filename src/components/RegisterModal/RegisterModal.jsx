@@ -15,6 +15,7 @@ import {
   StyledField,
   StyledForm,
 } from './RegisterModal.styled';
+import { useNavigate } from 'react-router-dom';
 
 const style = {
   position: 'absolute',
@@ -42,7 +43,10 @@ const RegisterSchema = Yup.object({
 });
 
 const RegisterModal = ({ open, setOpen }) => {
-  const handleClose = () => setOpen(false);
+  const navigate = useNavigate();
+  const handleClose = () => {
+    setOpen(false)
+  navigate('/')};
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -97,6 +101,7 @@ const RegisterModal = ({ open, setOpen }) => {
               dispatch(register({ ...values }));
               actions.resetForm();
               setOpen(false);
+              navigate('/');
             }}
           >
             {({

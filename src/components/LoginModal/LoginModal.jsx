@@ -15,6 +15,7 @@ import {
   StyledField,
   StyledForm,
 } from './LoginModal.styled';
+import { useNavigate } from 'react-router-dom';
 
 
 const style = {
@@ -39,7 +40,11 @@ const LoginSchema = Yup.object({
 });
 
 const LoginModal = ({ open, setOpen,  }) => {
-  const handleLoginClose = () => setOpen(false);
+  const navigate = useNavigate();
+  const handleLoginClose = () => {
+    setOpen(false);
+    navigate('/');
+  }
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -93,6 +98,7 @@ const LoginModal = ({ open, setOpen,  }) => {
               dispatch(logIn({ ...values }));
               actions.resetForm();
               setOpen(false);
+              navigate('/');
             }}
           >
             {({

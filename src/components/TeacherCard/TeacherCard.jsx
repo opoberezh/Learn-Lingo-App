@@ -16,10 +16,19 @@ import {
   SecondList,
   UnderlinedText,
   ReadMoreButton,
+  RadioContainer,
+  RadioInput,
+  RadioInputWrapper,
 } from './TeacherCard.styled';
 import sprite from '../../../assets/symbol.svg';
+import { useState } from 'react';
+import ExpandedCard from '../ExpandedCard/ExpandedCard';
 
 const TeacherCard = ({ teacher }) => {
+
+  const [isExpanded, setExpanded] = useState(false);
+const [selectedLevel, setSelectedLevel] = useState("");
+
   const {
     avatar_url,
     lessons_done,
@@ -32,6 +41,13 @@ const TeacherCard = ({ teacher }) => {
     lesson_info,
     levels,
   } = teacher || {};
+
+const handleToggleExpand = () => setExpanded(!isExpanded)
+
+const handleLevelChange = (event) => {
+  setSelectedLevel(event.target.value);
+};
+
 
   return (
     <CardContainer>
@@ -91,19 +107,26 @@ const TeacherCard = ({ teacher }) => {
             </p>
           </li>
         </SecondList>
-
+{isExpanded && (
+  <ExpandedCard/>
+)}
         <ReadMoreButton
-          type="button">Read more</ReadMoreButton>
-        {/* <ul>
-          {reviews && reviews.map((review, index) => (
-            <li key={index}>
-              <p><strong>{review.reviewer_name}:</strong> {review.comment}</p>
-              <p>Rating: {review.reviewer_rating}</p>
-            </li>
-          ))}
-        </ul> */}
+          type="button" onClick={handleToggleExpand}>{isExpanded ? 'Show less' : 'Read more'}</ReadMoreButton>
+        
 
-        <div>{levels}</div>
+        <RadioContainer>
+                {levels.map((level, index) => (
+                  <RadioInputWrapper key={index}>
+                    <RadioInput
+                      type="radio"
+                      value={level}
+                      data-label={level}
+                      checked={selectedLevel === level}
+                      onChange={handleLevelChange}
+                    />
+                  </RadioInputWrapper>
+                ))}
+              </RadioContainer>
       </div>
     </CardContainer>
   );

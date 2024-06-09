@@ -8,6 +8,7 @@ background-color: #F8F8F8;
     border-radius: 24px;
     padding: 24px;
     width: 1184px;
+    height: 328px;
     gap: 48px;
 
 `;
@@ -111,5 +112,45 @@ cursor: pointer;
   &:hover,
   &:focus {
     color: #F4C550;
+  }
+`;
+
+export const RadioContainer = styled.div`
+  display: flex;
+ 
+  gap: 8px;
+  margin-top: 32px;
+`;
+
+export const RadioInputWrapper = styled.div`
+  position: relative;
+  display: flex;
+`;
+
+export const RadioInput = styled.input`
+  appearance: none;
+  min-width: 110px;
+  height: 32px;
+  border: 1px solid #12141733;
+  border-radius: 35px 0px 0px 0px;
+  padding: 8px 12px;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &:checked {
+    background-color: #F4C550;
+  }
+
+  &:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
   }
 `;
