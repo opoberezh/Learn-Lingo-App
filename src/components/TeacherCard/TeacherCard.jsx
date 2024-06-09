@@ -115,18 +115,22 @@ const handleLevelChange = (event) => {
         
 
         <RadioContainer>
-                {levels.map((level, index) => (
-                  <RadioInputWrapper key={index}>
-                    <RadioInput
-                      type="radio"
-                      value={level}
-                      data-label={level}
-                      checked={selectedLevel === level}
-                      onChange={handleLevelChange}
-                    />
-                  </RadioInputWrapper>
-                ))}
-              </RadioContainer>
+  {levels.map((level, index) => (
+    <RadioInputWrapper
+      key={index}
+      checked={selectedLevel === level}
+    >
+      <RadioInput
+        type="radio"
+        value={level}
+        checked={selectedLevel === level}
+        onChange={handleLevelChange}
+      />
+      {level}
+    </RadioInputWrapper>
+  ))}
+</RadioContainer>
+
       </div>
     </CardContainer>
   );

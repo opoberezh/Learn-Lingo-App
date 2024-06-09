@@ -117,40 +117,28 @@ cursor: pointer;
 
 export const RadioContainer = styled.div`
   display: flex;
- 
-  gap: 8px;
   margin-top: 32px;
+  gap: 8px;
 `;
 
-export const RadioInputWrapper = styled.div`
-  position: relative;
-  display: flex;
-`;
-
-export const RadioInput = styled.input`
-  appearance: none;
+export const RadioInputWrapper = styled.label`
+  display: inline-block;
   min-width: 110px;
   height: 32px;
   border: 1px solid #12141733;
-  border-radius: 35px 0px 0px 0px;
+  border-radius: 35px;
   padding: 8px 12px;
-  background-color: transparent;
+  background-color: ${props => props.checked ? '#F4C550' : '#fff'};
   cursor: pointer;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  &:checked {
+  text-align: center;
+  transition: background-color 0.3s;
+
+  &:hover {
     background-color: #F4C550;
   }
-
-  &:before {
-    content: attr(data-label);
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-  }
 `;
+
+export const RadioInput = styled.input`
+  display: none;
+`;
+
