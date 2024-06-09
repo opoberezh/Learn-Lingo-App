@@ -2382,7 +2382,8 @@ cursor: pointer;
   margin-top: 32px;
   gap: 8px;
 `,YW=H.label`
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   min-width: 110px;
   height: 32px;
   border: 1px solid #12141733;
@@ -2390,7 +2391,7 @@ cursor: pointer;
   padding: 8px 12px;
   background-color: ${e=>e.checked?"#F4C550":"#fff"};
   cursor: pointer;
-  text-align: center;
+ 
   transition: background-color 0.3s;
 
   &:hover {
