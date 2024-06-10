@@ -1,18 +1,24 @@
+import { ExpandedCardContainer, ReviewContainer } from "./ExpandedCard.styled";
 
-
-const ExpandedCard = () => {
+const ExpandedCard = ({ teacher }) => {
+  const { experience, reviews } = teacher || {};
   return (
-    {/* <ul>
-          {reviews && reviews.map((review, index) => (
+    <ExpandedCardContainer>
+      <p>{experience}</p>
+      <ReviewContainer>
+        {reviews &&
+          reviews.map((review, index) => (
             <li key={index}>
-              <p><strong>{review.reviewer_name}:</strong> {review.comment}</p>
-              <p>Rating: {review.reviewer_rating}</p>
+              <p>
+                <span>{review.reviewer_name}</span>
+                {review.reviewer_rating}
+                {review.comment}
+              </p>
             </li>
           ))}
-        </ul> */}
+      </ReviewContainer>
+    </ExpandedCardContainer>
+  );
+};
 
-    // <div>ExpandedCard</div>
-  )
-}
-
-export default ExpandedCard
+export default ExpandedCard;

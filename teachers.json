@@ -14,11 +14,13 @@
     "rating": 4.5,
     "reviews": [
       {
+        "img":"https://st2.depositphotos.com/2015105/6571/i/450/depositphotos_65716127-stock-photo-beautiful-woman-face-in-retro.jpg",
         "reviewer_name": "Alice",
         "reviewer_rating": 5,
         "comment": "John is an excellent teacher! I highly recommend him."
       },
       {
+        "img":"https://static8.depositphotos.com/1371851/850/i/450/depositphotos_8501655-stock-photo-male-model.jpg",
         "reviewer_name": "Bob",
         "reviewer_rating": 4,
         "comment": "John is very knowledgeable and patient. I enjoyed his classes."
@@ -39,13 +41,15 @@
     "rating": 4.8,
     "reviews": [
       {
+        "img":"https://st.depositphotos.com/1011382/2833/i/450/depositphotos_28333887-stock-photo-happy-smiling-portrait.jpg",
         "reviewer_name": "Eve",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Jane is an amazing teacher! She is patient and supportive."
       },
       {
+        "img":"https://static8.depositphotos.com/1371851/850/i/450/depositphotos_8501655-stock-photo-male-model.jpg",
         "reviewer_name": "Frank",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "Jane's lessons were very helpful. I made good progress."
       }
     ],
@@ -67,13 +71,15 @@
     "rating": 4.2,
     "reviews": [
       {
+        "img":"https://st.depositphotos.com/1011382/2833/i/450/depositphotos_28333887-stock-photo-happy-smiling-portrait.jpg",
         "reviewer_name": "Grace",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "David explains things clearly and is knowledgeable in the subject."
       },
       {
+        "img":"https://st4.depositphotos.com/12985790/23746/i/450/depositphotos_237461914-stock-photo-happy-handsome-man-posing-white.jpg",
         "reviewer_name": "Henry",
-        "reviewer_rating": 3,
+        "reviewer_rating": 3.0,
         "comment": "David's teaching style didn't suit me, but he is still a good teacher."
       }
     ],
@@ -95,13 +101,15 @@
     "rating": 4.6,
     "reviews": [
       {
+        "img":"https://st4.depositphotos.com/12071432/21304/i/450/depositphotos_213045836-stock-photo-beautician-applying-lipstick-girls-lips.jpg",
         "reviewer_name": "Emily",
         "reviewer_rating": 4,
         "comment": "Sarah is a patient and helpful teacher. I enjoyed her lessons."
       },
       {
+        "img":"https://st.depositphotos.com/1715570/2894/i/450/depositphotos_28948821-stock-photo-portrait-of-a-handsome-young.jpg",
         "reviewer_name": "Alex",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Sarah's teaching style is engaging and effective. Highly recommended."
       }
     ],
@@ -120,13 +128,15 @@
     "rating": 4.4,
     "reviews": [
       {
+        "img":"https://st.depositphotos.com/2069323/2156/i/450/depositphotos_21567869-stock-photo-asian-beauty-woman.jpg",
         "reviewer_name": "Sophia",
         "reviewer_rating": 5,
         "comment": "Michael is an excellent teacher. He makes learning Spanish fun and engaging."
       },
       {
+        "img":"https://st2.depositphotos.com/1010550/12085/i/450/depositphotos_120850614-stock-photo-handsome-young-man-looking-at.jpg",
         "reviewer_name": "Oliver",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have made great progress with Michael's lessons. Highly recommended."
       }
     ],
@@ -148,13 +158,15 @@
     "rating": 4.9,
     "reviews": [
       {
+        "img":"https://st2.depositphotos.com/1010550/12085/i/450/depositphotos_120850614-stock-photo-handsome-young-man-looking-at.jpg",
         "reviewer_name": "Liam",
         "reviewer_rating": 5,
         "comment": "Emma is an amazing teacher. Her lessons are interactive and engaging."
       },
       {
+        "img":"https://st.depositphotos.com/2069323/2156/i/450/depositphotos_21567869-stock-photo-asian-beauty-woman.jpg",
         "reviewer_name": "Mia",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have learned a lot from Emma's lessons. Highly recommended for French and Italian."
       }
     ],
@@ -173,13 +185,15 @@
     "rating": 4.7,
     "reviews": [
       {
+        "img":"https://st.depositphotos.com/1385248/4899/i/450/depositphotos_48997519-stock-photo-attractive-skin-care-woman-face.jpg",
         "reviewer_name": "Sophie",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Alexander is a patient and knowledgeable teacher. I have learned a lot from his lessons."
       },
       {
+        "img":"https://st.depositphotos.com/3323581/4543/i/450/depositphotos_45434515-stock-photo-caucasian-male-face-portreit.jpg",
         "reviewer_name": "Daniel",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I highly recommend Alexander. His lessons are engaging and well-structured."
       }
     ],
@@ -198,13 +212,15 @@
     "rating": 4.9,
     "reviews": [
       {
+        "img":"https://st4.depositphotos.com/12985790/23746/i/450/depositphotos_237466550-stock-photo-young-man-wet-face-isolated.jpg",
         "reviewer_name": "Ethan",
         "reviewer_rating": 5,
         "comment": "Sophia is an excellent teacher. Her lessons are fun and interactive."
       },
       {
+        "img":"https://st.depositphotos.com/1385248/4899/i/450/depositphotos_48997519-stock-photo-attractive-skin-care-woman-face.jpg",
         "reviewer_name": "Ava",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have improved my Spanish and French skills significantly with Sophia's lessons."
       }
     ],
@@ -226,13 +242,15 @@
     "rating": 4.6,
     "reviews": [
       {
+        "img":"https://st2.depositphotos.com/1000742/6543/i/450/depositphotos_65438419-stock-photo-frozen-chilled-female-face-covered.jpg",
         "reviewer_name": "Olivia",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "Max is a dedicated and knowledgeable teacher. I enjoyed his German lessons."
       },
       {
+        "img":"https://st4.depositphotos.com/12985790/23746/i/450/depositphotos_237461914-stock-photo-happy-handsome-man-posing-white.jpg",
         "reviewer_name": "Noah",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "I highly recommend Max for German lessons. He explains concepts clearly and provides useful tips."
       }
     ],
@@ -251,13 +269,15 @@
     "rating": 4.8,
     "reviews": [
       {
+        "img":"https://st4.depositphotos.com/12985790/23746/i/450/depositphotos_237461914-stock-photo-happy-handsome-man-posing-white.jpg",
         "reviewer_name": "Liam",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Isabella is a fantastic teacher. Her lessons are engaging and effective."
       },
       {
+        "img":"https://st2.depositphotos.com/1000742/6543/i/450/depositphotos_65438419-stock-photo-frozen-chilled-female-face-covered.jpg",
         "reviewer_name": "Mia",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have made significant progress with Isabella's lessons. Highly recommended."
       }
     ],
@@ -276,13 +296,15 @@
     "rating": 4.7,
     "reviews": [
       {
+        "img":"https://st.depositphotos.com/1022138/2467/i/450/depositphotos_24675129-stock-photo-excited-dj-girl-on-decks.jpg",
         "reviewer_name": "Sophie",
         "reviewer_rating": 5,
         "comment": "Daniel is an excellent teacher. His lessons are well-structured and enjoyable."
       },
       {
+        "img":"https://st4.depositphotos.com/12985790/23744/i/450/depositphotos_237448254-stock-photo-portrait-brunette-young-sexy-man.jpg",
         "reviewer_name": "Benjamin",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have learned a lot from Daniel's lessons. Highly recommended for French learners."
       }
     ],
@@ -301,13 +323,15 @@
     "rating": 4.9,
     "reviews": [
       {
+        "img":"https://st4.depositphotos.com/12985790/23744/i/450/depositphotos_237448254-stock-photo-portrait-brunette-young-sexy-man.jpg",
         "reviewer_name": "Jacob",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Olivia is an amazing Italian teacher. Her lessons are engaging and informative."
       },
       {
+        "img":"https://st2.depositphotos.com/1561509/10988/i/450/depositphotos_109884918-stock-photo-indian-girl-in-colorful-ethnic.jpg",
         "reviewer_name": "Emily",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have improved my Italian skills significantly with Olivia's lessons. Highly recommended."
       }
     ],
@@ -327,13 +351,15 @@
     "rating": 4.6,
     "reviews": [
       {
+        "img":"https://st.depositphotos.com/1712366/2957/i/450/depositphotos_29579193-stock-photo-girl-face-sword.jpg",
         "reviewer_name": "Ava",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Ethan is an excellent teacher. His lessons are engaging and tailored to individual needs."
       },
       {
+        "img":"https://st5.depositphotos.com/3584053/66168/i/450/depositphotos_661688120-stock-photo-portrait-serious-man-man-portrait.jpg",
         "reviewer_name": "Noah",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I highly recommend Ethan. He makes learning languages enjoyable and productive."
       }
     ],
@@ -352,13 +378,15 @@
     "rating": 4.8,
     "reviews": [
       {
+        "img":"https://st5.depositphotos.com/3584053/66168/i/450/depositphotos_661688120-stock-photo-portrait-serious-man-man-portrait.jpg",
         "reviewer_name": "Liam",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Emily is an excellent teacher. Her lessons are well-structured and informative."
       },
       {
+        "img":"https://st.depositphotos.com/1712366/2957/i/450/depositphotos_29579193-stock-photo-girl-face-sword.jpg",
         "reviewer_name": "Mia",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have learned a lot from Emily's lessons. Highly recommended for French and German learners."
       }
     ],
@@ -377,13 +405,15 @@
     "rating": 4.9,
     "reviews": [
       {
+        "img":"https://st2.depositphotos.com/4145843/8570/i/450/depositphotos_85701908-stock-photo-side-view-of-beautiful-girl.jpg",
         "reviewer_name": "Olivia",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Jacob is an excellent Mandarin teacher. His lessons are clear, structured, and enjoyable."
       },
       {
+        "img":"https://st3.depositphotos.com/1003697/14154/i/450/depositphotos_141542222-stock-photo-portrait-of-a-young-guy.jpg",
         "reviewer_name": "Daniel",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have improved my Mandarin skills significantly with Jacob's lessons. Highly recommended."
       }
     ],
@@ -403,13 +433,15 @@
     "rating": 4.7,
     "reviews": [
       {
+        "img":"https://st3.depositphotos.com/1003697/14154/i/450/depositphotos_141542222-stock-photo-portrait-of-a-young-guy.jpg",
         "reviewer_name": "Noah",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Ava is a fantastic teacher. Her lessons are engaging and effective."
       },
       {
+        "img":"https://static8.depositphotos.com/1386577/865/i/450/depositphotos_8654328-stock-photo-a-girl-in-autumn-colors.jpg",
         "reviewer_name": "Sophia",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have made significant progress with Ava's lessons. Highly recommended."
       }
     ],
@@ -428,13 +460,15 @@
     "rating": 4.9,
     "reviews": [
       {
+        "img":"https://st2.depositphotos.com/6393838/10587/i/450/depositphotos_105874906-stock-photo-little-girl-making-a-funny.jpg",
         "reviewer_name": "Olivia",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Benjamin is an excellent teacher. His lessons are engaging and tailored to individual needs."
       },
       {
+        "img":"https://st.depositphotos.com/2775971/3535/i/450/depositphotos_35353575-stock-photo-handsome-young-man.jpg",
         "reviewer_name": "Daniel",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I highly recommend Benjamin. He makes learning Spanish enjoyable and productive."
       }
     ],
@@ -453,13 +487,15 @@
     "rating": 4.8,
     "reviews": [
       {
+        "img":"https://st.depositphotos.com/2775971/3535/i/450/depositphotos_35353575-stock-photo-handsome-young-man.jpg",
         "reviewer_name": "Liam",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Chloe is an amazing Vietnamese teacher. Her lessons are well-structured and informative."
       },
       {
+        "img":"https://st2.depositphotos.com/6393838/10587/i/450/depositphotos_105874906-stock-photo-little-girl-making-a-funny.jpg",
         "reviewer_name": "Mia",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have learned a lot from Chloe's lessons. Highly recommended for Vietnamese learners."
       }
     ],
@@ -479,13 +515,15 @@
     "rating": 4.9,
     "reviews": [
       {
+        "img":"https://st.depositphotos.com/1905593/2307/i/450/depositphotos_23071842-stock-illustration-unknown-face.jpg",
         "reviewer_name": "Olivia",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Henry is an excellent teacher. His lessons are engaging and effective."
       },
       {
+        "img":"https://st.depositphotos.com/1003410/2521/i/450/depositphotos_25218173-stock-photo-portrait-of-young-man.jpg",
         "reviewer_name": "Benjamin",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have made significant progress with Henry's lessons. Highly recommended."
       }
     ],
@@ -504,13 +542,15 @@
     "rating": 4.7,
     "reviews": [
       {
+        "img":"https://st3.depositphotos.com/1006488/14763/i/450/depositphotos_147634463-stock-illustration-portrait-girl-black-hat-fashion.jpg",
         "reviewer_name": "Sophie",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Emily is an excellent French teacher. Her lessons are well-structured and informative."
       },
       {
+        "img":"https://st5.depositphotos.com/67720150/66220/i/450/depositphotos_662203482-stock-photo-vertical-close-portrait-confident-teenage.jpg",
         "reviewer_name": "Noah",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have learned a lot from Emily's lessons. Highly recommended for French learners."
       }
     ],
@@ -529,13 +569,15 @@
     "rating": 4.8,
     "reviews": [
       {
+        "img":"https://st5.depositphotos.com/67720150/66220/i/450/depositphotos_662203482-stock-photo-vertical-close-portrait-confident-teenage.jpg",
         "reviewer_name": "Liam",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Isabella is an amazing Mandarin teacher. Her lessons are engaging and effective."
       },
       {
+        "img":"https://static5.depositphotos.com/1003940/403/i/450/depositphotos_4034560-stock-photo-beauty-on-natural-background.jpg",
         "reviewer_name": "Mia",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have improved my Mandarin skills significantly with Isabella's lessons. Highly recommended."
       }
     ],
@@ -555,13 +597,15 @@
     "rating": 4.6,
     "reviews": [
       {
+        "img":"https://static3.depositphotos.com/1003410/159/i/450/depositphotos_1597734-stock-photo-portrait-of-beautiful-girl.jpg",
         "reviewer_name": "Ava",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Oliver is a fantastic teacher. His lessons are engaging and effective."
       },
       {
+        "img":"https://st3.depositphotos.com/1011382/12829/i/450/depositphotos_128296246-stock-photo-african-man-with-no-expression.jpg",
         "reviewer_name": "Noah",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have made significant progress with Oliver's lessons. Highly recommended."
       }
     ],
@@ -580,13 +624,15 @@
     "rating": 4.8,
     "reviews": [
       {
+        "img":"https://st4.depositphotos.com/12985790/24313/i/450/depositphotos_243137338-stock-photo-cheerful-man-looking-camera-isolated.jpg",
         "reviewer_name": "Liam",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Sophia is an excellent French teacher. Her lessons are well-structured and informative."
       },
       {
+        "img":"https://st2.depositphotos.com/1001030/8384/i/450/depositphotos_83842626-stock-photo-pin-up-girl.jpg",
         "reviewer_name": "Mia",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have learned a lot from Sophia's lessons. Highly recommended for French learners."
       }
     ],
@@ -605,13 +651,15 @@
     "rating": 4.7,
     "reviews": [
       {
+        "img":"https://st4.depositphotos.com/16575858/26789/i/450/depositphotos_267896954-stock-photo-the-girls-face-is-a.jpg",
         "reviewer_name": "Olivia",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Lucas is an excellent Mandarin teacher. His lessons are engaging and effective."
       },
       {
+        "img":"https://st.depositphotos.com/1144472/2003/i/450/depositphotos_20030237-stock-photo-cheerful-young-man-over-white.jpg",
         "reviewer_name": "Daniel",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have improved my Mandarin skills significantly with Lucas's lessons. Highly recommended."
       }
     ],
@@ -631,13 +679,15 @@
     "rating": 4.9,
     "reviews": [
       {
+        "img":"https://st3.depositphotos.com/12985790/16523/i/450/depositphotos_165232336-stock-photo-young-man-taking-shower.jpg",
         "reviewer_name": "Oliver",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Sophie is an excellent teacher. Her lessons are engaging and effective."
       },
       {
+        "img":"https://st2.depositphotos.com/6660576/9578/i/450/depositphotos_95787080-stock-photo-fashion-stylish-beauty-portrait-with.jpg",
         "reviewer_name": "Mia",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have made significant progress with Sophie's lessons. Highly recommended."
       }
     ],
@@ -656,13 +706,15 @@
     "rating": 4.7,
     "reviews": [
       {
+        "img":"https://st5.depositphotos.com/1000746/64200/i/450/depositphotos_642001028-stock-photo-bearded-man-laughing-portrait-white.jpg",
         "reviewer_name": "Liam",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Emma is an excellent French teacher. Her lessons are well-structured and informative."
       },
       {
+        "img":"https://st2.depositphotos.com/6660576/9578/i/450/depositphotos_95787080-stock-photo-fashion-stylish-beauty-portrait-with.jpg",
         "reviewer_name": "Mia",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have learned a lot from Emma's lessons. Highly recommended for French learners."
       }
     ],
@@ -681,13 +733,15 @@
     "rating": 4.8,
     "reviews": [
       {
+        "img":"https://static8.depositphotos.com/1491329/952/i/450/depositphotos_9529863-stock-photo-beautiful-young-woman-skincare-perfect.jpg",
         "reviewer_name": "Olivia",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Daniel is an excellent Mandarin teacher. His lessons are engaging and effective."
       },
       {
+        "img":"https://st3.depositphotos.com/9881890/13322/i/450/depositphotos_133222684-stock-photo-businessman-with-female-hand-on.jpg",
         "reviewer_name": "Daniel",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have improved my Mandarin skills significantly with Daniel's lessons. Highly recommended."
       }
     ],
@@ -706,13 +760,15 @@
     "rating": 4.9,
     "reviews": [
       {
+        "img":"https://st.depositphotos.com/1715570/2349/i/450/depositphotos_23493623-stock-photo-handsome-young-man.jpg",
         "reviewer_name": "Oliver",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "James is an excellent teacher. His lessons are engaging and effective."
       },
       {
+        "img":"https://static6.depositphotos.com/1003940/597/i/450/depositphotos_5972559-stock-photo-smiling-beauty.jpg",
         "reviewer_name": "Mia",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have made significant progress with James's lessons. Highly recommended."
       }
     ],
@@ -731,13 +787,15 @@
     "rating": 4.7,
     "reviews": [
       {
+        "img":"https://st5.depositphotos.com/3584053/66308/i/450/depositphotos_663087318-stock-photo-handsome-young-man-outdoor-portrait.jpg",
         "reviewer_name": "Liam",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "Natalie is an excellent French teacher. Her lessons are well-structured and informative."
       },
       {
+        "img":"https://st.depositphotos.com/1491329/2459/i/450/depositphotos_24593367-stock-photo-beauty-woman-with-long-black.jpg",
         "reviewer_name": "Mia",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have learned a lot from Natalie's lessons. Highly recommended for French learners."
       }
     ],
@@ -756,13 +814,15 @@
     "rating": 4.8,
     "reviews": [
       {
+        "img":"https://static8.depositphotos.com/1491329/1060/i/450/depositphotos_10603870-stock-photo-spa-girls-face.jpg",
         "reviewer_name": "Olivia",
-        "reviewer_rating": 5,
+        "reviewer_rating": 5.0,
         "comment": "William is an excellent Mandarin teacher. His lessons are engaging and effective."
       },
       {
+        "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFZUBJN2KgbAPuijvTRpRdy4ArljhK8q83yg&s",
         "reviewer_name": "Daniel",
-        "reviewer_rating": 4,
+        "reviewer_rating": 4.0,
         "comment": "I have improved my Mandarin skills significantly with William's lessons. Highly recommended."
       }
     ],

@@ -8,8 +8,10 @@ background-color: #F8F8F8;
     border-radius: 24px;
     padding: 24px;
     width: 1184px;
-    height: 328px;
+    height: ${({isExpanded}) => (isExpanded ? "748px" : "328px")} ;
     gap: 48px;
+
+
 
 `;
 

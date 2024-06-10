@@ -50,7 +50,7 @@ const handleLevelChange = (event) => {
 
 
   return (
-    <CardContainer>
+    <CardContainer isExpanded={isExpanded}>
       <AvatarCircle>
         <BadgeAvatars avatar_url={avatar_url} />
       </AvatarCircle>
@@ -108,7 +108,9 @@ const handleLevelChange = (event) => {
           </li>
         </SecondList>
 {isExpanded && (
-  <ExpandedCard/>
+ 
+<ExpandedCard teacher={teacher}/>
+ 
 )}
         <ReadMoreButton
           type="button" onClick={handleToggleExpand}>{isExpanded ? 'Show less' : 'Read more'}</ReadMoreButton>
