@@ -1,22 +1,46 @@
-import { ExpandedCardContainer, ReviewContainer } from "./ExpandedCard.styled";
+import {
+  Avatar,
+  ExpandedCardContainer,
+  IconStar,
+  ReviewList,
+  ReviewWrapper,
+  Rating,
+  ReviewComment,
+} from './ExpandedCard.styled';
+import sprite from '../../../assets/symbol.svg';
 
 const ExpandedCard = ({ teacher }) => {
-  const { experience, reviews } = teacher || {};
+  const {
+    experience, reviews
+  } = teacher || {};
+
+
   return (
     <ExpandedCardContainer>
       <p>{experience}</p>
-      <ReviewContainer>
+      <ReviewList>
         {reviews &&
           reviews.map((review, index) => (
             <li key={index}>
-              <p>
-                <span>{review.reviewer_name}</span>
-                {review.reviewer_rating}
-                {review.comment}
-              </p>
+              <div>
+                <ReviewWrapper>
+                  <Avatar src={review.img} alt="Reviewer Avatar" />
+                  <div>
+                    <p>{review.reviewer_name}</p>
+                    <Rating>
+                      <IconStar>
+                        <use xlinkHref={sprite + '#icon-star-full'} />
+                      </IconStar>
+                      {review.reviewer_rating}
+                    </Rating>
+                  </div>
+                </ReviewWrapper>
+
+                <ReviewComment>{review.comment}</ReviewComment>
+              </div>
             </li>
           ))}
-      </ReviewContainer>
+      </ReviewList>
     </ExpandedCardContainer>
   );
 };
