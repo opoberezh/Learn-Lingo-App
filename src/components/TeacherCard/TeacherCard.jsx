@@ -19,6 +19,7 @@ import {
   RadioContainer,
   RadioInput,
   RadioInputWrapper,
+  BookingButton,
 } from './TeacherCard.styled';
 import sprite from '../../../assets/symbol.svg';
 import { useState } from 'react';
@@ -132,7 +133,9 @@ const handleLevelChange = (event) => {
     </RadioInputWrapper>
   ))}
 </RadioContainer>
-
+{isExpanded && (
+  <BookingButton type='button'>Book trial lesson</BookingButton>
+)}
       </div>
     </CardContainer>
   );

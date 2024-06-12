@@ -145,3 +145,28 @@ export const RadioInput = styled.input`
   display: none;
 `;
 
+export const BookingButton = styled.button`
+  align-self: flex-end;
+ 
+  ${(props) => props.isExpanded && 'margin-top: auto;'}
+  display: inline-block;
+  width: 267px;
+  height: 60px;
+  margin-top: 32px;
+  padding: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 12px;
+  background-color: #f4c550;
+  font-weight: 700;
+  font-size: 18px;
+  color: #121417;
+  transition: background-color 0.3s;
+
+  &:hover,
+  &:focus {
+    background-color: #fbe9ba;
+  }
+`;
+
+
