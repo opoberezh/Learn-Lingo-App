@@ -145,7 +145,7 @@ const handleModalOpen = () => setModalOpen(true);
   <BookingButton type='button' onClick={handleModalOpen}>Book trial lesson</BookingButton>
 )}
    {isExpanded && (
-    <BookingModal open={modalOpen} setOpen={setModalOpen} />
+    <BookingModal  teacher={teacher} open={modalOpen} setOpen={setModalOpen} />
    )} 
       </div>
     </CardContainer>

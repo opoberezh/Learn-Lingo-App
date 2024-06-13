@@ -12,6 +12,7 @@ const Header = () => {
   const {isLoggedIn} = useAuth();
   const [registerOpen, setRegisterOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
+  
   return (
     <HeaderWrapper>
       <Navigation />

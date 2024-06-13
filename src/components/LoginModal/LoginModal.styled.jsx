@@ -38,6 +38,8 @@ export const StyledField = styled(Field)`
   padding: 16px;
   font-size: 16px;
   color: #121417;
+
+  
 `;
 
 export const ErrorMessageStyled = styled.div`

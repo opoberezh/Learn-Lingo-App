@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { register } from '../../redux/auth/operations';
 import Box from '@mui/material/Box';
 import { Formik } from 'formik';
-import * as Yup from 'yup';
+import { RegisterSchema } from '../YupSchema/YupSchema';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -29,18 +29,7 @@ const style = {
   p: 8,
 };
 
-const RegisterSchema = Yup.object({
-  name: Yup.string()
-    .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Name is required!'),
-  email: Yup.string('Enter your email')
-    .email('Enter a valid email')
-    .required('Email is required!'),
-  password: Yup.string('Enter your password')
-    .min(8, 'Password should be of minimum 8 characters length')
-    .required('Password is required!'),
-});
+
 
 const RegisterModal = ({ open, setOpen }) => {
   const navigate = useNavigate();

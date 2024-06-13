@@ -3,7 +3,7 @@ import {  useState } from 'react';
 import { logIn } from '../../redux/auth/operations';
 import Box from '@mui/material/Box';
 import { Formik } from 'formik';
-import * as Yup from 'yup';
+import { LoginSchema } from '../YupSchema/YupSchema';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import VisibilityIcon from '@mui/icons-material/Visibility';
@@ -30,14 +30,7 @@ const style = {
   p: 8,
 };
 
-const LoginSchema = Yup.object({
-  email: Yup.string('Enter your email')
-    .email('Enter a valid email')
-    .required('Email is required!'),
-  password: Yup.string('Enter your password')
-    .min(8, 'Password should be of minimum 8 characters length')
-    .required('Password is required!'),
-});
+
 
 const LoginModal = ({ open, setOpen,  }) => {
   const navigate = useNavigate();
