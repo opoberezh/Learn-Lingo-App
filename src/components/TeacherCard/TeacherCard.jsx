@@ -24,11 +24,14 @@ import {
 import sprite from '../../../assets/symbol.svg';
 import { useState } from 'react';
 import ExpandedCard from '../ExpandedCard/ExpandedCard';
+import BookingModal from '../BookingModal/BookingModal';
 
-const TeacherCard = ({ teacher }) => {
+
+const TeacherCard = ({ teacher}) => {
 
   const [isExpanded, setExpanded] = useState(false);
 const [selectedLevel, setSelectedLevel] = useState("");
+
 
   const {
     avatar_url,
@@ -49,8 +52,13 @@ const handleLevelChange = (event) => {
   setSelectedLevel(event.target.value);
 };
 
+const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
 
   return (
+   
     <CardContainer isExpanded={isExpanded}>
       <AvatarCircle>
         <BadgeAvatars avatar_url={avatar_url} />
@@ -134,10 +142,15 @@ const handleLevelChange = (event) => {
   ))}
 </RadioContainer>
 {isExpanded && (
-  <BookingButton type='button'>Book trial lesson</BookingButton>
+  <BookingButton type='button' onClick={handleOpen}>Book trial lesson</BookingButton>
 )}
+   {isExpanded && (
+    <BookingModal open={open} handleClose={handleClose} />
+   )} 
       </div>
     </CardContainer>
+    
+  
   );
 };
 
