@@ -28,7 +28,7 @@ import BookingModal from '../BookingModal/BookingModal';
 
 
 const TeacherCard = ({ teacher}) => {
-
+  const [modalOpen, setModalOpen] = useState(false);
   const [isExpanded, setExpanded] = useState(false);
 const [selectedLevel, setSelectedLevel] = useState("");
 
@@ -52,9 +52,9 @@ const handleLevelChange = (event) => {
   setSelectedLevel(event.target.value);
 };
 
-const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+const handleModalOpen = () => setModalOpen(true);
+
+
 
 
   return (
@@ -142,10 +142,10 @@ const [open, setOpen] = useState(false);
   ))}
 </RadioContainer>
 {isExpanded && (
-  <BookingButton type='button' onClick={handleOpen}>Book trial lesson</BookingButton>
+  <BookingButton type='button' onClick={handleModalOpen}>Book trial lesson</BookingButton>
 )}
    {isExpanded && (
-    <BookingModal open={open} handleClose={handleClose} />
+    <BookingModal open={modalOpen} setOpen={setModalOpen} />
    )} 
       </div>
     </CardContainer>

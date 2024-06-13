@@ -1,8 +1,9 @@
 
 import Box from '@mui/material/Box';
-// import Button from '@mui/material/Button';
+
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
+
 
 const style = {
   position: 'absolute',
@@ -19,14 +20,14 @@ const style = {
 
 const BookingModal = ({open, setOpen}) => {
 
-  const handleClose = () => setOpen(false);
+  const handleBookingClose = () => setOpen(false);
 
   return (
     <div>
-      {/* <Button onClick={handleOpen}>Open modal</Button> */}
+     
       <Modal
         open={open}
-        onClose={handleClose}
+        onClose={handleBookingClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
