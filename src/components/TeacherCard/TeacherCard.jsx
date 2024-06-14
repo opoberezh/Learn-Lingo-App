@@ -24,7 +24,8 @@ import {
 import sprite from '../../../assets/symbol.svg';
 import { useState } from 'react';
 import ExpandedCard from '../ExpandedCard/ExpandedCard';
-import BookingModal from '../BookingModal/BookingModal';
+// import BookingModal from '../BookingModal/BookingModal';
+import ModalReactHookForm from '../ModalReactHookForm/ModalReactHookForm';
 
 
 const TeacherCard = ({ teacher}) => {
@@ -145,7 +146,7 @@ const handleModalOpen = () => setModalOpen(true);
   <BookingButton type='button' onClick={handleModalOpen}>Book trial lesson</BookingButton>
 )}
    {isExpanded && (
-    <BookingModal  teacher={teacher} open={modalOpen} setOpen={setModalOpen} />
+    <ModalReactHookForm  teacher={teacher} open={modalOpen} setOpen={setModalOpen} />
    )} 
       </div>
     </CardContainer>
