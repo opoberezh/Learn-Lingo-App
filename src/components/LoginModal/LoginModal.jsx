@@ -11,11 +11,11 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import CloseIcon from '@mui/icons-material/Close';
 import {
   ErrorMessageStyled,
-  SignUpButton,
   StyledField,
   StyledForm,
 } from './LoginModal.styled';
 import { useNavigate } from 'react-router-dom';
+import ButtonModal from '../ButtonModal/ButtonModal';
 
 
 const style = {
@@ -142,7 +142,7 @@ const LoginModal = ({ open, setOpen,  }) => {
                 {errors.password && touched.password ? (
                   <ErrorMessageStyled>{errors.password}</ErrorMessageStyled>
                 ) : null}
-                <SignUpButton type="submit">Log In</SignUpButton>
+                <ButtonModal text="Sign In" onClick={handleSubmit} />
               </StyledForm>
             )}
           </Formik>

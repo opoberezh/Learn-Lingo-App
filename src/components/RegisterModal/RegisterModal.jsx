@@ -11,11 +11,11 @@ import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 import CloseIcon from '@mui/icons-material/Close';
 import {
   ErrorMessageStyled,
-  SignUpButton,
   StyledField,
   StyledForm,
 } from './RegisterModal.styled';
 import { useNavigate } from 'react-router-dom';
+import ButtonModal from '../ButtonModal/ButtonModal';
 
 const style = {
   position: 'absolute',
@@ -29,13 +29,12 @@ const style = {
   p: 8,
 };
 
-
-
 const RegisterModal = ({ open, setOpen }) => {
   const navigate = useNavigate();
   const handleClose = () => {
-    setOpen(false)
-  navigate('/')};
+    setOpen(false);
+    navigate('/');
+  };
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -153,7 +152,7 @@ const RegisterModal = ({ open, setOpen }) => {
                 {errors.password && touched.password ? (
                   <ErrorMessageStyled>{errors.password}</ErrorMessageStyled>
                 ) : null}
-                <SignUpButton type="submit">Sign Up</SignUpButton>
+                <ButtonModal text="Sign Up" onClick={handleSubmit} />
               </StyledForm>
             )}
           </Formik>

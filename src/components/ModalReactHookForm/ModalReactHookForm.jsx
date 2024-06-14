@@ -1,20 +1,38 @@
-import Typography from "@mui/material/Typography";
-import  Box  from "@mui/material/Box";
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
 import CloseIcon from '@mui/icons-material/Close';
-import { Controller, useForm } from "react-hook-form";
-import {yupResolver} from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import { TeacherAvatar } from "./ModalReactHookForm.styled";
+import { Controller, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import {
+  ErrorMessageStyled,
+  FormInput,
+  FormWrapper,
+  RadioGroupTitle,
+  RadioGroupWrapper,
+  StyledForm,
+  StyledLabel,
+  StyledRadioInput,
+  TeacherAvatar,
+  TeacherInfoWrapper,
+} from './ModalReactHookForm.styled';
+import ButtonModal from '../ButtonModal/ButtonModal';
+import { useEffect, useState } from 'react';
 
 const schema = yup.object({
   picked: yup.string().required('Please select an option'),
-  fullName: yup.string()
+  fullName: yup
+    .string()
     .min(2, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Name is required!'),
-  email: yup.string().email('Enter a valid email').required('Email is required!'),
-  phoneNumber: yup.string()
+  email: yup
+    .string()
+    .email('Enter a valid email')
+    .required('Email is required!'),
+  phoneNumber: yup
+    .string()
     .matches(/^[0-9]{10}$/, 'Phone number must be 10 digits')
     .required('Phone number is required!'),
 });
@@ -32,14 +50,22 @@ const style = {
 };
 
 const ModalReactHookForm = ({ teacher, open, setOpen }) => {
-  const handleBookingClose = () => setOpen(false);
-  const {control,
+  const [bookingInfo, setBookingInfo] = useState(null);
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleBookingClose = () => {
+    setOpen(false);
+    setShowAlert(true);
+  };
+  const {
+    control,
     register,
     handleSubmit,
-    formState: {errors}, reset
+    formState: { errors },
+    reset,
   } = useForm({
     resolver: yupResolver(schema),
-    initialValues:{
+    initialValues: {
       picked: '',
       fullName: '',
       email: '',
@@ -48,13 +74,23 @@ const ModalReactHookForm = ({ teacher, open, setOpen }) => {
   });
 
   const onSubmit = (data) => {
-    console.log(data);
+    setBookingInfo(data);
     reset();
     handleBookingClose();
   };
+
+  useEffect(() => {
+    if (!open && bookingInfo && showAlert) {
+      alert(`Booking successful!\n\nDetails:\nName: ${bookingInfo.fullName}\nEmail: ${bookingInfo.email}\nPhone: ${bookingInfo.phoneNumber}\nReason: ${bookingInfo.picked}\nTeacher: ${teacher.name} ${teacher. surname}`);
+      setShowAlert(false);
+    }
+  }, [open, bookingInfo, showAlert, teacher]);
+
+
+
   return (
-<div>
-<Modal
+    <div>
+      <Modal
         open={open}
         onClose={handleBookingClose}
         aria-labelledby="modal-modal-title"
@@ -73,91 +109,151 @@ const ModalReactHookForm = ({ teacher, open, setOpen }) => {
               cursor: 'pointer',
             }}
           />
-          <Typography id="modal-modal-title" variant="h3" component="h2" sx={{ mb: 1, fontSize: 40, fontWeight: 500 }}>
+          <Typography
+            id="modal-modal-title"
+            variant="h3"
+            component="h2"
+            sx={{ mb: 1, fontSize: 40, fontWeight: 500 }}
+          >
             Book trial lesson
           </Typography>
-          <Typography id="modal-modal-description" sx={{ color: '#121417CC', fontSize: 16, fontWeight: 400 }}>
-            Our experienced tutor will assess your current language level, discuss your learning goals, and tailor the lesson to your specific needs.
+          <Typography
+            id="modal-modal-description"
+            sx={{ color: '#121417CC', fontSize: 16, fontWeight: 400 }}
+          >
+            Our experienced tutor will assess your current language level,
+            discuss your learning goals, and tailor the lesson to your specific
+            needs.
           </Typography>
-          <div>
-            <TeacherAvatar alt="Teacher Avatar" src={teacher.avatar_url} loading="lazy" />
+          <TeacherInfoWrapper>
+            <TeacherAvatar
+              alt="Teacher Avatar"
+              src={teacher.avatar_url}
+              loading="lazy"
+            />
             <div>
-            <Typography variant="subtitle1">Your teacher</Typography>
-            <Typography variant="h6">{`${teacher.name} ${teacher.surname}`}</Typography>
+              <Typography variant="subtitle1">Your teacher</Typography>
+              <Typography variant="h6">{`${teacher.name} ${teacher.surname}`}</Typography>
             </div>
-          </div>
-          <form onSubmit={handleSubmit(onSubmit)}>
-          <div id="my-radio-group">What is your main reason for learning English?</div>
-          <div role="group" aria-labelledby="my-radio-group" style={{ marginBottom: '15px' }}>
-          <label>
-              <Controller
-                name="picked"
-                control={control}
-                render={({ field }) => (
-                  <input type="radio" {...field} value="Career and business" />
+          </TeacherInfoWrapper>
+          <StyledForm onSubmit={handleSubmit(onSubmit)}>
+            <RadioGroupTitle id="my-radio-group">
+              What is your main reason for learning English?
+            </RadioGroupTitle>
+            <RadioGroupWrapper
+              role="group"
+              aria-labelledby="my-radio-group"
+              style={{ marginBottom: '15px' }}
+            >
+              <StyledLabel>
+                <Controller
+                  name="picked"
+                  control={control}
+                  render={({ field }) => (
+                    <StyledRadioInput
+                      type="radio"
+                      {...field}
+                      value="Career and business"
+                    />
+                  )}
+                />
+                Career and business
+              </StyledLabel>
+              <StyledLabel>
+                <Controller
+                  name="picked"
+                  control={control}
+                  render={({ field }) => (
+                    <StyledRadioInput
+                      type="radio"
+                      {...field}
+                      value="Lesson for kids"
+                    />
+                  )}
+                />
+                Lesson for kids
+              </StyledLabel>
+              <StyledLabel>
+                <Controller
+                  name="picked"
+                  control={control}
+                  render={({ field }) => (
+                    <StyledRadioInput
+                      type="radio"
+                      {...field}
+                      value="Living abroad"
+                    />
+                  )}
+                />
+                Living abroad
+              </StyledLabel>
+              <StyledLabel>
+                <Controller
+                  name="picked"
+                  control={control}
+                  render={({ field }) => (
+                    <StyledRadioInput
+                      type="radio"
+                      {...field}
+                      value="Exams and coursework"
+                    />
+                  )}
+                />
+                Exams and coursework
+              </StyledLabel>
+              <StyledLabel>
+                <Controller
+                  name="picked"
+                  control={control}
+                  render={({ field }) => (
+                    <StyledRadioInput
+                      type="radio"
+                      {...field}
+                      value="Culture, travel or hobby"
+                    />
+                  )}
+                />
+                Culture, travel or hobby
+              </StyledLabel>
+            </RadioGroupWrapper>
+            {errors.picked && (
+              <ErrorMessageStyled>{errors.picked.message}</ErrorMessageStyled>
+            )}
+            <FormWrapper>
+              <div>
+                <FormInput {...register('fullName')}  placeholder="Full Name"/>
+                {errors.fullName && (
+                  <ErrorMessageStyled>
+                    {errors.fullName?.message}
+                  </ErrorMessageStyled>
                 )}
-              />
-              Career and business
-            </label>
-            <label>
-              <Controller
-                name="picked"
-                control={control}
-                render={({ field }) => (
-                  <input type="radio" {...field} value="Lesson for kids" />
-                )}
-              />
-              Lesson for kids
-            </label>
-            <label>
-              <Controller
-                name="picked"
-                control={control}
-                render={({ field }) => (
-                  <input type="radio" {...field} value="Living abroad" />
-                )}
-              />
-              Living abroad
-            </label>
-            <label>
-              <Controller
-                name="picked"
-                control={control}
-                render={({ field }) => (
-                  <input type="radio" {...field} value="Exams and coursework" />
-                )}
-              />
-              Exams and coursework
-            </label>
-            <label>
-              <Controller
-                name="picked"
-                control={control}
-                render={({ field }) => (
-                  <input type="radio" {...field} value="Culture, travel or hobby" />
-                )}
-              />
-              Culture, travel or hobby
-            </label>
+              </div>
 
-          </div>
-          {errors.picked && <div>{errors.picked.message}</div>}
-<input {...register("fullName")}/>
-<p>{errors.fullName?.message}</p>
+              <div>
+                <FormInput {...register('email')} placeholder="Email" />
+                {errors.email && (
+                  <ErrorMessageStyled>
+                    {errors.email?.message}
+                  </ErrorMessageStyled>
+                )}
+              </div>
 
-<input {...register("email")}/>
-<p>{errors.email?.message}</p>
+              <div>
+                <FormInput {...register('phoneNumber')} placeholder="Phone Number" />
+                {errors.phoneNumber && (
+                  <ErrorMessageStyled>
+                    {errors.phoneNumber?.message}
+                  </ErrorMessageStyled>
+                )}
+              </div>
+            </FormWrapper>
 
-<input {...register("phoneNumber")}/>
-<p>{errors.phoneNumber?.message}</p>
-<button title="Submit" onClick={handleSubmit(onSubmit)} />
-          </form>
-          </Box>
-          </Modal>
-</div>
-     
-        
-  )
-}
+            <ButtonModal text="Book" onClick={handleSubmit(onSubmit)} />
+          </StyledForm>
+        </Box>
+      </Modal>
+    </div>
+  );
+};
 
 export default ModalReactHookForm;
