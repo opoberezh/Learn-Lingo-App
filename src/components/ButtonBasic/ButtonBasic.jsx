@@ -3,15 +3,15 @@ import { StyledButtonBasic } from './ButtonBasic.styled';
 
 
 
-const ButtonBasic = ({ text, onClick, size }) => {
+const BasicButton = ({ text, onClick}) => {
   return (
     <Stack spacing={2} direction="row">
-      <div style={{marginTop: "40px", }}>
-        <StyledButtonBasic variant="contained" onClick={onClick} size={size}>{text}</StyledButtonBasic>
-      </div>
+     
+        <StyledButtonBasic variant="contained" onClick={onClick} >{text}</StyledButtonBasic>
+      
       
     </Stack>
   );
 }
 
-export default ButtonBasic
+export default BasicButton;

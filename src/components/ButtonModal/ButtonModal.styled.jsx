@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 export const StyledModalButton = styled(Button)`
 
   display: inline-block;
-  width: 438px;
+  width: 100%;
   height: 60px;
 text-transform: none;
   padding: 16px;
@@ -12,6 +12,7 @@ text-transform: none;
   border: none;
   border-radius: 12px;
   background-color: #f4c550;
+box-shadow: none;
 
   font-weight: 700;
   font-size: 18px;

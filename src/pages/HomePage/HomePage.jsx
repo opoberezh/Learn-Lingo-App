@@ -5,7 +5,6 @@ import {
   HeroWrapper,
   StyledSpan,
   Text,
-  SignUpButton,
   PicsWrapper,
   TextWrapper,
   EmojiImg,
@@ -22,6 +21,7 @@ import {
   ThirdAndForthNumbers,
   SecondDescription,
 } from './HomePage.styled';
+import BasicButton from '../../components/ButtonBasic/ButtonBasic';
 
 const HomePage = () => {
   return (
@@ -41,7 +41,11 @@ const HomePage = () => {
               connecting with highly qualified and experienced tutors.
             </Text>
           </TextWrapper>
-<Link to="/teachers"><SignUpButton type="submit">Get started</SignUpButton>
+<Link to="/teachers">
+  <div style={{marginTop: "64px", width: "267px"}}>
+     <BasicButton type="submit" text="Get started" />
+  </div>
+ 
 </Link>
           
         </HeroWrapper>

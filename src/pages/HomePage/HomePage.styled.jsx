@@ -46,26 +46,6 @@ export const StyledSpan = styled.span`
   font-style: italic;
 `;
 
-export const SignUpButton = styled.button`
-  display: inline-block;
-  width: 267px;
-  height: 60px;
-  margin-top: 64px;
-  padding: 16px;
-  cursor: pointer;
-  border: none;
-  border-radius: 12px;
-  background-color: #f4c550;
-  font-weight: 700;
-  font-size: 18px;
-  color: #121417;
-  transition: background-color 0.3s;
-
-  &:hover,
-  &:focus {
-    background-color: #fbe9ba;
-  }
-`;
 
 export const PicsWrapper = styled.div`
   display: flex;

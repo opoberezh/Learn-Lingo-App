@@ -19,12 +19,13 @@ import {
   RadioContainer,
   RadioInput,
   RadioInputWrapper,
-  BookingButton,
+
 } from './TeacherCard.styled';
 import sprite from '../../../assets/symbol.svg';
 import { useState } from 'react';
 import ExpandedCard from '../ExpandedCard/ExpandedCard';
 import ModalReactHookForm from '../ModalBooking/ModalReactHookForm';
+import BasicButton from '../ButtonBasic/ButtonBasic';
 
 
 const TeacherCard = ({ teacher}) => {
@@ -142,7 +143,10 @@ const handleModalOpen = () => setModalOpen(true);
   ))}
 </RadioContainer>
 {isExpanded && (
-  <BookingButton type='button' onClick={handleModalOpen}>Book trial lesson</BookingButton>
+  <div style={{width: '232px', marginTop: "32px"}}>
+<BasicButton  type='button' text="Book trial lesson" onClick={handleModalOpen}/>
+  </div>
+  
 )}
    {isExpanded && (
     <ModalReactHookForm  teacher={teacher} open={modalOpen} setOpen={setModalOpen} />

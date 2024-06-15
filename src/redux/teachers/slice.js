@@ -1,3 +1,4 @@
+
 import { createSlice } from '@reduxjs/toolkit';
 import { fetchTeachers } from './operations';
 
@@ -14,15 +15,17 @@ const handleRejected = (state, action) => {
 const handleFetchTeachersFulfilled = (state, action) => {
   state.isLoading = false;
   state.error = null;
-  state.items = action.payload;
+  state.items = action.payload.teachers;
+  state.totalCount = action.payload.totalCount;
 };
 
 export const teachersSlice = createSlice({
   name: 'teachers',
   initialState: {
-    items: [],
+    items: [], 
     isLoading: false,
     error: null,
+    totalCount: 0,
   },
   extraReducers: (builder) => {
     builder

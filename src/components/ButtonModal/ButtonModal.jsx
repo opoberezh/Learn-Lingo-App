@@ -4,7 +4,7 @@ import { StyledModalButton } from './ButtonModal.styled';
 export default function ButtonModal({ text, onClick }) {
   return (
     <Stack spacing={2} direction="row">
-      <div style={{marginTop: "40px", }}>
+      <div style={{marginTop: "40px", width: "100%"}}>
         <StyledModalButton variant="contained" onClick={onClick}>{text}</StyledModalButton>
       </div>
       
