@@ -47,7 +47,7 @@ const HomePage = () => {
         </HeroWrapper>
         <PicsWrapper>
           <EmojiImg
-            src="/assets/sticker%201.png"
+            src="/assets/emoji.png"
             alt="Emoji of a girl with curly hair"
             width={339}
             height={339}

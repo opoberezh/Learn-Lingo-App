@@ -24,8 +24,7 @@ import {
 import sprite from '../../../assets/symbol.svg';
 import { useState } from 'react';
 import ExpandedCard from '../ExpandedCard/ExpandedCard';
-// import BookingModal from '../BookingModal/BookingModal';
-import ModalReactHookForm from '../ModalReactHookForm/ModalReactHookForm';
+import ModalReactHookForm from '../ModalBooking/ModalReactHookForm';
 
 
 const TeacherCard = ({ teacher}) => {
