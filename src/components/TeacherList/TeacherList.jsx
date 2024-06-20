@@ -7,6 +7,7 @@ import TeacherCard from '../TeacherCard/TeacherCard';
 import { CardsWrapper } from './TeacherList.styled';
 import Loader from '../Loader/Loader';
 import BasicButton from '../ButtonBasic/ButtonBasic';
+import Filter from '../Filter/Filter';
 
 const TeacherList = () => {
   const dispatch = useDispatch();
@@ -43,8 +44,9 @@ const TeacherList = () => {
 
   return (
     <>
+    <Filter/>
       <CardsWrapper>
-        {Array.isArray(teachers) && teachers.map((teacher) => ( // Перевірка, чи є teachers масивом
+        {Array.isArray(teachers) && teachers.map((teacher) => ( 
           <li key={teacher.id}>
             <TeacherCard teacher={teacher} />
           </li>
