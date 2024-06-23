@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  selectedLanguage: null,
-  selectedLevel: null,
-  selectedPrice: null,
+  language: '',
+  level: '',
+  price: '',
 }
 
 const filterSlice = createSlice({

@@ -1,29 +1,59 @@
-import { useDispatch, useSelector } from "react-redux"
-import { selectFilter } from "../../redux/filter/selectors"
-import { selectTeachers } from "../../redux/teachers/selectors";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectFilter } from "../../redux/filter/selectors";
 import { setLanguageFilter, setLevelFilter, setPriceFilter } from "../../redux/filter/slice";
+import { selectAllTeachers } from "../../redux/teachers/selectors";
+import { fetchAllTeachers } from "../../redux/teachers/operations";
+import Select from "react-select";
+import Loader from "../Loader/Loader";
 
 function Filter() {
   const filter = useSelector(selectFilter);
-  const teachers = useSelector(selectTeachers);
+  const teachers = useSelector(selectAllTeachers);
   const dispatch = useDispatch();
 
-  const { languages: selectedLanguage, levels: selectedLevel, price_per_hour: selectedPrice } = filter || {};
+  useEffect(() => {
+    dispatch(fetchAllTeachers()); 
+  }, [dispatch]);
 
-  const languageOptions = [...new Set(teachers.flatMap(teacher => teacher.languages))];
-  const levelOptions = [...new Set(teachers.flatMap(teacher => teacher.levels))];
-  const priceOptions = [...new Set(teachers.map(teacher => teacher.price_per_hour))];
+  if (!teachers || teachers.length === 0) {
+    return <Loader/>; 
+  }
 
-  const handleLanguageChange = (e) => {
-    dispatch(setLanguageFilter(e.target.value));
+  const languageOptions = [
+    ...new Set(teachers.flatMap(teacher => teacher.languages))
+  ].map(language => ({
+    value: language,
+    label: language
+  }));
+  
+
+  const levelOptions = [
+    ...new Set(teachers.flatMap(teacher => teacher.levels))
+  ].map(level => ({
+    value: level,
+    label: level
+  }));
+
+
+  const priceOptions = [
+    ...new Set(teachers.map(teacher => teacher.price_per_hour))
+  ].map(price => ({
+    value: price,
+    label: `${price} $`
+  }));
+
+
+  const handleLanguageChange = (selectedOption) => {
+    dispatch(setLanguageFilter(selectedOption ? selectedOption.value : null));
   };
 
-  const handleLevelChange = (e) => {
-    dispatch(setLevelFilter(e.target.value));
+  const handleLevelChange = (selectedOption) => {
+    dispatch(setLevelFilter(selectedOption ? selectedOption.value : null));
   };
 
-  const handlePriceChange = (e) => {
-    dispatch(setPriceFilter(e.target.value));
+  const handlePriceChange = (selectedOption) => {
+    dispatch(setPriceFilter(selectedOption ? selectedOption.value : null));
   };
 
   return (
@@ -31,56 +61,35 @@ function Filter() {
       <form>
         <div>
           <label htmlFor="languageSelect">Languages</label>
-          <select
+          <Select
             id="languageSelect"
-            value={selectedLanguage}
+            value={languageOptions.find(option => option.value === filter.language)}
             onChange={handleLanguageChange}
-          >
-          
-            {languageOptions.map((language, index) => (
-              <option key={index} value={language}>
-                {language}
-              </option>
-            ))}
-          </select>
+            options={languageOptions}
+            isClearable
+          />
         </div>
 
         <div>
           <label htmlFor="levelSelect">Levels</label>
-          <select
+          <Select
             id="levelSelect"
-            value={selectedLevel}
+            value={levelOptions.find(option => option.value === filter.level)}
             onChange={handleLevelChange}
-          >
-         
-            {levelOptions.map((level, index) => (
-              <option key={index} value={level}>
-                {level}
-              </option>
-            ))}
-          </select>
+            options={levelOptions}
+            isClearable
+          />
         </div>
 
         <div>
           <label htmlFor="priceSelect">Price per hour</label>
-          <div>
-          <select
+          <Select
             id="priceSelect"
-            value={selectedPrice}
+            value={priceOptions.find(option => option.value === filter.price)}
             onChange={handlePriceChange}
-          >
-           
-            {priceOptions.map((price, index) => (
-              <option key={index} value={price}>
-                {price}
-              </option>
-            ))}
-          </select>
-            <span>
-              $
-            </span>
-          </div>
-         
+            options={priceOptions}
+            isClearable
+          />
         </div>
       </form>
     </div>
