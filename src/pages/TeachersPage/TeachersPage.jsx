@@ -14,13 +14,14 @@ const TeachersPage = () => {
   }, []);
 
   return (
-    <div>
-      <div>
+    <div style={{padding: "0 64px"}}>
+      <div style={{display: "flex", flexDirection: "column", gap: "24px" }}> 
         <Link to='/'>
           <img src={ukraine} alt="Ukraine Flag" />
         </Link>
+        <Filter />
       </div>
-      <Filter />
+      
       <TeacherList />
     </div>
   );
