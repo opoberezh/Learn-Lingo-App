@@ -14,6 +14,7 @@ import storage from 'redux-persist/lib/storage';
 import { authReducer } from './auth/slice';
 import { teacherReducer } from './teachers/slice';
 import { filterReducer } from './filter/slice';
+import { favoritesReducer } from './favorites/slice';
 
 const authPersistConfig = {
   key: 'auth',
@@ -21,11 +22,18 @@ const authPersistConfig = {
   whitelist: ['token'],
 };
 
+const favoritesPersistConfig = {
+  key: 'favorites',
+  storage,
+  whitelist: ['favorites'],
+};
+
 export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     teachers: teacherReducer,
     filter: filterReducer,
+    favorites: persistReducer(favoritesPersistConfig, favoritesReducer),
   },
 
   middleware: (getDefaultMiddleware) =>
