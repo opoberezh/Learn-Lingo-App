@@ -11,7 +11,7 @@ import { selectError, selectIsLoading } from '../../redux/teachers/selectors';
 const TeacherList = () => {
   const dispatch = useDispatch();
   const filter = useSelector(selectFilter);
-  const [teachers, setTeachers] = useState([]); // State to hold all teachers
+  const [teachers, setTeachers] = useState([]); 
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
   
@@ -23,7 +23,7 @@ const TeacherList = () => {
       .unwrap()
       .then((teachersResponse) => {
         console.log('Fetch all teachers success:', teachersResponse);
-        setTeachers(teachersResponse.teachers); // Store all teachers in state
+        setTeachers(teachersResponse.teachers); 
       })
       .catch((error) => {
         console.error('Fetch all teachers error:', error);
@@ -47,7 +47,7 @@ const TeacherList = () => {
     });
   };
 
-  // Apply filters to all teachers
+  
   const filteredTeachers = applyFilters(teachers, filter);
 
   if (isLoading) {
