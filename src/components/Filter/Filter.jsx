@@ -1,26 +1,34 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { selectFilter } from "../../redux/filter/selectors";
-import { setLanguageFilter, setLevelFilter, setPriceFilter } from "../../redux/filter/slice";
-import { selectAllTeachers } from "../../redux/teachers/selectors";
-import { fetchAllTeachers } from "../../redux/teachers/operations";
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectFilter } from '../../redux/filter/selectors';
+import { setLanguageFilter, setLevelFilter, setPriceFilter } from '../../redux/filter/slice';
+import { fetchAllTeachers } from '../../redux/teachers/operations'; // Ensure this is correctly imported
 
-import Loader from "../Loader/Loader";
-import { FilterBarContainer, FilterBarForm, LabelStyled, StyledSelectLang,  StyledLevelsSelect, Wrapper, PriceSelect } from "./Filter.styled";
+import Loader from '../Loader/Loader';
+import { FilterBarContainer, FilterBarForm, LabelStyled, StyledSelectLang, StyledLevelsSelect, Wrapper, PriceSelect } from './Filter.styled';
 
 function Filter() {
   const filter = useSelector(selectFilter);
-  const teachers = useSelector(selectAllTeachers);
   const dispatch = useDispatch();
+  const [teachers, setTeachers] = useState([]); // State to hold all teachers
 
   useEffect(() => {
-    dispatch(fetchAllTeachers());
+    dispatch(fetchAllTeachers())
+      .unwrap()
+      .then((teachersResponse) => {
+        console.log('Fetch all teachers success:', teachersResponse);
+        setTeachers(teachersResponse.teachers); // Store all teachers in state
+      })
+      .catch((error) => {
+        console.error('Fetch all teachers error:', error);
+      });
   }, [dispatch]);
 
   if (!teachers || teachers.length === 0) {
     return <Loader />;
   }
 
+  // Now you can filter over all teachers, not just those currently loaded
   const languageOptions = [
     ...new Set(teachers.flatMap(teacher => teacher.languages))
   ].map(language => ({
@@ -82,16 +90,16 @@ function Filter() {
         </Wrapper>
 
         <Wrapper>
-  <LabelStyled htmlFor="priceSelect">Price</LabelStyled>
-  <PriceSelect
-    id="priceSelect"
-    value={priceOptions.find(option => option.value === filter.price)}
-    onChange={handlePriceChange}
-    options={priceOptions}
-    isClearable
-    classNamePrefix="react-select"
-  />
-</Wrapper>
+          <LabelStyled htmlFor="priceSelect">Price</LabelStyled>
+          <PriceSelect
+            id="priceSelect"
+            value={priceOptions.find(option => option.value === filter.price)}
+            onChange={handlePriceChange}
+            options={priceOptions}
+            isClearable
+            classNamePrefix="react-select"
+          />
+        </Wrapper>
       </FilterBarForm>
     </FilterBarContainer>
   );

@@ -26,7 +26,7 @@ export const fetchTeachers = createAsyncThunk(
         (pageNumber + 1) * pageSize
       );
 
-      return { teachers: paginatedTeachers, totalCount: teachersArray.length };
+      return { teachers: paginatedTeachers };
     } catch (error) {
       console.error('Error fetching teachers:', error.message);
       return thunkAPI.rejectWithValue(error.message);

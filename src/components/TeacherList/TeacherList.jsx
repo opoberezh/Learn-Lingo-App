@@ -1,30 +1,32 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchTeachers } from '../../redux/teachers/operations';
-import { selectError, selectIsLoading, selectTeachers, selectTotalCount } from '../../redux/teachers/selectors';
+import { fetchAllTeachers } from '../../redux/teachers/operations';
 import { selectFilter } from '../../redux/filter/selectors';
 import TeacherCard from '../TeacherCard/TeacherCard';
 import { CardsWrapper } from './TeacherList.styled';
 import Loader from '../Loader/Loader';
 import BasicButton from '../ButtonBasic/ButtonBasic';
+import { selectError, selectIsLoading } from '../../redux/teachers/selectors';
 
 const TeacherList = () => {
   const dispatch = useDispatch();
-  const teachers = useSelector(selectTeachers);
+  const filter = useSelector(selectFilter);
+  const [teachers, setTeachers] = useState([]); // State to hold all teachers
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
-  const totalCount = useSelector(selectTotalCount);
-  const filter = useSelector(selectFilter);
+  
   const [pageNumber, setPageNumber] = useState(0);
   const pageSize = 3;
 
   useEffect(() => {
-    dispatch(fetchTeachers({ pageSize, pageNumber }))
-      .then((response) => {
-        console.log('Fetch teachers success:', response.payload);
+    dispatch(fetchAllTeachers({pageSize, pageNumber}))
+      .unwrap()
+      .then((teachersResponse) => {
+        console.log('Fetch all teachers success:', teachersResponse);
+        setTeachers(teachersResponse.teachers); // Store all teachers in state
       })
       .catch((error) => {
-        console.error('Fetch teachers error:', error);
+        console.error('Fetch all teachers error:', error);
       });
   }, [dispatch, pageNumber]);
 
@@ -45,6 +47,7 @@ const TeacherList = () => {
     });
   };
 
+  // Apply filters to all teachers
   const filteredTeachers = applyFilters(teachers, filter);
 
   if (isLoading) {
@@ -55,38 +58,43 @@ const TeacherList = () => {
     return <div>Error: {error}</div>;
   }
 
-  const canLoadMore = filteredTeachers.length < totalCount;
+  if (filteredTeachers.length === 0 && teachers.length > 0) {
+    return <p>No teachers match the selected filters.</p>;
+  }
+
+  const paginatedTeachers = teachers.slice(pageNumber * pageSize, (pageNumber + 1) * pageSize);
 
   return (
     <>
       <CardsWrapper>
-        {filteredTeachers.length > 0 ? (
-          filteredTeachers.slice(0, (pageNumber + 1) * pageSize).map((teacher) => (
+        {(filter.selectedLanguage || filter.selectedLevel || filter.selectedPrice ? filteredTeachers : paginatedTeachers)
+          .map((teacher) => (
             <li key={teacher.id}>
               <TeacherCard teacher={teacher} />
             </li>
-          ))
-        ) : (
-          <p>No teachers match the selected filters.</p>
-        )}
+          ))}
       </CardsWrapper>
-      <div style={{
-        display: "flex",
-        width: "600px",
-        margin: "64px auto",
-        justifyContent: canLoadMore && pageNumber > 0 ? "space-between" : "center"
-      }}>
-        {pageNumber > 0 && (
-          <div style={{ width: "183px" }}>
-            <BasicButton text="Load less" onClick={loadLessTeachers} />
-          </div>
-        )}
-        {canLoadMore && (
-          <div style={{ width: "183px" }}>
-            <BasicButton text="Load more" onClick={loadMoreTeachers} />
-          </div>
-        )}
-      </div>
+      {!filter.selectedLanguage && !filter.selectedLevel && !filter.selectedPrice && (
+        <div
+          style={{
+            display: 'flex',
+            width: '600px',
+            margin: '64px auto',
+            justifyContent: pageNumber > 0 ? 'space-between' : 'center',
+          }}
+        >
+          {pageNumber > 0 && (
+            <div style={{ width: '183px' }}>
+              <BasicButton text="Load less" onClick={loadLessTeachers} />
+            </div>
+          )}
+          {teachers.length > paginatedTeachers.length && (
+            <div style={{ width: '183px' }}>
+              <BasicButton text="Load more" onClick={loadMoreTeachers} />
+            </div>
+          )}
+        </div>
+      )}
     </>
   );
 };
