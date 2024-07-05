@@ -13,6 +13,8 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@eslint/config-array": "^0.17.0",
+    "@eslint/object-schema": "^2.1.4",
     "@hookform/resolvers": "^3.6.0",
     "@mui/icons-material": "^5.15.20",
     "@mui/material": "^5.15.20",
@@ -20,7 +22,7 @@
     "@vitejs/plugin-react-swc": "^3.3.2",
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
-    "firebase": "^10.12.1",
+    "firebase": "^10.12.3",
     "formik": "^2.4.6",
     "modern-normalize": "^2.0.0",
     "normalize.css": "^8.0.1",

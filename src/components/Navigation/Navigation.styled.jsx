@@ -5,14 +5,13 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
   width: 661px;
-
-  gap: 390px;
+  gap: ${({ isLoggedIn }) => (isLoggedIn ? '330px' : '370px')}; 
 `;
 
 export const StyledLink = styled(Link)`
   display: flex;
   gap: 8px;
-  padding: 8px 8px;
+  // padding: 8px 8px;
   color: #121417;
   font-weight: 500;
   font-size: 20px;

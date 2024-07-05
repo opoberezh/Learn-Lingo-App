@@ -1,5 +1,4 @@
 import { useAuth } from '../../hooks/index';
-
 import ukraine from '../../../assets/ukraine.svg';
 import {
   LinkStyled,
@@ -12,7 +11,7 @@ import {
 const Navigation = () => {
   const { isLoggedIn } = useAuth();
   return (
-    <Nav>
+    <Nav isLoggedIn={isLoggedIn}>
       <StyledLink to="/">
         <Logo src={ukraine} alt="Ukraine Flag" />
         LearnLingo

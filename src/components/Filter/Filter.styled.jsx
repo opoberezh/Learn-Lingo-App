@@ -3,6 +3,9 @@ import Select from "react-select";
 
 export const FilterBarContainer = styled.div`
 display: flex;
+margin: 20px auto;
+width: 1184px;
+
 `;
 
 export const FilterBarForm = styled.form`

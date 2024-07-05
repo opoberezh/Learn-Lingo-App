@@ -23,19 +23,19 @@ import { useEffect, useState } from 'react';
 import ExpandedCard from '../ExpandedCard/ExpandedCard';
 import ModalReactHookForm from '../ModalBooking/ModalReactHookForm';
 import BasicButton from '../ButtonBasic/ButtonBasic';
+import { useDispatch, useSelector } from 'react-redux';
 import { selectFavorites } from '../../redux/favorites/selectors';
 import { selectIsLoggedIn } from '../../redux/auth/selectors';
 import { addToFavorite, removeFromFavorite } from '../../redux/favorites/slice';
-import { useDispatch, useSelector } from 'react-redux';
 
 const TeacherCard = ({ teacher }) => {
   const dispatch = useDispatch();
+  const favorites = useSelector(selectFavorites);
+  const isAuthenticated = useSelector(selectIsLoggedIn);
+  const [isFavorite, setIsFavorite] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [isExpanded, setExpanded] = useState(false);
   const [selectedLevel, setSelectedLevel] = useState("");
-  const favorites = useSelector(selectFavorites);
-  const [isFavorite, setIsFavorite] = useState(false);
-  const isAuthenticated = useSelector(selectIsLoggedIn);
 
   const {
     id,
@@ -51,23 +51,6 @@ const TeacherCard = ({ teacher }) => {
     levels,
   } = teacher || {};
 
-  useEffect(() => {
-    const isFav = favorites.some((fav) => fav.id === id);
-    setIsFavorite(isFav);
-  }, [favorites, id]);
-
-  const handleToggleFavorite = () => {
-    if (!isAuthenticated) {
-      return alert('You are not an authenticated user. Please, register or log in.');
-    }
-
-    if (isFavorite) {
-      dispatch(removeFromFavorite(id));
-    } else {
-      dispatch(addToFavorite(teacher));
-    }
-  };
-
   const handleToggleExpand = () => setExpanded(!isExpanded);
 
   const handleLevelChange = (event) => {
@@ -76,8 +59,25 @@ const TeacherCard = ({ teacher }) => {
 
   const handleModalOpen = () => setModalOpen(true);
 
+  useEffect(() => {
+    const isFav = favorites.some((fav) => fav.id === id);
+    setIsFavorite(isFav);
+  }, [favorites, id]);
+
+  const handleToggleFavorite = (teacher) => {
+    if (!isAuthenticated) {
+      return alert('You are not an authenticated user. Please, register or log in.');
+    }
+
+    if (favorites.some(fav => fav.id === teacher.id)) {
+      dispatch(removeFromFavorite(teacher.id));
+    } else {
+      dispatch(addToFavorite(teacher));
+    }
+  };
+
   return (
-    <CardContainer isExpanded={isExpanded} style={{position: "relative"}}>
+    <CardContainer isExpanded={isExpanded} style={{ position: 'relative' }}>
       <AvatarCircle>
         <BadgeAvatars avatar_url={avatar_url} />
       </AvatarCircle>
@@ -134,9 +134,9 @@ const TeacherCard = ({ teacher }) => {
             </p>
           </li>
         </SecondList>
-        
+
         {isExpanded && <ExpandedCard teacher={teacher} />}
-        
+
         <ReadMoreButton type="button" onClick={handleToggleExpand}>
           {isExpanded ? 'Show less' : 'Read more'}
         </ReadMoreButton>
@@ -154,34 +154,31 @@ const TeacherCard = ({ teacher }) => {
             </RadioInputWrapper>
           ))}
         </RadioContainer>
-        
+
         {isExpanded && (
           <div style={{ width: '232px', marginTop: '32px' }}>
             <BasicButton type="button" text="Book trial lesson" onClick={handleModalOpen} />
           </div>
         )}
-        
+
         {isExpanded && <ModalReactHookForm teacher={teacher} open={modalOpen} setOpen={setModalOpen} />}
-        
+
         <div style={{ position: 'absolute', top: '24px', right: '24px' }}>
-      <button
-        onClick={handleToggleFavorite}
-        style={{ background: 'transparent', border: 'none' }}
-      >
-        {isFavorite ? (
-          <svg style={{ fill: 'transparent', stroke:'#121417', width: '26px', height: '26px' }}>
-<use xlinkHref={sprite + '#icon-Vector'} />
-          </svg>
-            
-         
-        ) : (
-          <svg style={{ fill: '#F4C550', width: '26', height: '26px' }}>
-<use xlinkHref={sprite + '#icon-hover'} />
-          </svg>
-        )}
-      </button>
-     
-    </div>
+          <button
+            onClick={() => handleToggleFavorite(teacher)}
+            style={{ background: 'transparent', border: 'none' }}
+          >
+            {isFavorite ? (
+              <svg style={{ fill: '#F4C550', width: '26px', height: '26px' }}>
+                <use xlinkHref={sprite + '#icon-hover'} />
+              </svg>
+            ) : (
+              <svg style={{ fill: 'transparent', stroke: '#121417', width: '26px', height: '26px' }}>
+                <use xlinkHref={sprite + '#icon-Vector'} />
+              </svg>
+            )}
+          </button>
+        </div>
       </div>
     </CardContainer>
   );

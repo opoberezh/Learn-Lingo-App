@@ -2,17 +2,20 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { auth } from '../../../fireBaseConfig';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
-import { setAuthHeader } from '../../components/utilities/AuthHeader';
+import { getUserData, saveUserData, setAuthHeader } from '../../components/utilities/AuthHeader';
 
 const transformFirebaseUser = async (user) => {
   const token = await user.getIdToken();
-  return {
+  const transformedUser = {
     uid: user.uid,
     email: user.email,
-    displayName: user.displayName || user.email.split('@')[0], token
-  }
- 
+    displayName: user.displayName || user.email.split('@')[0], 
+    token
+  };
+  saveUserData(transformedUser); 
+  return transformedUser;
 };
+
 
 export const register = createAsyncThunk(
   'auth/register',
@@ -60,11 +63,18 @@ export const refreshUser = createAsyncThunk(
     try {
       const user = auth.currentUser;
       if (user) {
-        const token = await user.getIdToken(true); 
-        setAuthHeader(token); 
-        return transformFirebaseUser(user);
+        const token = await user.getIdToken(true);
+        setAuthHeader(token);
+        const transformedUser = await transformFirebaseUser(user);
+        return transformedUser;
       } else {
-        return null;
+        const storedUser = getUserData();
+        if (storedUser) {
+          setAuthHeader(storedUser.token);
+          return storedUser;
+        } else {
+          return null;
+        }
       }
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

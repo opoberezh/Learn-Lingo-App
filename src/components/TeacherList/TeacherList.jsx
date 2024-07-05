@@ -69,7 +69,7 @@ const TeacherList = () => {
       <CardsWrapper>
         {(filter.selectedLanguage || filter.selectedLevel || filter.selectedPrice ? filteredTeachers : paginatedTeachers)
           .map((teacher) => (
-            <li key={teacher.id}>
+            <li  key={teacher.id}>
               <TeacherCard teacher={teacher} />
             </li>
           ))}

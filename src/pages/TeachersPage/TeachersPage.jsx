@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import ukraine from '../../../assets/ukraine.svg';
+
 import Filter from '../../components/Filter/Filter';
 import TeacherList from '../../components/TeacherList/TeacherList';
 
@@ -14,11 +13,9 @@ const TeachersPage = () => {
   }, []);
 
   return (
-    <div style={{padding: "0 64px"}}>
+    <div >
       <div style={{display: "flex", flexDirection: "column", gap: "24px" }}> 
-        <Link to='/'>
-          <img src={ukraine} alt="Ukraine Flag" />
-        </Link>
+       
         <Filter />
       </div>
       
