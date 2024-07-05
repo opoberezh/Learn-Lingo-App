@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFilter } from '../../redux/filter/selectors';
 import { setLanguageFilter, setLevelFilter, setPriceFilter } from '../../redux/filter/slice';
-import { fetchAllTeachers } from '../../redux/teachers/operations'; // Ensure this is correctly imported
+import { fetchAllTeachers } from '../../redux/teachers/operations'; 
 
 import Loader from '../Loader/Loader';
 import { FilterBarContainer, FilterBarForm, LabelStyled, StyledSelectLang, StyledLevelsSelect, Wrapper, PriceSelect } from './Filter.styled';
@@ -10,14 +10,14 @@ import { FilterBarContainer, FilterBarForm, LabelStyled, StyledSelectLang, Style
 function Filter() {
   const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
-  const [teachers, setTeachers] = useState([]); // State to hold all teachers
+  const [teachers, setTeachers] = useState([]); 
 
   useEffect(() => {
     dispatch(fetchAllTeachers())
       .unwrap()
       .then((teachersResponse) => {
         console.log('Fetch all teachers success:', teachersResponse);
-        setTeachers(teachersResponse.teachers); // Store all teachers in state
+        setTeachers(teachersResponse.teachers); 
       })
       .catch((error) => {
         console.error('Fetch all teachers error:', error);
@@ -28,7 +28,7 @@ function Filter() {
     return <Loader />;
   }
 
-  // Now you can filter over all teachers, not just those currently loaded
+ 
   const languageOptions = [
     ...new Set(teachers.flatMap(teacher => teacher.languages))
   ].map(language => ({

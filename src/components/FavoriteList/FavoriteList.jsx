@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { selectFavorites } from '../../redux/favorites/selectors';
 import { selectIsLoggedIn } from '../../redux/auth/selectors';
 import TeacherCard from '../TeacherCard/TeacherCard';
+import { FavoriteCardsWrapper } from './FavoriteList.styled';
 
 const FavoriteList = () => {
   const favorites = useSelector(selectFavorites);
@@ -9,7 +10,7 @@ const FavoriteList = () => {
 
   return (
     isAuthenticated && (
-      <div>
+      <FavoriteCardsWrapper>
         {favorites.map((teacher) => (
           <TeacherCard
             key={teacher.id}
@@ -17,7 +18,7 @@ const FavoriteList = () => {
             isFavorite={true}
           />
         ))}
-      </div>
+      </FavoriteCardsWrapper>
     )
   );
 };
