@@ -22,6 +22,8 @@ import {
   SecondDescription,
 } from './HomePage.styled';
 import BasicButton from '../../components/ButtonBasic/ButtonBasic';
+import emoji from "../../../assets/emoji.png";
+import macbook from "../../../assets/Mac.png";
 
 const HomePage = () => {
   return (
@@ -31,7 +33,7 @@ const HomePage = () => {
           <Title>
             Unlock your potential with the best{' '}
             <StyledSpan>language </StyledSpan>
-            tutors
+            {' '}tutors
           </Title>
 
           <TextWrapper>
@@ -51,12 +53,12 @@ const HomePage = () => {
         </HeroWrapper>
         <PicsWrapper>
           <EmojiImg
-            src="/assets/emoji.png"
+            src={emoji}
             alt="Emoji of a girl with curly hair"
             width={339}
             height={339}
           />
-          <MacImg src="/assets/Mac.png" alt="MacBook" width={391} />
+          <MacImg src={macbook} alt="MacBook" width={391} />
         </PicsWrapper>
       </Wrapper>
 

@@ -44,6 +44,9 @@ export const StyledSpan = styled.span`
   font-weight: 400;
   background: #fbe9ba;
   font-style: italic;
+   display: inline-block;
+  padding: 0 5px;
+  border-radius: 12px;
 `;
 
 
