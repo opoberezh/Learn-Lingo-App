@@ -161,7 +161,14 @@ const TeacherCard = ({ teacher }) => {
           </div>
         )}
 
-        {isExpanded && <ModalReactHookForm teacher={teacher} open={modalOpen} setOpen={setModalOpen} />}
+        {isExpanded && (
+          <ModalReactHookForm
+            teacher={teacher}
+            open={modalOpen}
+            setOpen={setModalOpen}
+            selectedLevel={selectedLevel}
+          />
+        )}
 
         <div style={{ position: 'absolute', top: '24px', right: '24px' }}>
           <button

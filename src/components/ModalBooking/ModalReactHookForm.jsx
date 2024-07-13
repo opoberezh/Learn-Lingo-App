@@ -49,7 +49,7 @@ const style = {
   p: 8,
 };
 
-const ModalReactHookForm = ({ teacher, open, setOpen }) => {
+const ModalReactHookForm = ({ teacher, open, setOpen, selectedLevel }) => {
   const [bookingInfo, setBookingInfo] = useState(null);
   const [showAlert, setShowAlert] = useState(false);
 
@@ -57,6 +57,7 @@ const ModalReactHookForm = ({ teacher, open, setOpen }) => {
     setOpen(false);
     setShowAlert(true);
   };
+
   const {
     control,
     register,
@@ -74,19 +75,17 @@ const ModalReactHookForm = ({ teacher, open, setOpen }) => {
   });
 
   const onSubmit = (data) => {
-    setBookingInfo(data);
+    setBookingInfo({ ...data, selectedLevel });
     reset();
     handleBookingClose();
   };
 
   useEffect(() => {
     if (!open && bookingInfo && showAlert) {
-      alert(`Booking successful!\n\nDetails:\nName: ${bookingInfo.fullName}\nEmail: ${bookingInfo.email}\nPhone: ${bookingInfo.phoneNumber}\nReason: ${bookingInfo.picked}\nTeacher: ${teacher.name} ${teacher. surname}`);
+      alert(`Booking successful!\n\nDetails:\nName: ${bookingInfo.fullName}\nEmail: ${bookingInfo.email}\nPhone: ${bookingInfo.phoneNumber}\nReason: ${bookingInfo.picked}\nLevel: ${bookingInfo.selectedLevel}\nTeacher: ${teacher.name} ${teacher.surname}`);
       setShowAlert(false);
     }
   }, [open, bookingInfo, showAlert, teacher]);
-
-
 
   return (
     <div>
