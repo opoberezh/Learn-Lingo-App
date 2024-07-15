@@ -8,7 +8,8 @@ import { refreshUser } from './redux/auth/operations';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivetRoute } from './PrivetRoute';
 import InactiveLayout from './components/InactiveLayout/InactiveLayout';
-import Loader from './components/Loader/Loader'; // Import a fallback component
+import Loader from './components/Loader/Loader'; 
+import ThemeProvider from './ThemeProvider';
 
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
@@ -28,6 +29,7 @@ function App() {
   return isRefreshing ? (
     <b>Refreshing user ...</b>
   ) : (
+    <ThemeProvider>
     <AppWrapper>
       <Suspense fallback={<Loader />}>
         <Routes>
@@ -64,6 +66,7 @@ function App() {
         </Routes>
       </Suspense>
     </AppWrapper>
+    </ThemeProvider>
   );
 }
 
