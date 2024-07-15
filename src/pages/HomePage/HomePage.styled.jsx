@@ -3,9 +3,9 @@ import styled from '@emotion/styled';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
- 
   margin-top: 20px;
 `;
+
 export const Wrapper = styled.div`
   display: flex;
   gap: 24px;
@@ -14,7 +14,6 @@ export const Wrapper = styled.div`
 export const HeroWrapper = styled.div`
   display: flex;
   flex-direction: column;
-
   padding: 98px 64px;
   background-color: #f8f8f8;
   width: 720px;
@@ -44,11 +43,10 @@ export const StyledSpan = styled.span`
   font-weight: 400;
   background: #fbe9ba;
   font-style: italic;
-   display: inline-block;
+  display: inline-block;
   padding: 0 5px;
   border-radius: 12px;
 `;
-
 
 export const PicsWrapper = styled.div`
   display: flex;
@@ -72,15 +70,24 @@ export const MacImg = styled.img`
 `;
 
 export const IndexesWrapper = styled.div`
-  display: flex;
-
+   display: flex;
+   position: relative;
   width: 1312px;
   height: 116px;
   margin-top: 24px;
   padding: 40px 122px;
-  border: 1.5px dashed #f4c550;
+  
+  
 
-  border-radius: 30px;
+`;
+
+export const DashedFrame = styled.img`
+width: 1312px;
+  height: 116px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 `;
 
 export const IndexesList = styled.ul`
@@ -89,52 +96,45 @@ export const IndexesList = styled.ul`
 `;
 
 export const DivStyled = styled.div`
-display: flex;
-gap: 16px;
-
+  display: flex;
+  gap: 16px;
 `;
-
-
 
 export const Numbers = styled.p`
-width: 110px;
+  width: 110px;
   font-size: 28px;
-  font-weight: 500px;
+  font-weight: 500;
 `;
 
-
-
 export const Description = styled.p`
-width: 96px;
+  width: 96px;
   font-size: 14px;
   color: #121417b2;
 `;
 
-export const DescWrapper = styled.div`
- 
-`;
+export const DescWrapper = styled.div``;
 
 export const SecondNumber = styled.p`
-width: 130px;
+  width: 130px;
   font-size: 28px;
-  font-weight: 500px;
+  font-weight: 500;
 `;
-
 
 export const ThirdAndForthNumbers = styled.p`
-width: 80px;
+  width: 80px;
   font-size: 28px;
-  font-weight: 500px;
+  font-weight: 500;
 `;
+
 export const SecondDescWrapper = styled.div`
-width: 74px;
-font-size: 14px;
+  width: 74px;
+  font-size: 14px;
   font-weight: 400;
   color: #121417b2;
 `;
 
 export const SecondDescription = styled.p`
-width: 74px;
+  width: 74px;
   font-size: 14px;
   color: #121417b2;
 `;

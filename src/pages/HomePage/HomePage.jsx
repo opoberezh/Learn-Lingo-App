@@ -20,10 +20,12 @@ import {
   SecondNumber,
   ThirdAndForthNumbers,
   SecondDescription,
+  DashedFrame,
 } from './HomePage.styled';
 import BasicButton from '../../components/ButtonBasic/ButtonBasic';
 import emoji from "../../../assets/emoji.png";
 import macbook from "../../../assets/Mac.png";
+import rectangle from "../../../assets/Rectangle 1.png";
 
 const HomePage = () => {
   return (
@@ -63,6 +65,7 @@ const HomePage = () => {
       </Wrapper>
 
       <IndexesWrapper>
+      <DashedFrame src={rectangle} alt='Dashed frame' />
         <IndexesList>
           <li>
             <DivStyled>

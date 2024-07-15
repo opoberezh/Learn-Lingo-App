@@ -1,5 +1,6 @@
-import { Container, Description, DivStyled, FakeButton, HeroWrapper, IndexesList, IndexesWrapper, Numbers, PicsWrapper, SecondDescWrapper, SecondDescription, SecondNumber, StyledSpan, Text, TextWrapper, ThirdAndForthNumbers, Title, Wrapper } from './ErrorPage.styled';
+import { Container, DashedFrame, Description, DivStyled, FakeButton, HeroWrapper, IndexesList, IndexesWrapper, Numbers, PicsWrapper, SecondDescWrapper, SecondDescription, SecondNumber, StyledSpan, Text, TextWrapper, ThirdAndForthNumbers, Title, Wrapper } from './ErrorPage.styled';
 import image from "../../../assets/image.png";
+import rectangleGray from "../../../assets/RectangleGray.png";
 
 
 const ErrorPage = () => {
@@ -34,6 +35,7 @@ const ErrorPage = () => {
     </Wrapper>
 
     <IndexesWrapper>
+    <DashedFrame src={rectangleGray} alt='Dashed frame' />
       <IndexesList>
         <li>
           <DivStyled>

@@ -77,14 +77,25 @@ font-size: 18px;
 
 export const IndexesWrapper = styled.div`
    display: flex;
+   position: relative;
   width: 1312px;
   height: 116px;
   margin-top: 24px;
   padding: 40px 122px;
-  border-radius: 30px;
-  border: 1.5px dashed #8A8A89;
+  
+  
 
 `;
+
+export const DashedFrame = styled.img`
+width: 1312px;
+  height: 116px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+`;
+
 
 
 export const IndexesList = styled.ul`
