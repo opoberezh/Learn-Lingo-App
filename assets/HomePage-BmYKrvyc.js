@@ -1,4 +1,4 @@
-import{n as e,j as A,L as s}from"./index-yyJJuUaX.js";import{B as r}from"./ButtonBasic-DP_db_VG.js";const p=e.div`
+import{n as e,j as A,L as s}from"./index-BGqyxXm2.js";import{B as r}from"./ButtonBasic-BggiyA-r.js";const p=e.div`
   display: flex;
   flex-direction: column;
   margin-top: 20px;

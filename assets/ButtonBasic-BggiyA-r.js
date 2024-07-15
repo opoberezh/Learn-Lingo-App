@@ -1,4 +1,4 @@
-import{n as t,U as e,j as o,S as i}from"./index-yyJJuUaX.js";const s=t(e)`
+import{n as t,U as e,j as o,S as i}from"./index-BGqyxXm2.js";const s=t(e)`
 
   display: inline-block;
   width: 100%;
