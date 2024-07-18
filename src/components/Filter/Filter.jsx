@@ -1,23 +1,25 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { ThemeContext } from '../../ThemeProvider';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFilter } from '../../redux/filter/selectors';
 import { setLanguageFilter, setLevelFilter, setPriceFilter } from '../../redux/filter/slice';
-import { fetchAllTeachers } from '../../redux/teachers/operations'; 
+import { fetchAllTeachers } from '../../redux/teachers/operations';
 
 import Loader from '../Loader/Loader';
 import { FilterBarContainer, FilterBarForm, LabelStyled, StyledSelectLang, StyledLevelsSelect, Wrapper, PriceSelect } from './Filter.styled';
 
 function Filter() {
+  const { theme } = useContext(ThemeContext);
   const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
-  const [teachers, setTeachers] = useState([]); 
+  const [teachers, setTeachers] = useState([]);
 
   useEffect(() => {
     dispatch(fetchAllTeachers())
       .unwrap()
       .then((teachersResponse) => {
         console.log('Fetch all teachers success:', teachersResponse);
-        setTeachers(teachersResponse.teachers); 
+        setTeachers(teachersResponse.teachers);
       })
       .catch((error) => {
         console.error('Fetch all teachers error:', error);
@@ -28,7 +30,6 @@ function Filter() {
     return <Loader />;
   }
 
- 
   const languageOptions = [
     ...new Set(teachers.flatMap(teacher => teacher.languages))
   ].map(language => ({
@@ -65,7 +66,7 @@ function Filter() {
   return (
     <FilterBarContainer>
       <FilterBarForm>
-        <Wrapper>
+        <Wrapper theme={theme}>
           <LabelStyled htmlFor="languageSelect">Languages</LabelStyled>
           <StyledSelectLang
             id="languageSelect"
@@ -74,10 +75,11 @@ function Filter() {
             options={languageOptions}
             isClearable
             classNamePrefix="react-select"
+            theme={theme} 
           />
         </Wrapper>
 
-        <Wrapper>
+        <Wrapper theme={theme}>
           <LabelStyled htmlFor="levelSelect">Level of knowledge</LabelStyled>
           <StyledLevelsSelect
             id="levelSelect"
@@ -86,10 +88,11 @@ function Filter() {
             options={levelOptions}
             isClearable
             classNamePrefix="react-select"
+            theme={theme} 
           />
         </Wrapper>
 
-        <Wrapper>
+        <Wrapper theme={theme}>
           <LabelStyled htmlFor="priceSelect">Price</LabelStyled>
           <PriceSelect
             id="priceSelect"
@@ -98,6 +101,7 @@ function Filter() {
             options={priceOptions}
             isClearable
             classNamePrefix="react-select"
+            theme={theme} 
           />
         </Wrapper>
       </FilterBarForm>

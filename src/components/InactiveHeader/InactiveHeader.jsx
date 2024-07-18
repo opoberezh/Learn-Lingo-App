@@ -7,6 +7,7 @@ import {
   LogoWrapper,
   PageWrapper,
   RegisterContainer,
+  StyledIcon,
   Text,
   TextWrapper,
 } from './InactiveHeader.styled';
@@ -36,9 +37,9 @@ const InactiveHeader = () => {
       </PageWrapper>
       <AuthNavWrapper>
       <LogInWrapper> 
-       <svg style={{ width: "20px", height: "20px" }}>
-        <use xlinkHref={`${sprite}#icon-login_inact`} />
-      </svg>  
+      <StyledIcon>
+            <use xlinkHref={`${sprite}#icon-login`} />
+          </StyledIcon>
       <LoginText>Log in</LoginText>
       </LogInWrapper>
       <RegisterContainer>

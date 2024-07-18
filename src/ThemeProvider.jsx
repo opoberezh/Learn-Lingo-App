@@ -1,33 +1,23 @@
-import { createContext, useState } from "react"
-import { BlueTheme, GreenTheme, OrangeTheme, PinkTheme, RedTheme } from "./theme";
 
+import  { createContext, useState } from 'react';
+import { OrangeTheme, GreenTheme, BlueTheme, RedTheme, PinkTheme } from './themes';
 
 export const ThemeContext = createContext();
+const themes = [OrangeTheme, GreenTheme, BlueTheme, RedTheme, PinkTheme];
 
-const ThemeProvider = ({children}) => {
-const [theme, setTheme] = useState(OrangeTheme);
+const ThemeProvider = ({ children }) => {
+  const [themeIndex, setThemeIndex] = useState(0);
 
-const toggleTheme = () => {
-  setTheme(currentTheme => {
-    switch (currentTheme) {
-case OrangeTheme:
-  return GreenTheme;
-  case GreenTheme:
-    return BlueTheme;
-    case BlueTheme:
-      return RedTheme;
-      case RedTheme:
-        return PinkTheme;
-        case PinkTheme:
-          return OrangeTheme;
-          default:
-            return OrangeTheme;
-    }
-  })
-}
+  const toggleTheme = () => {
+    setThemeIndex((prevIndex) => (prevIndex + 1) % themes.length);
+  };
+
+
   return (
-   <ThemeContext.Provider value={{theme, toggleTheme}}>{children}</ThemeContext.Provider>
-  )
-}
+    <ThemeContext.Provider value={{ theme: themes[themeIndex], toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
 
-export default ThemeProvider
+export default ThemeProvider;

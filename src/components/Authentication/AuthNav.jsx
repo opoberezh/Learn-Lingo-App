@@ -1,26 +1,26 @@
 import { NavLink } from 'react-router-dom';
-import login from '../../../assets/login.svg';
-import {
-  Authentication,
-  LoginButton,
-  Icon,
-  Button,
-} from './AuthNav.styled';
+import sprite from '../../../assets/symbol.svg';
+import { Authentication, LoginButton, Button, StyledIcon } from './AuthNav.styled';
+import { useContext } from 'react';
+import { ThemeContext } from '../../ThemeProvider';
 
 const AuthNav = ({ setRegisterOpen, setLoginOpen }) => {
   const handleRegisterOpen = () => setRegisterOpen(true);
   const handleLoginOpen = () => setLoginOpen(true);
+  const { theme } = useContext(ThemeContext);
 
   return (
     <Authentication>
       <NavLink to="/login">
-        <LoginButton type="button" onClick={handleLoginOpen}>
-          <Icon src={login} alt="Login" />
+        <LoginButton theme={theme} type="button" onClick={handleLoginOpen}>
+          <StyledIcon theme={theme}>
+            <use xlinkHref={`${sprite}#icon-login`} />
+          </StyledIcon>
           Log in
         </LoginButton>
       </NavLink>
       <NavLink to="/register">
-        <Button type="button" onClick={handleRegisterOpen}>
+        <Button theme={theme} type="button" onClick={handleRegisterOpen}>
           Registration
         </Button>
       </NavLink>

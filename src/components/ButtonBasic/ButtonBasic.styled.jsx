@@ -12,7 +12,7 @@ text-transform: none;
   cursor: pointer;
   border: none;
   border-radius: 12px;
-  background-color: #f4c550;
+  background-color: ${({ theme }) => theme.primary};
   box-shadow: none;
 
   font-weight: 700;
@@ -23,6 +23,6 @@ text-transform: none;
 
   &:hover,
   &:focus {
-    background-color: #fbe9ba;
+    background-color: ${({ theme }) => theme.secondary};
   }
 `;

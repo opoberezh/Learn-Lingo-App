@@ -32,16 +32,12 @@ export const LogoWrapper = styled.div`
 export const Logo = styled.img`
   width: 28px;
   height: 28px;
-  
 `;
 
 export const LogoName = styled.p`
   margin: 0;
   font-weight: 500;
   font-size: 20px;
-  
-
-  
 `;
 
 export const Text = styled.p`
@@ -51,27 +47,31 @@ export const Text = styled.p`
 `;
 
 export const AuthNavWrapper = styled.div`
-    display: flex;
-    gap: 16px;
+  display: flex;
+  gap: 16px;
 `;
 
 export const LogInWrapper = styled.div`
-display: flex;
-align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`;
+
+export const StyledIcon = styled.svg`
+  width: 20px;
+  height: 20px;
+  stroke: #8a8a89;
 `;
 
 export const LoginText = styled.p`
-
-color: #8A8A89;
+  color: #8a8a89;
 `;
 
 export const RegisterContainer = styled.div`
-
-width: 166px;
-height: 48px;
-border-radius: 12px;
-padding: 14px 39px;
-background-color: #8A8A89;
-color: #FFFFFF;
+  width: 166px;
+  height: 48px;
+  border-radius: 12px;
+  padding: 14px 39px;
+  background-color: #8a8a89;
+  color: #ffffff;
 `;

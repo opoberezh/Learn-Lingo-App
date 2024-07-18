@@ -20,7 +20,7 @@ export const StyledLink = styled(Link)`
 
   &:hover,
   &:focus {
-    color: #f4c550;
+    color: ${({theme})=> theme.primary};
   }
 `;
 
@@ -46,10 +46,10 @@ export const LinkStyled = styled(NavLink)`
 
   &:hover,
   &:focus {
-    color: #f4c550;
+    color: ${({theme})=> theme.primary};
   }
 
   &.active {
-    color: #f4c550;
+    color: ${({theme})=> theme.primary};
   }
 `;

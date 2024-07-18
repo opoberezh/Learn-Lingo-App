@@ -41,7 +41,7 @@ export const StyledImage = styled.img`
 
 export const StyledSpan = styled.span`
   font-weight: 400;
-  background: #fbe9ba;
+  background: ${({theme})=> theme.primary};
   font-style: italic;
   display: inline-block;
   padding: 0 5px;
@@ -54,7 +54,7 @@ export const PicsWrapper = styled.div`
   position: relative;
   width: 568px;
   height: 530px;
-  background-color: #fbe9ba;
+  background-color: ${({theme})=> theme.secondary};
   border-radius: 30px;
 `;
 

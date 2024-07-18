@@ -9,6 +9,7 @@ import UserMenu from '../UserMenu/UserMenu';
 import AuthNav from '../Authentication/AuthNav';
 
 
+
 const Header = () => {
   const {isLoggedIn} = useAuth();
   const [registerOpen, setRegisterOpen] = useState(false);
@@ -22,7 +23,7 @@ const Header = () => {
       {isLoggedIn ? <UserMenu/> : <AuthNav setRegisterOpen={setRegisterOpen} setLoginOpen={setLoginOpen} />}
       <LoginModal open={loginOpen} setOpen={setLoginOpen} />
       <RegisterModal open={registerOpen} setOpen={setRegisterOpen} />
-      
+    
     </HeaderWrapper>
   );
 };

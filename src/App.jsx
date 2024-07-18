@@ -11,6 +11,7 @@ import InactiveLayout from './components/InactiveLayout/InactiveLayout';
 import Loader from './components/Loader/Loader'; 
 import ThemeProvider from './ThemeProvider';
 
+
 const HomePage = lazy(() => import('./pages/HomePage/HomePage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage/RegisterPage'));
 const LoginPage = lazy(() => import('./pages/LoginPage/LoginPage'));
@@ -21,6 +22,7 @@ const ErrorPage = lazy(() => import('./pages/ErrorPage/ErrorPage'));
 function App() {
   const dispatch = useDispatch();
   const { isRefreshing } = useAuth();
+  
 
   useEffect(() => {
     dispatch(refreshUser());
@@ -30,6 +32,7 @@ function App() {
     <b>Refreshing user ...</b>
   ) : (
     <ThemeProvider>
+   
     <AppWrapper>
       <Suspense fallback={<Loader />}>
         <Routes>

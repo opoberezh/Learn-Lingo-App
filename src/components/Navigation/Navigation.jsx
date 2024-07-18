@@ -7,20 +7,23 @@ import {
   Nav,
   StyledLink,
 } from './Navigation.styled';
+import { ThemeContext } from '../../ThemeProvider';
+import { useContext } from 'react';
 
 const Navigation = () => {
   const { isLoggedIn } = useAuth();
+  const { theme } = useContext(ThemeContext);
   return (
     <Nav isLoggedIn={isLoggedIn}>
-      <StyledLink to="/">
+      <StyledLink to="/" theme={theme}>
         <Logo src={ukraine} alt="Ukraine Flag" />
         LearnLingo
       </StyledLink>
 
       <LinkWrapper>
-        <LinkStyled to="/">Home</LinkStyled>
-        <LinkStyled to="/teachers">Teachers</LinkStyled>
-        {isLoggedIn && <LinkStyled to="/favorite">Favorite</LinkStyled>}
+        <LinkStyled to="/" theme={theme}>Home</LinkStyled>
+        <LinkStyled to="/teachers" theme={theme}>Teachers</LinkStyled>
+        {isLoggedIn && <LinkStyled to="/favorite" theme={theme}>Favorite</LinkStyled>}
       </LinkWrapper>
     </Nav>
   );

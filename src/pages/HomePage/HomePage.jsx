@@ -15,7 +15,6 @@ import {
   Numbers,
   Description,
   DivStyled,
-  
   SecondDescWrapper,
   SecondNumber,
   ThirdAndForthNumbers,
@@ -24,17 +23,22 @@ import {
 } from './HomePage.styled';
 import BasicButton from '../../components/ButtonBasic/ButtonBasic';
 import emoji from "../../../assets/emoji.png";
-import macbook from "../../../assets/Mac.png";
-import rectangle from "../../../assets/Rectangle 1.png";
+
+import { ThemeContext } from '../../ThemeProvider';
+import { useContext } from 'react';
 
 const HomePage = () => {
+  const { theme } = useContext(ThemeContext);
+  const macBookImg = theme?.macBookImg || "../../../assets/Mac.png"; 
+  const rectangleImg = theme?.rectangleImg || "../../../assets/Rectangle 1.png"; 
+  
   return (
     <Container>
       <Wrapper>
         <HeroWrapper>
           <Title>
             Unlock your potential with the best{' '}
-            <StyledSpan>language </StyledSpan>
+            <StyledSpan theme={theme}>language </StyledSpan>
             {' '}tutors
           </Title>
 
@@ -45,39 +49,35 @@ const HomePage = () => {
               connecting with highly qualified and experienced tutors.
             </Text>
           </TextWrapper>
-<Link to="/teachers">
-  <div style={{marginTop: "64px", width: "267px"}}>
-     <BasicButton type="submit" text="Get started" />
-  </div>
- 
-</Link>
-          
+          <Link to="/teachers">
+            <div style={{ marginTop: "64px", width: "267px" }}>
+              <BasicButton type="submit" text="Get started" />
+            </div>
+          </Link>
         </HeroWrapper>
-        <PicsWrapper>
+        <PicsWrapper theme={theme}>
           <EmojiImg
             src={emoji}
             alt="Emoji of a girl with curly hair"
             width={339}
             height={339}
           />
-          <MacImg src={macbook} alt="MacBook" width={391} />
+          <MacImg theme={theme} src={macBookImg} alt="MacBook" width={391} />
         </PicsWrapper>
       </Wrapper>
 
       <IndexesWrapper>
-      <DashedFrame src={rectangle} alt='Dashed frame' />
+        <DashedFrame theme={theme} src={rectangleImg} alt='Dashed frame' />
         <IndexesList>
           <li>
             <DivStyled>
               <Numbers>32,000 +</Numbers>
-
               <Description>Experienced tutors</Description>
             </DivStyled>
           </li>
           <li>
             <DivStyled>
               <SecondNumber>300,000 +</SecondNumber>
-
               <Description>5-star tutor reviews</Description>
             </DivStyled>
           </li>
