@@ -1,4 +1,4 @@
-import{n as r,u as s,p as a,j as e,r as i}from"./index-F7rXEQex.js";import{s as n,T as c,a as l}from"./TeacherCard-CbbNWxqP.js";import"./ButtonBasic-rcUpAKIh.js";const d=r.ul`
+import{n as r,u as s,q as a,j as e,r as i}from"./index-eCxlt9_u.js";import{s as n,T as c,a as l}from"./TeacherCard-BQKIyXZV.js";import"./ButtonBasic-WzmLPtUQ.js";const d=r.ul`
 display: flex;
 flex-direction: column;
 align-items: center;
