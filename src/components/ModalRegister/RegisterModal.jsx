@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { register } from '../../redux/auth/operations';
 import Box from '@mui/material/Box';
 import { Formik } from 'formik';
@@ -16,6 +16,7 @@ import {
 } from './RegisterModal.styled';
 import { useNavigate } from 'react-router-dom';
 import ButtonModal from '../ButtonModal/ButtonModal';
+import { ThemeContext } from '../../ThemeProvider';
 
 const style = {
   position: 'absolute',
@@ -30,6 +31,7 @@ const style = {
 };
 
 const RegisterModal = ({ open, setOpen }) => {
+  const {theme} = useContext(ThemeContext);
   const navigate = useNavigate();
   const handleClose = () => {
     setOpen(false);
@@ -60,6 +62,7 @@ const RegisterModal = ({ open, setOpen }) => {
               transform: 'translate(-50%, -50%)',
               width: 32,
               height: 32,
+              cursor: 'pointer',
             }}
           />
           <Typography
@@ -102,6 +105,7 @@ const RegisterModal = ({ open, setOpen }) => {
             }) => (
               <StyledForm onSubmit={handleSubmit}>
                 <StyledField
+                theme={theme} 
                   id="name"
                   name="name"
                   placeholder="Name"
@@ -114,6 +118,7 @@ const RegisterModal = ({ open, setOpen }) => {
                   <ErrorMessageStyled>{errors.name}</ErrorMessageStyled>
                 ) : null}
                 <StyledField
+                theme={theme} 
                   id="email"
                   name="email"
                   placeholder="Email"
@@ -127,6 +132,7 @@ const RegisterModal = ({ open, setOpen }) => {
                 ) : null}
                 <div style={{ position: 'relative' }}>
                   <StyledField
+                  theme={theme} 
                     id="password"
                     name="password"
                     placeholder="Password"

@@ -15,6 +15,7 @@ import { authReducer } from './auth/slice';
 import { teacherReducer } from './teachers/slice';
 import { filterReducer } from './filter/slice';
 import { favoritesReducer } from './favorites/slice';
+import clearFavoritesMiddleware from './favorites/middleware';
 
 const authPersistConfig = {
   key: 'auth',
@@ -41,7 +42,8 @@ export const store = configureStore({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
+
+    }).concat(clearFavoritesMiddleware),
   // devTools: process.env.NODE_ENV === 'development',
 });
 

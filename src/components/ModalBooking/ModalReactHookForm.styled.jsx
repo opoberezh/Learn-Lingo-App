@@ -52,8 +52,8 @@ export const StyledRadioInput = styled.input`
     border 0.3s;
 
   &:checked {
-    background: radial-gradient(circle, #f4c550 40%, transparent 50%);
-    border: 2px solid #f4c550;
+    background: radial-gradient(circle, ${({theme})=> theme.primary} 40%, transparent 50%);
+    border: 2px solid ${({theme})=> theme.primary};
   }
 `;
 
@@ -72,6 +72,12 @@ border: 1px solid #1214171a;
 padding: 16px;
 font-size: 16px;
 color: #121417;
+outline: none;
+
+&:hover,
+&:focus {
+      border-color: ${({ theme }) => theme.primary};
+    }
 
 `;
 

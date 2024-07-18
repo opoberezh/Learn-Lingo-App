@@ -58,6 +58,14 @@ export const PicsWrapper = styled.div`
   border-radius: 30px;
 `;
 
+export const ThemeSwitcherWrapper = styled.div`
+  position: absolute;
+  top: 15px;
+  right: 10px;
+
+  
+`;
+
 export const EmojiImg = styled.img`
   position: absolute;
   top: 80px;

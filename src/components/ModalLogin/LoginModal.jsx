@@ -1,5 +1,5 @@
 import { useDispatch  } from 'react-redux';
-import {  useState } from 'react';
+import {  useContext, useState } from 'react';
 import { logIn } from '../../redux/auth/operations';
 import Box from '@mui/material/Box';
 import { Formik } from 'formik';
@@ -16,6 +16,7 @@ import {
 } from './LoginModal.styled';
 import { useNavigate } from 'react-router-dom';
 import ButtonModal from '../ButtonModal/ButtonModal';
+import { ThemeContext } from '../../ThemeProvider';
 
 
 const style = {
@@ -33,6 +34,7 @@ const style = {
 
 
 const LoginModal = ({ open, setOpen,  }) => {
+  const {theme} = useContext(ThemeContext);
   const navigate = useNavigate();
   const handleLoginClose = () => {
     setOpen(false);
@@ -64,6 +66,7 @@ const LoginModal = ({ open, setOpen,  }) => {
               transform: 'translate(-50%, -50%)',
               width: 32,
               height: 32,
+              cursor: 'pointer',
             }}
           />
           <Typography
@@ -104,6 +107,7 @@ const LoginModal = ({ open, setOpen,  }) => {
             }) => (
               <StyledForm onSubmit={handleSubmit}>
                 <StyledField
+                theme={theme}
                   id="email"
                   name="email"
                   placeholder="Email"
@@ -117,6 +121,7 @@ const LoginModal = ({ open, setOpen,  }) => {
                 ) : null}
                 <div style={{ position: 'relative' }}>
                   <StyledField
+                  theme={theme}
                     id="password"
                     name="password"
                     placeholder="Password"

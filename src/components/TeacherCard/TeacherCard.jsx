@@ -17,9 +17,11 @@ import {
   RadioContainer,
   RadioInput,
   RadioInputWrapper,
+  FavoriteButton,
+  FavoriteIcon,
 } from './TeacherCard.styled';
 import sprite from '../../../assets/symbol.svg';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import ExpandedCard from '../ExpandedCard/ExpandedCard';
 import ModalReactHookForm from '../ModalBooking/ModalReactHookForm';
 import BasicButton from '../ButtonBasic/ButtonBasic';
@@ -27,8 +29,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectFavorites } from '../../redux/favorites/selectors';
 import { selectIsLoggedIn } from '../../redux/auth/selectors';
 import { addToFavorite, removeFromFavorite } from '../../redux/favorites/slice';
+import { ThemeContext } from '../../ThemeProvider';
 
 const TeacherCard = ({ teacher }) => {
+  const { theme } = useContext(ThemeContext);
   const dispatch = useDispatch();
   const favorites = useSelector(selectFavorites);
   const isAuthenticated = useSelector(selectIsLoggedIn);
@@ -78,7 +82,7 @@ const TeacherCard = ({ teacher }) => {
 
   return (
     <CardContainer isExpanded={isExpanded} style={{ position: 'relative' }}>
-      <AvatarCircle>
+      <AvatarCircle theme={theme}>
         <BadgeAvatars avatar_url={avatar_url} />
       </AvatarCircle>
       <div>
@@ -137,13 +141,13 @@ const TeacherCard = ({ teacher }) => {
 
         {isExpanded && <ExpandedCard teacher={teacher} />}
 
-        <ReadMoreButton type="button" onClick={handleToggleExpand}>
+        <ReadMoreButton theme={theme} type="button" onClick={handleToggleExpand}>
           {isExpanded ? 'Show less' : 'Read more'}
         </ReadMoreButton>
 
         <RadioContainer>
           {levels.map((level, index) => (
-            <RadioInputWrapper key={index} checked={selectedLevel === level}>
+            <RadioInputWrapper theme={theme} key={index} checked={selectedLevel === level}>
               <RadioInput
                 type="radio"
                 value={level}
@@ -170,22 +174,11 @@ const TeacherCard = ({ teacher }) => {
           />
         )}
 
-        <div style={{ position: 'absolute', top: '24px', right: '24px' }}>
-          <button
-            onClick={() => handleToggleFavorite(teacher)}
-            style={{ background: 'transparent', border: 'none' }}
-          >
-            {isFavorite ? (
-              <svg style={{ fill: '#F4C550', width: '26px', height: '26px' }}>
-                <use xlinkHref={sprite + '#icon-hover'} />
-              </svg>
-            ) : (
-              <svg style={{ fill: 'transparent', stroke: '#121417', width: '26px', height: '26px' }}>
-                <use xlinkHref={sprite + '#icon-Vector'} />
-              </svg>
-            )}
-          </button>
-        </div>
+        <FavoriteButton onClick={() => handleToggleFavorite(teacher)}>
+          <FavoriteIcon isFavorite={isFavorite} theme={theme}>
+            <use xlinkHref={sprite + (isFavorite ? '#icon-hover' : '#icon-Vector')} />
+          </FavoriteIcon>
+        </FavoriteButton>
       </div>
     </CardContainer>
   );

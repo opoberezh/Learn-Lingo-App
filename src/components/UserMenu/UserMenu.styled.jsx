@@ -13,7 +13,7 @@ export const LogOutButton = styled.button`
 
   &:hover,
   &:focus {
-    color: #f4c550;
+    color: ${({ theme }) => theme.primary};
   }
 `;
 
@@ -29,10 +29,11 @@ export const LoginWrapper = styled.div`
   gap: 8px;
 `;
 
-export const IconWrapper = styled.img`
+export const StyledIcon = styled.svg`
   width: 20px;
   height: 20px;
-  margin-left: 8px;
+  stroke: ${({ theme }) => theme.primary};
+  margin-right: 8px;
 `;
 
 export const UserMailDiv = styled.div`

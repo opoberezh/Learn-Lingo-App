@@ -20,12 +20,14 @@ import {
   ThirdAndForthNumbers,
   SecondDescription,
   DashedFrame,
+  ThemeSwitcherWrapper,
 } from './HomePage.styled';
 import BasicButton from '../../components/ButtonBasic/ButtonBasic';
 import emoji from "../../../assets/emoji.png";
 
 import { ThemeContext } from '../../ThemeProvider';
 import { useContext } from 'react';
+import ThemeSwitcher from '../../components/ThemeSwitcher/ThemeSwidcher';
 
 const HomePage = () => {
   const { theme } = useContext(ThemeContext);
@@ -56,6 +58,11 @@ const HomePage = () => {
           </Link>
         </HeroWrapper>
         <PicsWrapper theme={theme}>
+          <ThemeSwitcherWrapper>
+          <ThemeSwitcher 
+         />
+          </ThemeSwitcherWrapper>
+          
           <EmojiImg
             src={emoji}
             alt="Emoji of a girl with curly hair"

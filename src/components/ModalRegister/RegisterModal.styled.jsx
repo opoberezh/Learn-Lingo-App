@@ -17,6 +17,12 @@ export const StyledField = styled(Field)`
   padding: 16px;
   font-size: 16px;
   color: #121417;
+  outline: none;
+
+  &:hover,
+&:focus {
+      border-color: ${({ theme }) => theme.primary};
+    }
 `;
 
 export const ErrorMessageStyled = styled.div`

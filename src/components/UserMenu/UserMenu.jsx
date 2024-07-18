@@ -4,11 +4,14 @@ import { selectUser } from '../../redux/auth/selectors';
 import { logOut } from '../../redux/auth/operations';
 
 
-import { LogOutButton, Authentication, LoginWrapper, IconWrapper, UserMailDiv, UserMail } from './UserMenu.styled';
-import logout from '../../../assets/logOut.svg';
+import { LogOutButton, Authentication, LoginWrapper,  UserMailDiv, UserMail, StyledIcon } from './UserMenu.styled';
+import sprite from '../../../assets/symbol.svg';
+import { useContext } from 'react';
+import { ThemeContext } from '../../ThemeProvider';
 
 
 const UserMenu = () => {
+  const {theme} = useContext(ThemeContext);
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
 
@@ -17,8 +20,10 @@ const UserMenu = () => {
   return (
     <Authentication>
       <LoginWrapper>
-      <IconWrapper src={logout} alt="log out" />
-        <LogOutButton type="button" onClick={() => dispatch(logOut())}>
+      <StyledIcon theme={theme}>
+            <use xlinkHref={`${sprite}#icon-login`} />
+          </StyledIcon>
+        <LogOutButton theme={theme} type="button" onClick={() => dispatch(logOut())}>
           Log out
           
         </LogOutButton>

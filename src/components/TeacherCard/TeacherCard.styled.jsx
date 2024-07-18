@@ -19,7 +19,7 @@ background-color: #F8F8F8;
 export const AvatarCircle = styled.div`
 width: 120px;
 height: 120px;
-border: 3px solid #FBE9BA;
+border: 3px solid ${({theme})=> theme.secondary};
 border-radius: 50%;
 align-content: center;
     padding: 8px;
@@ -113,7 +113,7 @@ cursor: pointer;
 
   &:hover,
   &:focus {
-    color: #F4C550;
+    color: ${({theme})=> theme.primary};
   }
 `;
 
@@ -131,13 +131,13 @@ export const RadioInputWrapper = styled.label`
   border: 1px solid #12141733;
   border-radius: 35px;
   padding: 8px 12px;
-  background-color: ${props => props.checked ? '#F4C550' : '#fff'};
+  background-color: ${({ checked, theme }) => (checked ? theme.primary : '#fff')};
   cursor: pointer;
  
   transition: background-color 0.3s;
 
   &:hover {
-    background-color: #F4C550;
+    background-color: ${({theme})=>theme.primary};
   }
 `;
 
@@ -145,3 +145,17 @@ export const RadioInput = styled.input`
   display: none;
 `;
 
+export const FavoriteButton = styled.button`
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+`;
+
+export const FavoriteIcon = styled.svg`
+  fill: ${({ isFavorite, theme }) => (isFavorite ? theme.primary : 'transparent')};
+  stroke: ${({ isFavorite, theme }) => (isFavorite ? theme.primary : '#121417')};
+  width: 26px;
+  height: 26px;
+`;

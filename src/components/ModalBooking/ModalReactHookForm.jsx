@@ -18,7 +18,8 @@ import {
   TeacherInfoWrapper,
 } from './ModalReactHookForm.styled';
 import ButtonModal from '../ButtonModal/ButtonModal';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { ThemeContext } from '../../ThemeProvider';
 
 const schema = yup.object({
   picked: yup.string().required('Please select an option'),
@@ -50,6 +51,7 @@ const style = {
 };
 
 const ModalReactHookForm = ({ teacher, open, setOpen, selectedLevel }) => {
+  const { theme } = useContext(ThemeContext);
   const [bookingInfo, setBookingInfo] = useState(null);
   const [showAlert, setShowAlert] = useState(false);
 
@@ -82,7 +84,9 @@ const ModalReactHookForm = ({ teacher, open, setOpen, selectedLevel }) => {
 
   useEffect(() => {
     if (!open && bookingInfo && showAlert) {
-      alert(`Booking successful!\n\nDetails:\nName: ${bookingInfo.fullName}\nEmail: ${bookingInfo.email}\nPhone: ${bookingInfo.phoneNumber}\nReason: ${bookingInfo.picked}\nLevel: ${bookingInfo.selectedLevel}\nTeacher: ${teacher.name} ${teacher.surname}`);
+      alert(
+        `Booking successful!\n\nDetails:\nName: ${bookingInfo.fullName}\nEmail: ${bookingInfo.email}\nPhone: ${bookingInfo.phoneNumber}\nReason: ${bookingInfo.picked}\nLevel: ${bookingInfo.selectedLevel}\nTeacher: ${teacher.name} ${teacher.surname}`
+      );
       setShowAlert(false);
     }
   }, [open, bookingInfo, showAlert, teacher]);
@@ -135,7 +139,7 @@ const ModalReactHookForm = ({ teacher, open, setOpen, selectedLevel }) => {
               <Typography variant="h6">{`${teacher.name} ${teacher.surname}`}</Typography>
             </div>
           </TeacherInfoWrapper>
-          <StyledForm onSubmit={handleSubmit(onSubmit)}>
+          <StyledForm  onSubmit={handleSubmit(onSubmit)}>
             <RadioGroupTitle id="my-radio-group">
               What is your main reason for learning English?
             </RadioGroupTitle>
@@ -150,6 +154,7 @@ const ModalReactHookForm = ({ teacher, open, setOpen, selectedLevel }) => {
                   control={control}
                   render={({ field }) => (
                     <StyledRadioInput
+                      theme={theme}
                       type="radio"
                       {...field}
                       value="Career and business"
@@ -164,6 +169,7 @@ const ModalReactHookForm = ({ teacher, open, setOpen, selectedLevel }) => {
                   control={control}
                   render={({ field }) => (
                     <StyledRadioInput
+                    theme={theme}
                       type="radio"
                       {...field}
                       value="Lesson for kids"
@@ -178,6 +184,7 @@ const ModalReactHookForm = ({ teacher, open, setOpen, selectedLevel }) => {
                   control={control}
                   render={({ field }) => (
                     <StyledRadioInput
+                    theme={theme}
                       type="radio"
                       {...field}
                       value="Living abroad"
@@ -192,6 +199,7 @@ const ModalReactHookForm = ({ teacher, open, setOpen, selectedLevel }) => {
                   control={control}
                   render={({ field }) => (
                     <StyledRadioInput
+                    theme={theme}
                       type="radio"
                       {...field}
                       value="Exams and coursework"
@@ -206,6 +214,7 @@ const ModalReactHookForm = ({ teacher, open, setOpen, selectedLevel }) => {
                   control={control}
                   render={({ field }) => (
                     <StyledRadioInput
+                    theme={theme}
                       type="radio"
                       {...field}
                       value="Culture, travel or hobby"
@@ -220,7 +229,7 @@ const ModalReactHookForm = ({ teacher, open, setOpen, selectedLevel }) => {
             )}
             <FormWrapper>
               <div>
-                <FormInput {...register('fullName')}  placeholder="Full Name"/>
+                <FormInput theme={theme} {...register('fullName')} placeholder="Full Name" />
                 {errors.fullName && (
                   <ErrorMessageStyled>
                     {errors.fullName?.message}
@@ -229,7 +238,7 @@ const ModalReactHookForm = ({ teacher, open, setOpen, selectedLevel }) => {
               </div>
 
               <div>
-                <FormInput {...register('email')} placeholder="Email" />
+                <FormInput theme={theme} {...register('email')} placeholder="Email" />
                 {errors.email && (
                   <ErrorMessageStyled>
                     {errors.email?.message}
@@ -238,7 +247,10 @@ const ModalReactHookForm = ({ teacher, open, setOpen, selectedLevel }) => {
               </div>
 
               <div>
-                <FormInput {...register('phoneNumber')} placeholder="Phone Number" />
+                <FormInput theme={theme}
+                  {...register('phoneNumber')}
+                  placeholder="Phone Number"
+                />
                 {errors.phoneNumber && (
                   <ErrorMessageStyled>
                     {errors.phoneNumber?.message}
