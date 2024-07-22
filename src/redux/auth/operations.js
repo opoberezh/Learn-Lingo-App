@@ -51,7 +51,8 @@ export const logOut = createAsyncThunk(
   async (_, thunkAPI) => {
     try {
       await signOut(auth);
-      
+      setAuthHeader(null);
+      localStorage.removeItem('user');
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -74,6 +75,7 @@ export const refreshUser = createAsyncThunk(
           setAuthHeader(storedUser.token);
           return storedUser;
         } else {
+          setAuthHeader(null); 
           return null;
         }
       }

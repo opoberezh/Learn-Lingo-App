@@ -8,6 +8,7 @@ import { LogOutButton, Authentication, LoginWrapper,  UserMailDiv, UserMail, Sty
 import sprite from '../../../assets/symbol.svg';
 import { useContext } from 'react';
 import { ThemeContext } from '../../ThemeProvider';
+import { clearFavorites } from '../../redux/favorites/slice';
 
 
 const UserMenu = () => {
@@ -15,7 +16,10 @@ const UserMenu = () => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
 
- 
+  const handleLogout = () => {
+    dispatch(logOut());
+    dispatch(clearFavorites());
+  };
 
   return (
     <Authentication>
@@ -23,7 +27,7 @@ const UserMenu = () => {
       <StyledIcon theme={theme}>
             <use xlinkHref={`${sprite}#icon-login`} />
           </StyledIcon>
-        <LogOutButton theme={theme} type="button" onClick={() => dispatch(logOut())}>
+        <LogOutButton theme={theme} type="button" onClick={handleLogout}>
           Log out
           
         </LogOutButton>
