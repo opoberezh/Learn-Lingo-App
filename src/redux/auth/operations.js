@@ -3,6 +3,8 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { auth } from '../../../fireBaseConfig';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { getUserData, saveUserData, setAuthHeader } from '../../components/utilities/AuthHeader';
+import { getFavorites } from '../favorites/operations';
+import { setFavorites } from '../favorites/slice';
 
 const transformFirebaseUser = async (user) => {
   const token = await user.getIdToken();
@@ -39,6 +41,8 @@ export const logIn = createAsyncThunk(
       const userCredential = await signInWithEmailAndPassword(auth, credentials.email, credentials.password);
      const user = await transformFirebaseUser(userCredential.user);
       setAuthHeader(user.token);
+      const favorites = await getFavorites();
+      thunkAPI.dispatch(setFavorites(favorites)); 
       return user;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

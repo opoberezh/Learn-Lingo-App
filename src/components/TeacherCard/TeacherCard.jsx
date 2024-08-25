@@ -30,6 +30,7 @@ import { selectFavorites } from '../../redux/favorites/selectors';
 import { selectIsLoggedIn } from '../../redux/auth/selectors';
 import { addToFavorite, removeFromFavorite } from '../../redux/favorites/slice';
 import { ThemeContext } from '../../ThemeProvider';
+import {saveFavoriteTeacher} from '../../redux/favorites/operations';
 
 const TeacherCard = ({ teacher }) => {
   const { theme } = useContext(ThemeContext);
@@ -69,22 +70,24 @@ const TeacherCard = ({ teacher }) => {
     setIsFavorite(isFav);
   }, [favorites, id]);
 
-  const handleToggleFavorite = (teacher) => {
+  const handleToggleFavorite = () => {
     if (!isAuthenticated) {
       return alert('You are not an authenticated user. Please, register or log in.');
     }
-    if (!Array.isArray(favorites)) {
-      console.error('Favorites is not an array:', favorites);
-      return;
-    }
-
-    if (favorites.some(fav => fav.id === teacher.id)) {
-      dispatch(removeFromFavorite(teacher.id));
+    if (isFavorite) {
+      // Видалення з улюблених
+      dispatch(removeFromFavorite(id));
+      // Виклик функції для видалення з Firebase
+      saveFavoriteTeacher({ ...teacher, remove: true });
     } else {
+      // Додавання до улюблених
       dispatch(addToFavorite(teacher));
+      // Виклик функції для збереження у Firebase
+      saveFavoriteTeacher(teacher);
     }
-    
+    setIsFavorite(!isFavorite);
   };
+
 
   return (
     <CardContainer isExpanded={isExpanded} style={{ position: 'relative' }}>

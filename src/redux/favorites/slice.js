@@ -21,8 +21,11 @@ const favoritesSlice = createSlice({
     clearFavorites: (state) => {
       state.favorites = [];
     },
+    setFavorites: (state, action) => {
+      state.favorites = action.payload;
+    }
   },
 });
 
-export const { addToFavorite, removeFromFavorite, clearFavorites } = favoritesSlice.actions;
+export const { addToFavorite, removeFromFavorite, clearFavorites, setFavorites } = favoritesSlice.actions;
 export const favoritesReducer = favoritesSlice.reducer;
