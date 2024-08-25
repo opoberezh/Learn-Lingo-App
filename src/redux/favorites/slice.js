@@ -2,7 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   favorites: [],
+  status: 'idle',
+  error: null,
 };
+
 
 const favoritesSlice = createSlice({
   name: 'favorites',

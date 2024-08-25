@@ -64,7 +64,8 @@ const TeacherCard = ({ teacher }) => {
   const handleModalOpen = () => setModalOpen(true);
 
   useEffect(() => {
-    const isFav = favorites.some((fav) => fav.id === id);
+    const isFav = Array.isArray(favorites) && favorites.some((fav) => fav.id === id);
+
     setIsFavorite(isFav);
   }, [favorites, id]);
 
@@ -72,12 +73,17 @@ const TeacherCard = ({ teacher }) => {
     if (!isAuthenticated) {
       return alert('You are not an authenticated user. Please, register or log in.');
     }
+    if (!Array.isArray(favorites)) {
+      console.error('Favorites is not an array:', favorites);
+      return;
+    }
 
     if (favorites.some(fav => fav.id === teacher.id)) {
       dispatch(removeFromFavorite(teacher.id));
     } else {
       dispatch(addToFavorite(teacher));
     }
+    
   };
 
   return (
