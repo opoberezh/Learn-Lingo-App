@@ -21,6 +21,7 @@ import {
   SecondDescription,
   DashedFrame,
   ThemeSwitcherWrapper,
+  ButtonWrapper,
 } from './HomePage.styled';
 import BasicButton from '../../components/ButtonBasic/ButtonBasic';
 import emoji from "../../../assets/emoji.png";
@@ -52,9 +53,9 @@ const HomePage = () => {
             </Text>
           </TextWrapper>
           <Link to="/teachers">
-            <div style={{ marginTop: "64px", width: "267px" }}>
+            <ButtonWrapper>
               <BasicButton type="submit" text="Get started" />
-            </div>
+            </ButtonWrapper>
           </Link>
         </HeroWrapper>
         <PicsWrapper theme={theme}>
@@ -66,10 +67,9 @@ const HomePage = () => {
           <EmojiImg
             src={emoji}
             alt="Emoji of a girl with curly hair"
-            width={339}
-            height={339}
+           
           />
-          <MacImg theme={theme} src={macBookImg} alt="MacBook" width={391} />
+          <MacImg theme={theme} src={macBookImg} alt="MacBook" />
         </PicsWrapper>
       </Wrapper>
 
@@ -77,25 +77,25 @@ const HomePage = () => {
         <DashedFrame theme={theme} src={rectangleImg} alt='Dashed frame' />
         <IndexesList>
           <li>
-            <DivStyled>
+            <DivStyled theme={theme}>
               <Numbers>32,000 +</Numbers>
               <Description>Experienced tutors</Description>
             </DivStyled>
           </li>
           <li>
-            <DivStyled>
+            <DivStyled theme={theme}>
               <SecondNumber>300,000 +</SecondNumber>
               <Description>5-star tutor reviews</Description>
             </DivStyled>
           </li>
           <li>
-            <DivStyled>
+            <DivStyled theme={theme}>
               <ThirdAndForthNumbers>120 +</ThirdAndForthNumbers>
               <SecondDescWrapper>Subjects taught</SecondDescWrapper>
             </DivStyled>
           </li>
           <li>
-            <DivStyled>
+            <DivStyled theme={theme}>
               <ThirdAndForthNumbers>200 +</ThirdAndForthNumbers>
               <SecondDescription>Tutor nationalities</SecondDescription>
             </DivStyled>

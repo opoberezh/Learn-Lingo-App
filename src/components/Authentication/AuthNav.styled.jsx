@@ -2,9 +2,17 @@ import styled from '@emotion/styled';
 
 export const Authentication = styled.div`
   display: flex;
-  align-items: center;
+  gap: 16px;
+  align-items: flex-start;
+  
+flex-direction: column;
+margin: 80px 0;
+  @media(min-width: 1312px){
   width: 255px;
   gap: 16px;
+  align-items: center;
+  }
+  
 `;
 
 export const LoginButton = styled.button`
@@ -14,7 +22,7 @@ export const LoginButton = styled.button`
   padding: 0;
   border: none;
   background-color: transparent;
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 700;
   transition: color 0.3s;
 
@@ -22,16 +30,22 @@ export const LoginButton = styled.button`
   &:focus {
     color: ${({ theme }) => theme.primary};
   }
+
+ @media(min-width: 1312px){
+ 
+  font-size: 16px;
+  
+} 
 `;
 
 export const Button = styled.button`
-  width: 166px;
+width: 169px;
   height: 48px;
   border: none;
   border-radius: 12px;
   background-color: #121417;
   color: #fff;
-  font-size: 16px;
+  font-size: 22px;
   font-weight: 700;
   transition: color 0.3s, background-color 0.3s;
 
@@ -40,11 +54,28 @@ export const Button = styled.button`
     color: #121417;
     background-color: ${({ theme }) => theme.primary};
   }
+
+@media(min-width: 1312px){
+ width: 166px;
+  font-size: 16px;
+  
+}
+ 
+
 `;
 
 export const StyledIcon = styled.svg`
-  width: 20px;
-  height: 20px;
-  stroke: ${({ theme }) => theme.primary};
+
+width: 24px;
+  height: 24px;
   margin-right: 8px;
+ stroke: ${({ theme }) => theme.primary};
+@media(min-width: 1312px){
+width: 20px;
+  height: 20px;
+  
+}
+  
+ 
+  
 `;

@@ -22,7 +22,7 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
         </CloseButton>
         <MenuContent>
           
-          <Navigation />
+          <Navigation toggleMenu={toggleMenu}/>
           
          
           {isLoggedIn ? <UserMenu /> : <AuthNav />}
@@ -33,7 +33,7 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
 
      
       <MenuButton  onClick={toggleMenu}>
-        {isOpen ? <CloseIcon style={{ fontSize: '3rem' }}/> : <MenuIcon style={{ fontSize: '3rem' }}/>}
+        {isOpen ? <CloseIcon style={{ fontSize: '2rem' }}/> : <MenuIcon style={{ fontSize: '2rem' }}/>}
       </MenuButton>
     </>
   );

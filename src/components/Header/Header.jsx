@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import Navigation from '../Navigation/Navigation';
-import { HeaderWrapper, Logo } from './Header.styled';
+import { Container, HeaderWrapper, Logo } from './Header.styled';
 import RegisterModal from '../ModalRegister/RegisterModal';
 import LoginModal from '../ModalLogin/LoginModal';
 import { useAuth } from '../../hooks/index';
@@ -23,7 +23,7 @@ const Header = () => {
   };
 
   return (
-    <>
+    <Container>
     <MobileMenu isOpen={menuOpen} toggleMenu={toggleMenu} />
     <StyledLink to="/" theme={theme}>
         <Logo src={ukraine} alt="Ukraine Flag" />
@@ -36,7 +36,7 @@ const Header = () => {
       <LoginModal open={loginOpen} setOpen={setLoginOpen} />
       <RegisterModal open={registerOpen} setOpen={setRegisterOpen} />
     </HeaderWrapper>
-    </>
+    </Container>
     
   );
 };

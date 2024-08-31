@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 import { Link } from 'react-router-dom';
 
+export const Container = styled.div`
+width: 335px;
+height: 21px;
+`;
 
 export const HeaderWrapper = styled.header`
 visibility: hidden;
@@ -23,10 +27,10 @@ export const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 0 64px;
+  padding: 0 20px;
   color: #121417;
   font-weight: 500;
-  font-size: 30px;
+  font-size: 18px;
   cursor: pointer;
   transition: color 0.3s;
 
