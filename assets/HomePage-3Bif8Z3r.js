@@ -1,4 +1,4 @@
-import{n as e,r as d,T as s,j as i,s as a,L as h}from"./index-BvK7jVf8.js";import{B as c}from"./ButtonBasic-BCzvvhWd.js";const l=e.div`
+import{n as e,r as d,T as s,j as i,s as a,L as h}from"./index-D1G-0ANI.js";import{B as c}from"./ButtonBasic-DydBdcp-.js";const l=e.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -6,7 +6,7 @@ import{n as e,r as d,T as s,j as i,s as a,L as h}from"./index-BvK7jVf8.js";impor
   width: 90%;
 
   @media (min-width: 375px) {
-    max-width: 335px;
+    max-width: 375px;
   }
 
   @media (min-width: 768px) {
@@ -59,7 +59,7 @@ import{n as e,r as d,T as s,j as i,s as a,L as h}from"./index-BvK7jVf8.js";impor
   }
 `,f=e.div`
   width: 100%;
-  max-width: 280px;
+  max-width: 335px;
   margin-top: 20px;
 
   @media (min-width: 1312px) {
@@ -67,6 +67,7 @@ import{n as e,r as d,T as s,j as i,s as a,L as h}from"./index-BvK7jVf8.js";impor
     margin-top: 32px;
   }
 `,j=e.p`
+
   @media (min-width: 768px) {
     font-size: 14px;
   }
@@ -86,7 +87,7 @@ import{n as e,r as d,T as s,j as i,s as a,L as h}from"./index-BvK7jVf8.js";impor
   justify-content: center;
   position: relative;
   width: 100%;
-  max-width: 335px;
+  max-width: 375px;
   height: 399px;
   background-color: ${({theme:t})=>t.secondary};
   border-radius: 30px;
