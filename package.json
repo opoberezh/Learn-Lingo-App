@@ -11,13 +11,14 @@
     "format": "prettier --write ./src"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
     "@eslint/config-array": "^0.17.0",
     "@eslint/object-schema": "^2.1.4",
     "@hookform/resolvers": "^3.9.0",
-    "@mui/icons-material": "^5.16.0",
-    "@mui/material": "^5.16.0",
+    "@mui/icons-material": "^6.0.2",
+    "@mui/material": "^6.0.2",
+    "@mui/system": "^6.0.2",
     "@reduxjs/toolkit": "^2.2.6",
     "@vitejs/plugin-react-swc": "^3.7.0",
     "axios": "^1.7.2",

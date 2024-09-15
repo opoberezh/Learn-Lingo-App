@@ -3,13 +3,21 @@ import styled from '@emotion/styled';
 
 export const CardContainer = styled.div`
 display: flex;
-// align-items: center;
+flex-direction: column; 
+align-items: center;
 background-color: #F8F8F8;
     border-radius: 24px;
+padding: 20px;
+    width: 100p%;
+    height: auto;
+    max-width: 375px;
+    @media(min-width: 1312px){
     padding: 24px;
     width: 1184px;
     height: ${({isExpanded}) => (isExpanded ? "748px" : "328px")} ;
     gap: 48px;
+    }
+    
 
 
 
@@ -27,13 +35,29 @@ align-content: center;
 
 export const ListWrapper = styled.div`
 display: flex;
+flex-direction: column;
+width: 100%;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 0 0 0 8px;
+@media(min-width: 1312px){
 gap: 149px;
+margin: 0;
+}
+
 `;
 
 
 export const FirstList = styled.ul`
 display: flex;
 flex-direction: row;
+flex-wrap: wrap;
+ width: 100%;
+ & > li {
+    flex-basis: calc(50% - 32px);  
+  }
+      gap: 16px;
+  justify-content: space-around;
 
 & > li:not(:last-child) {
     border-right: 1px solid #12141733;
@@ -44,31 +68,56 @@ flex-direction: row;
 
 export const FirstListTest = styled.p`
 font-weight: 500;
+font-size: 12px;
+
+@media(min-width: 1312px){
 font-size: 16px;
-`;
+}
+`
+;
 
 export const SecondaryText = styled.p`
+
+
 font-weight: 500;
-font-size: 16px;
+font-size: 12px;
 color: #8A8A89;
-`; 
+
+@media(min-width: 1312px){
+font-size: 16px;
+}
+`
+
+; 
+
+
+
 
 export const IconOpenBook = styled.svg`
-width: 16px;
-height: 16px;
+width: 12px;
+height: 12px;
 fill: transparent;
 stroke: #121417;
 margin-right: 4px;
 vertical-align: middle;
+
+@media(min-width: 1312px){
+width: 16px;
+height: 16px;
+}
 `;
 
 export const IconStar = styled.svg`
-width: 16px;
-height: 16px;
+width: 12px;
+height: 12px;
 fill: #FFC531;
 stroke: #FFC531;
 margin-right: 8px;
 vertical-align: text-top;
+
+@media(min-width: 1312px){
+width: 16px;
+height: 16px;}
 `;
 
 export const SpanText = styled.span`
@@ -119,8 +168,16 @@ cursor: pointer;
 
 export const RadioContainer = styled.div`
   display: flex;
+      flex-direction: column;
+  width: 100%;
+gap: 8px;
+margin-top: 24px;
+  @media(min-width: 1312px){
+  flex-direction: row;
   margin-top: 32px;
-  gap: 8px;
+  
+  }
+  
 `;
 
 export const RadioInputWrapper = styled.label`

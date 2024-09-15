@@ -8,7 +8,7 @@ export const Container = styled.div`
   width: 90%;
 
   @media (min-width: 375px) {
-    max-width: 335px;
+    max-width: 375px;
   }
 
   @media (min-width: 768px) {
@@ -71,7 +71,7 @@ export const Title = styled.h1`
 
 export const TextWrapper = styled.div`
   width: 100%;
-  max-width: 280px;
+  max-width: 335px;
   margin-top: 20px;
 
   @media (min-width: 1312px) {
@@ -81,6 +81,7 @@ export const TextWrapper = styled.div`
 `;
 
 export const Text = styled.p`
+
   @media (min-width: 768px) {
     font-size: 14px;
   }
@@ -104,7 +105,7 @@ export const PicsWrapper = styled.div`
   justify-content: center;
   position: relative;
   width: 100%;
-  max-width: 335px;
+  max-width: 375px;
   height: 399px;
   background-color: ${({ theme }) => theme.secondary};
   border-radius: 30px;

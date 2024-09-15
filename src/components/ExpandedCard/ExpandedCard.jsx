@@ -10,10 +10,7 @@ import {
 import sprite from '../../../assets/symbol.svg';
 
 const ExpandedCard = ({ teacher }) => {
-  const {
-    experience, reviews
-  } = teacher || {};
-
+  const { experience, reviews } = teacher || {};
 
   return (
     <ExpandedCardContainer>
