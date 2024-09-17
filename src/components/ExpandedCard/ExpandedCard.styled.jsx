@@ -8,7 +8,7 @@ margin-top: 16px;
 export const ReviewList = styled.ul`
 display: inline-flex;
 margin-top: 32px;
-min-width: 400px;
+min-width: 335px;
 gap: 32px;
 flex-direction: column;
 `;

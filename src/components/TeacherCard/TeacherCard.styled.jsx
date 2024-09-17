@@ -39,10 +39,10 @@ flex-direction: column;
 width: 100%;
   gap: 20px;
   flex-wrap: wrap;
-  margin: 0 0 0 8px;
+ 
 @media(min-width: 1312px){
 gap: 149px;
-margin: 0;
+
 }
 
 `;
@@ -56,14 +56,19 @@ flex-wrap: wrap;
  & > li {
     flex-basis: calc(50% - 32px);  
   }
-      gap: 16px;
-  justify-content: space-around;
+      gap: 8px;
+  justify-content: space-;
 
-& > li:not(:last-child) {
+  @media(min-width: 1312px){
+  gap: 16px;
+  & > li:not(:last-child) {
     border-right: 1px solid #12141733;
     margin-right: 16px;
     padding-right: 16px;
   }
+  }
+
+
 `;
 
 export const FirstListTest = styled.p`
@@ -80,12 +85,10 @@ export const SecondaryText = styled.p`
 
 
 font-weight: 500;
-font-size: 12px;
+font-size: 16px;
 color: #8A8A89;
 
-@media(min-width: 1312px){
-font-size: 16px;
-}
+
 `
 
 ; 
@@ -134,7 +137,11 @@ color: #38CD3E;
 export const NameText = styled.p`
 font-weight: 500;
 font-size: 24px;
+margin-top: 16px;
+@media(min-width: 1312px){
 margin-top: 8px;
+}
+
 `;
 
 export const SecondList = styled.ul`
