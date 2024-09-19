@@ -43,11 +43,18 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 600,
+  width: '100%',
+  maxWidth: 600,
   height: 972,
   bgcolor: 'background.paper',
   borderRadius: 10,
   p: 8,
+  '@media(min-width: 768px)': {
+  width: '80%',
+  },
+  '@media(min-width: 1312px)': {
+  width: '60%',
+  },
 };
 
 const ModalReactHookForm = ({ teacher, open, setOpen, selectedLevel }) => {

@@ -19,6 +19,7 @@ import {
   RadioInputWrapper,
   FavoriteButton,
   FavoriteIcon,
+  ButtonWrapper,
 } from './TeacherCard.styled';
 import sprite from '../../../assets/symbol.svg';
 import { useContext, useEffect, useState } from 'react';
@@ -169,9 +170,9 @@ const TeacherCard = ({ teacher }) => {
         </RadioContainer>
 
         {isExpanded && (
-          <div style={{ width: '232px', marginTop: '32px' }}>
+          <ButtonWrapper>
             <BasicButton type="button" text="Book trial lesson" onClick={handleModalOpen} />
-          </div>
+          </ButtonWrapper>
         )}
 
         {isExpanded && (
