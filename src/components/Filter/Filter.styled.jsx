@@ -3,15 +3,26 @@ import Select from "react-select";
 
 export const FilterBarContainer = styled.div`
   display: flex;
+
   margin: 20px auto;
+  width: 100%;
+  max-width: 375px;
+  @media(min-width: 1312px){
   width: 1184px;
+  }
+  
 `;
 
 export const FilterBarForm = styled.form`
   display: flex;
-  width: 583px;
+  flex-direction: column;
+  width: 100%;
   height: 74px;
   gap: 20px;
+
+  @media (min-width: 1312px){
+  flex-direction: row;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -29,7 +40,8 @@ export const LabelStyled = styled.label`
 export const StyledSelectLang = styled(Select)`
   .react-select__control {
     appearance: none;
-    width: 221px;
+    width: 100%;
+    max-width: 375px;
     height: 48px;
     outline: none;
     border: none;
@@ -79,12 +91,17 @@ export const StyledSelectLang = styled(Select)`
 
   .react-select__placeholder {
     color: #8a8a89;
+  }
+
+  @media (min-width:1312px){
+   width: 221px;
   }
 `;
 
 export const StyledLevelsSelect = styled(Select)`
   .react-select__control {
-    width: 198px;
+    width: 100%;
+    max-width: 375px;
     height: 48px;
     outline: none;
     border: none;
@@ -134,12 +151,17 @@ export const StyledLevelsSelect = styled(Select)`
 
   .react-select__placeholder {
     color: #8a8a89;
+  }
+
+  @media (min-width: 1312px){
+  width: 198px;
   }
 `;
 
 export const PriceSelect = styled(Select)`
   .react-select__control {
-    width: 150px;
+    width: 100%;
+    max-width: 375px;
     height: 48px;
     outline: none;
     border: none;
@@ -189,5 +211,8 @@ export const PriceSelect = styled(Select)`
 
   .react-select__placeholder {
     color: #8a8a89;
+  }
+    @media (min-width: 1312px){
+  width: 150px;
   }
 `;

@@ -44,13 +44,16 @@ const style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: '100%',
-  maxWidth: 600,
-  height: 972,
+  maxWidth: 375,
+  height: "auto",
   bgcolor: 'background.paper',
   borderRadius: 10,
   p: 8,
+  overflowY: 'auto',
+ 
   '@media(min-width: 768px)': {
   width: '80%',
+
   },
   '@media(min-width: 1312px)': {
   width: '60%',

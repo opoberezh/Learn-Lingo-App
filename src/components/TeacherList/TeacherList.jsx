@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllTeachers } from '../../redux/teachers/operations';
 import { selectFilter } from '../../redux/filter/selectors';
 import TeacherCard from '../TeacherCard/TeacherCard';
-import { CardsWrapper } from './TeacherList.styled';
+import { ButtonLess,ButtonMore, CardsWrapper, PaginateButtonWrapper } from './TeacherList.styled';
 import Loader from '../Loader/Loader';
 import BasicButton from '../ButtonBasic/ButtonBasic';
 import { selectError, selectIsLoading } from '../../redux/teachers/selectors';
@@ -16,7 +16,23 @@ const TeacherList = () => {
   const error = useSelector(selectError);
   
   const [pageNumber, setPageNumber] = useState(0);
-  const pageSize = 3;
+  const [pageSize, setPageSize] = useState(3);
+
+  const updatePageSize = () => {
+    if(window.innerWidth <= 1024){
+      setPageSize(1);
+    }else {
+      setPageSize(3);
+    }
+  };
+
+  useEffect(() => {
+    updatePageSize();
+    window.addEventListener('resize', updatePageSize);
+    return () => {
+      window.removeEventListener('resize', updatePageSize);
+    }
+  }, []);
 
   useEffect(() => {
     dispatch(fetchAllTeachers({pageSize, pageNumber}))
@@ -28,7 +44,7 @@ const TeacherList = () => {
       .catch((error) => {
         console.error('Fetch all teachers error:', error);
       });
-  }, [dispatch, pageNumber]);
+  }, [dispatch, pageNumber, pageSize]);
 
   const loadMoreTeachers = () => {
     setPageNumber((prevPageNumber) => prevPageNumber + 1);
@@ -75,25 +91,20 @@ const TeacherList = () => {
           ))}
       </CardsWrapper>
       {!filter.selectedLanguage && !filter.selectedLevel && !filter.selectedPrice && (
-        <div
-          style={{
-            display: 'flex',
-            width: '600px',
-            margin: '64px auto',
-            justifyContent: pageNumber > 0 ? 'space-between' : 'center',
-          }}
+        <PaginateButtonWrapper pageNumber={pageNumber}
+          
         >
           {pageNumber > 0 && (
-            <div style={{ width: '183px' }}>
+            <ButtonLess>
               <BasicButton text="Load less" onClick={loadLessTeachers} />
-            </div>
+            </ButtonLess>
           )}
           {teachers.length > paginatedTeachers.length && (
-            <div style={{ width: '183px' }}>
+            <ButtonMore>
               <BasicButton text="Load more" onClick={loadMoreTeachers} />
-            </div>
+            </ButtonMore>
           )}
-        </div>
+        </PaginateButtonWrapper>
       )}
     </>
   );

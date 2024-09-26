@@ -10,12 +10,6 @@ body {
   color: #121417;
   width: 100%;
   padding: 20px 20px;
-
- 
-
-  
-  
-  
 }
 html {
   box-sizing: border-box;
@@ -43,4 +37,3 @@ img {
 button {
   cursor: pointer;
 }
-

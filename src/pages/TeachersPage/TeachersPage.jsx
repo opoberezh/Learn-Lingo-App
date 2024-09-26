@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 
 import Filter from '../../components/Filter/Filter';
 import TeacherList from '../../components/TeacherList/TeacherList';
+import { Container, FilterWrapper } from './TeachersPage.styled';
 
 const TeachersPage = () => {
   useEffect(() => {
@@ -13,14 +14,18 @@ const TeachersPage = () => {
   }, []);
 
   return (
-    <div >
-      <div style={{display: "flex", flexDirection: "column", gap: "24px" }}> 
+    <Container>
+     
+       <FilterWrapper>
+       <Filter />
+       </FilterWrapper>
        
-        <Filter />
-      </div>
-      
+     
+      <div>
       <TeacherList />
-    </div>
+      </div>
+     
+    </Container>
   );
 };
 
