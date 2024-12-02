@@ -204,7 +204,8 @@ export const DivStyled = styled.div`
   display: flex;
   gap: 8px;
       align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 10px 20px;
     border: 1.5px double;
   border-color: ${({ theme }) => theme.primary};
   border-radius: 30px;

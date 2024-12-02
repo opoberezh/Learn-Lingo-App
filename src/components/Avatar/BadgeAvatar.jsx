@@ -16,7 +16,7 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
       left: 0,
       width: '100%',
       height: '100%',
-      borderRadius: '50%',
+      borderRadius: '40%',
       animation: 'ripple 1.2s infinite ease-in-out',
       border: '1px solid currentColor',
       content: '""',

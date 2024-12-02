@@ -25,7 +25,7 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
           <Navigation toggleMenu={toggleMenu}/>
           
          
-          {isLoggedIn ? <UserMenu /> : <AuthNav />}
+          {isLoggedIn ? <UserMenu toggleMenu={toggleMenu}/> : <AuthNav toggleMenu={toggleMenu}/>}
          
          
         </MenuContent>
@@ -40,3 +40,4 @@ const MobileMenu = ({ isOpen, toggleMenu }) => {
 };
 
 export default MobileMenu;
+      
