@@ -1,4 +1,4 @@
-import{n as e,r as d,T as s,j as i,s as a,L as h}from"./index-9AYsTD7P.js";import{B as c}from"./ButtonBasic-1U-qncWR.js";const l=e.div`
+import{n as e,r as o,T as s,j as i,s as a,L as h}from"./index-PW_tiwio.js";import{B as c}from"./ButtonBasic-BlpP6C_s.js";const l=e.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -172,7 +172,8 @@ top: 300px;
   display: flex;
   gap: 8px;
       align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 10px 20px;
     border: 1.5px double;
   border-color: ${({theme:t})=>t.primary};
   border-radius: 30px;
@@ -207,7 +208,7 @@ width: 100px;
 
 }
   
-`,o=e.p`
+`,d=e.p`
   width: 60px;
   font-size: 20px;
   font-weight: 500;
@@ -243,4 +244,4 @@ width: 54px;
   fill: ${({theme:t})=>t.primary};
   
  
-`,H=()=>{const{theme:t,toggleTheme:p}=d.useContext(s);return i.jsx(D,{theme:t,onClick:p,children:i.jsx($,{theme:t,children:i.jsx("use",{xlinkHref:`${a}#icon-paint-format`})})})},A=()=>{const{theme:t}=d.useContext(s),p=(t==null?void 0:t.macBookImg)||"../../../assets/Mac.png",r=(t==null?void 0:t.rectangleImg)||"../../../assets/Rectangle 1.png";return i.jsxs(l,{children:[i.jsxs(g,{children:[i.jsxs(w,{children:[i.jsxs(u,{children:["Unlock your potential with the best"," ",i.jsx(b,{theme:t,children:"language "})," ","tutors"]}),i.jsx(f,{children:i.jsx(j,{children:"Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your language proficiency to new heights by connecting with highly qualified and experienced tutors."})}),i.jsx(h,{to:"/teachers",children:i.jsx(m,{children:i.jsx(c,{type:"submit",text:"Get started"})})})]}),i.jsxs(y,{theme:t,children:[i.jsx(v,{children:i.jsx(H,{})}),i.jsx(z,{src:C,alt:"Emoji of a girl with curly hair"}),i.jsx(k,{theme:t,src:p,alt:"MacBook"})]})]}),i.jsxs(T,{children:[i.jsx(S,{theme:t,src:r,alt:"Dashed frame"}),i.jsxs(E,{children:[i.jsx("li",{children:i.jsxs(n,{theme:t,children:[i.jsx(I,{children:"32,000 +"}),i.jsx(x,{children:"Experienced tutors"})]})}),i.jsx("li",{children:i.jsxs(n,{theme:t,children:[i.jsx(B,{children:"300,000 +"}),i.jsx(x,{children:"5-star tutor reviews"})]})}),i.jsx("li",{children:i.jsxs(n,{theme:t,children:[i.jsx(o,{children:"120 +"}),i.jsx(W,{children:"Subjects taught"})]})}),i.jsx("li",{children:i.jsxs(n,{theme:t,children:[i.jsx(o,{children:"200 +"}),i.jsx(L,{children:"Tutor nationalities"})]})})]})]})]})};export{A as default};
+`,H=()=>{const{theme:t,toggleTheme:p}=o.useContext(s);return i.jsx(D,{theme:t,onClick:p,children:i.jsx($,{theme:t,children:i.jsx("use",{xlinkHref:`${a}#icon-paint-format`})})})},A=()=>{const{theme:t}=o.useContext(s),p=(t==null?void 0:t.macBookImg)||"../../../assets/Mac.png",r=(t==null?void 0:t.rectangleImg)||"../../../assets/Rectangle 1.png";return i.jsxs(l,{children:[i.jsxs(g,{children:[i.jsxs(w,{children:[i.jsxs(u,{children:["Unlock your potential with the best"," ",i.jsx(b,{theme:t,children:"language "})," ","tutors"]}),i.jsx(f,{children:i.jsx(j,{children:"Embark on an Exciting Language Journey with Expert Language Tutors: Elevate your language proficiency to new heights by connecting with highly qualified and experienced tutors."})}),i.jsx(h,{to:"/teachers",children:i.jsx(m,{children:i.jsx(c,{type:"submit",text:"Get started"})})})]}),i.jsxs(y,{theme:t,children:[i.jsx(v,{children:i.jsx(H,{})}),i.jsx(z,{src:C,alt:"Emoji of a girl with curly hair"}),i.jsx(k,{theme:t,src:p,alt:"MacBook"})]})]}),i.jsxs(T,{children:[i.jsx(S,{theme:t,src:r,alt:"Dashed frame"}),i.jsxs(E,{children:[i.jsx("li",{children:i.jsxs(n,{theme:t,children:[i.jsx(I,{children:"32,000 +"}),i.jsx(x,{children:"Experienced tutors"})]})}),i.jsx("li",{children:i.jsxs(n,{theme:t,children:[i.jsx(B,{children:"300,000 +"}),i.jsx(x,{children:"5-star tutor reviews"})]})}),i.jsx("li",{children:i.jsxs(n,{theme:t,children:[i.jsx(d,{children:"120 +"}),i.jsx(W,{children:"Subjects taught"})]})}),i.jsx("li",{children:i.jsxs(n,{theme:t,children:[i.jsx(d,{children:"200 +"}),i.jsx(L,{children:"Tutor nationalities"})]})})]})]})]})};export{A as default};
