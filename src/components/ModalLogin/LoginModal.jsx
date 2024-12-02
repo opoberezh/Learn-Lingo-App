@@ -1,5 +1,5 @@
-import { useDispatch  } from 'react-redux';
-import {  useContext, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useContext, useState } from 'react';
 import { logIn } from '../../redux/auth/operations';
 import Box from '@mui/material/Box';
 import { Formik } from 'formik';
@@ -18,7 +18,6 @@ import { useNavigate } from 'react-router-dom';
 import ButtonModal from '../ButtonModal/ButtonModal';
 import { ThemeContext } from '../../ThemeProvider';
 
-
 const style = {
   position: 'absolute',
   top: '50%',
@@ -31,20 +30,17 @@ const style = {
   p: 8,
 };
 
-
-
-const LoginModal = ({ open, setOpen,  }) => {
-  const {theme} = useContext(ThemeContext);
+const LoginModal = ({ open, setOpen }) => {
+  const { theme } = useContext(ThemeContext);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
-
-const handleLoginClose = () => {
-    setOpen(false);
-    navigate('/');
-  };
   const handlePasswordVisibility = () => {
     setShowPassword((prevPassword) => !prevPassword);
+  };
+  const handleLoginClose = () => {
+    setOpen(false);
+    navigate('/');
   };
 
   return (
@@ -106,7 +102,7 @@ const handleLoginClose = () => {
             }) => (
               <StyledForm onSubmit={handleSubmit}>
                 <StyledField
-                theme={theme}
+                  theme={theme}
                   id="email"
                   name="email"
                   placeholder="Email"
@@ -120,7 +116,7 @@ const handleLoginClose = () => {
                 ) : null}
                 <div style={{ position: 'relative' }}>
                   <StyledField
-                  theme={theme}
+                    theme={theme}
                     id="password"
                     name="password"
                     placeholder="Password"
