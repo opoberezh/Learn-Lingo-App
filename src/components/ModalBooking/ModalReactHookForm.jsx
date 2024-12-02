@@ -43,21 +43,20 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: '100%',
-  maxWidth: 375,
+  
+  width: 311,
   height: "auto",
   bgcolor: 'background.paper',
   borderRadius: 10,
-  p: 8,
+  p: 3,
   overflowY: 'auto',
  
   '@media(min-width: 768px)': {
-  width: '80%',
-
+    width: 600,
+    height: 972,
+    p: 8,
   },
-  '@media(min-width: 1312px)': {
-  width: '60%',
-  },
+  
 };
 
 const ModalReactHookForm = ({ teacher, open, setOpen, selectedLevel }) => {
@@ -114,19 +113,30 @@ const ModalReactHookForm = ({ teacher, open, setOpen, selectedLevel }) => {
             onClick={handleBookingClose}
             sx={{
               position: 'absolute',
-              top: '6%',
-              left: '93%',
+              top: '3%',
+              left: '90%',
               transform: 'translate(-50%, -50%)',
-              width: 32,
-              height: 32,
+              width: 24,
+              height: 24,
               cursor: 'pointer',
+
+              '@media(min-width: 768px)': {
+                position: 'absolute',
+                top: '6%',
+                left: '93%',
+                width: 32,
+              height: 32,
+  },
             }}
           />
           <Typography
             id="modal-modal-title"
             variant="h3"
             component="h2"
-            sx={{ mb: 1, fontSize: 40, fontWeight: 500 }}
+            sx={{ mb: 1, fontSize: 40, fontWeight: 500 
+              
+            }}
+            
           >
             Book trial lesson
           </Typography>

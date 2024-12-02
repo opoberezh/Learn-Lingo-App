@@ -8,7 +8,7 @@ export const TeacherInfoWrapper = styled.div`
 `;
 
 export const TeacherAvatar = styled.img`
-  width: 44px;
+   width: 44px;
   height: 44px;
   border-radius: 50%;
 `;

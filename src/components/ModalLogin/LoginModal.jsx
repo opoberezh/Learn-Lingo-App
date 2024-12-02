@@ -23,11 +23,23 @@ const style = {
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
-  width: 566,
-  height: 506,
+
+  width: 311,
+  height: "auto",
   bgcolor: 'background.paper',
   borderRadius: 10,
-  p: 8,
+  p: 3,
+  overflowY: 'auto',
+ 
+  '@media(min-width: 768px)': {
+  width: '80%',
+
+  },
+  '@media(min-width: 1024px)': {
+    width: 566,
+    height: 506,
+    p: 8,
+  },
 };
 
 const LoginModal = ({ open, setOpen }) => {
