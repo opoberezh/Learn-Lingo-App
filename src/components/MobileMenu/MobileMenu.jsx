@@ -7,13 +7,19 @@ import Navigation from '../Navigation/Navigation';
 import UserMenu from '../UserMenu/UserMenu';
 import AuthNav from '../Authentication/AuthNav';
 
-const MobileMenu = ({ isOpen, toggleMenu }) => {
+const MobileMenu = ({ isOpen, toggleMenu, isModalOpen }) => {
   const { isLoggedIn } = useAuth();
+
+  const handleOverlayClick = () => {
+    if (!isModalOpen) {
+      toggleMenu();
+    }
+  }
 
   return (
     <>
       
-      {isOpen && <Overlay onClick={toggleMenu} />}
+      {isOpen && !isModalOpen && <Overlay isOpen={isOpen} onClick={handleOverlayClick} />}
 
      
       <MobileMenuContainer isOpen={isOpen}>

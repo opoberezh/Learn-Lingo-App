@@ -11,6 +11,12 @@ export const CardContainer = styled.div`
   height: auto;
   max-width: 375px;
 
+  // @media (min-width: 769px) {
+  //   padding: 24px;
+  //   max-width: 1184px;
+    
+  // }
+
   @media (min-width: 1312px) {
     padding: 24px;
     width: 1184px;

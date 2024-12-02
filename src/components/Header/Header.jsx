@@ -19,12 +19,15 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { theme } = useContext(ThemeContext);
   const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
+    if (!loginOpen && !registerOpen){
+      setMenuOpen((prev) => !prev);
+    }
+    
   };
 
   return (
     <Container>
-    <MobileMenu isOpen={menuOpen} toggleMenu={toggleMenu} />
+    <MobileMenu isOpen={menuOpen} toggleMenu={toggleMenu} isModalOpen={loginOpen || registerOpen}/>
     <StyledLink to="/" theme={theme}>
         <Logo src={ukraine} alt="Ukraine Flag" />
         LearnLingo
