@@ -36,14 +36,13 @@ const style = {
 const LoginModal = ({ open, setOpen,  }) => {
   const {theme} = useContext(ThemeContext);
   const navigate = useNavigate();
-  const handleLoginClose = () => {
-    setOpen(false);
-    navigate('/');
-  }
   const dispatch = useDispatch();
   const [showPassword, setShowPassword] = useState(false);
 
-
+const handleLoginClose = () => {
+    setOpen(false);
+    navigate('/');
+  };
   const handlePasswordVisibility = () => {
     setShowPassword((prevPassword) => !prevPassword);
   };
